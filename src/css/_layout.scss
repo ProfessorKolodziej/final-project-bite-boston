@@ -1,16 +1,14 @@
-// Some frontend developers prefer to keep layout styles in a partial, like this.
-
 .content-container {
-	margin: 0 auto;
-	max-width: 900px;
-	padding: 1em;
+	// margin: 0 auto;
+	// max-width: 900px;
+	// padding: 1em;
 
-	@media screen and (min-width: 768px) {
-		display: grid;
-		grid-gap: 3em;
-		grid-template-columns: repeat(3, 1fr);
-		padding: 2em 1em 5em;
-	}
+	// @media screen and (min-width: 768px) {
+	// 	display: grid;
+	// 	grid-gap: 3em;
+	// 	grid-template-columns: repeat(3, 1fr);
+	// 	padding: 2em 1em 5em;
+	// }
 }
 
 .page-heading {
@@ -32,4 +30,9 @@ $blue: #4261ab;
 	background: lighten($blue, 50%);
 	border: 1px solid $blue;
 	padding: 2em;
+}
+
+#google_map,
+#google_map_appended {
+	height: 100%;
 }

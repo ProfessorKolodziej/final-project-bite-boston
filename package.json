@@ -83,6 +83,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "@googlemaps/map-loader": "^1.0.1",
     "clear": "^0.1.0",
     "enquirer": "^2.3.6",
     "figlet": "^1.5.0",
