@@ -1,8 +1,8 @@
-# Final Project (Replace with your project name)
+# Bite Boston
 
 ## Description
 
-Please add a brief description of your final project here.
+A Boston area restaurant guide.
 
 ## Project Documentation
 
