@@ -73,7 +73,7 @@ const restaurants = [
 function mapInfoWindow(restaurant) {
   return '<div class="info-card">' +
     '<div class="image-wrapper">' +
-      `<img src=${restaurant.image} class="info-card-image"/>` +
+      `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>` +
     '</div>' +
     `<h3> ${restaurant.name} </h3>` +
     `<p> ${restaurant.address} </p>` +
