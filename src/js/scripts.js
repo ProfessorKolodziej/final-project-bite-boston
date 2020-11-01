@@ -1,23 +1,12 @@
 import { GoogleMap } from '@googlemaps/map-loader';
+import MarkerWithLabel from '@googlemaps/markerwithlabel';
 
-/*
- * Set your API key here.
- * For more information on generating API keys,
- * see https://goo.gle/gmp-generate-api-key-video
- */
-const googleMapsAPIKey = 'AIzaSyBVizxDTK9ovtbn2UZeZ69xDvTO0IY5pJg';
-
-/*
- * Options for how the map should initially render.
- * For more information on available options,
- * see https://goo.gle/maps-js-api-map-options
- */
+const googleMapsAPIKey = process.env.MAP_KEY;
 const mapOptions = {
   center: {
-    lat: 47.649196,
-    lng: -122.350384,
+    lat: 42.343349, lng: -71.066010
   },
-  zoom: 12,
+  zoom: 13,
 };
 
 /*
@@ -43,10 +32,70 @@ const mapLoaderOptions = {
 // Instantiate map loader
 const mapLoader = new GoogleMap();
 
-// Load the map
-mapLoader
-  .initMap(mapLoaderOptions)
-  .then((googleMap) => {
-    console.log('map: ', googleMap);
-    return googleMap;
+const makeMarker = function(map, position, icon) {
+  return new MarkerWithLabel({
+    position: position,
+    draggable: false,
+    clickable: true,
+    map: map,
+    labelContent: '',
+    icon: icon
   });
+}
+
+//Restaurant database: use this to build the detail page and list page
+const restaurants = [
+  {
+    name: 'Oishii Boston',
+    location: {
+      lat: 42.343349, lng: -71.066010
+    },
+    image: '../images/oishii.jpg',
+    address: '1166 Washington St #110, Boston, MA 02118',
+    phone: '(617)482-8868',
+    icon: '../images/tuna.png',
+    url: 'https://www.oishiiboston.com/menu-2'
+  },
+  {
+    name: 'Grill 23 & Bar',
+    location: {
+      lat: 42.349411, lng: -71.071892
+    },
+    image: '../images/grill23.jpg',
+    address: 'an161 Berkeley St, Boston, MA 02116',
+    phone: ' (617)542-2255',
+    icon: '../images/meat.png',
+    url: 'https://grill23.com/'
+  }
+]
+
+//use this function to show data on the pages. I'm showing these information on a info-window here.
+function mapInfoWindow(restaurant) {
+  return '<div class="info-card">' +
+    '<div class="image-wrapper">' +
+      `<img src=${restaurant.image} class="info-card-image"/>` +
+    '</div>' +
+    `<h3> ${restaurant.name} </h3>` +
+    `<p> ${restaurant.address} </p>` +
+    `<p> ${restaurant.phone} </p>`+
+    `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>` +
+  '</div>'
+}
+
+//
+mapLoader.initMap(mapLoaderOptions)
+  .then((map) => {
+    restaurants.forEach(function(restaurant) {
+      let marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
+      const placeInfo = mapInfoWindow(restaurant)
+
+      const info = new google.maps.InfoWindow({
+        content: placeInfo //this should be a string
+      });
+
+      marker.addListener("click", function (e) {
+        info.open(map, marker);
+      });
+    })
+  });
+

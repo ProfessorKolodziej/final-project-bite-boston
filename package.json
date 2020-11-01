@@ -30,6 +30,7 @@
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "lint": "npm run lint:html && npm run lint:styles && npm run lint:js",
+    "fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\" && stylelint --fix \"src/**/*.scss\"",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
     "deploy": "npm run build && gh-pages -d dist"
   },
@@ -43,6 +44,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
+    "dotenv-webpack": "^5.0.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-loader": "^2.2.1",
@@ -71,13 +73,14 @@
     "stylelint-scss": "^3.9.3",
     "stylelint-webpack-plugin": "^0.10.5",
     "webapp-webpack-plugin": "^2.7.1",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6",
-    "webpack-merge": "^4.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^4.2.2",
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
     "@googlemaps/map-loader": "^1.0.1",
+    "@googlemaps/markerwithlabel": "^1.0.3",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "enquirer": "^2.3.1",
