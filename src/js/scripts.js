@@ -24,7 +24,7 @@ const apiOptions = {
 const mapLoaderOptions = {
   apiKey: googleMapsAPIKey,
   divId: 'google_map',
-  append: true, // Appends to divId. Set to false to init in divId.
+  append: false, // Appends to divId. Set to false to init in divId.
   mapOptions,
   apiOptions,
 };
