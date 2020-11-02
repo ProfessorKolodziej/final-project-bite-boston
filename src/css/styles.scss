@@ -44,3 +44,16 @@ $blue: #4261ab;
 		color: $blue;
 	}
 }
+
+.page-top{
+	background-color: #CCB34F;
+	padding: 2em;
+}
+
+// Style the search box inside the navigation bar //
+.topnav input[type=text] {
+	float: right;
+	padding: 6px;
+	border: none;
+	font-size: 10px;
+  }
