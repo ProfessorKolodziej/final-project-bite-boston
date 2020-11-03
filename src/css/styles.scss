@@ -18,10 +18,10 @@ $desktop: 1200px;
 // And some color variables.
 // Look how much easier it is to keep track of what these are than hex codes!
 
-$red: #ab424a;
-$orange: #dd7c00;
-$green: #3b975f;
-$blue: #4261ab;
+$red:#802D2B;
+$yellow:#CCB34F;
+$blue: #081B67;
+$grey: #707070;
 
 .page-heading {
 	color: $red;
@@ -43,4 +43,16 @@ $blue: #4261ab;
 	@media screen and (min-width: $desktop) {
 		color: $blue;
 	}
+}
+.read-more-button{
+	border: none;
+	color: $red;
+	font-style: "roboto",sans-serif;
+	font-size: 15px;
+}
+.view-photos-button{
+	border: none;
+	color: $grey;
+	font-style: 'roboto', sans-serif;
+	font-size: 15px;
 }
