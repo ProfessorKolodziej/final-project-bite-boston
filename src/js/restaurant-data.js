@@ -9,6 +9,7 @@ const restaurantList = [
       address: '1166 Washington St #110, Boston, MA 02118',
       phone: '(617)482-8868',
       icon: '../images/tuna.png',
+      introduction:'High-concept sushi & other Japanese plates crafted in swish, dramatically lit environment.',
       url: '../detail.html'
     },
     {
@@ -20,6 +21,7 @@ const restaurantList = [
       address: '161 Berkeley St, Boston, MA 02116',
       phone: ' (617)542-2255',
       icon: '../images/meat.png',
+      introduction:'Classy chophouse presenting surf ’n’ turf classics & an ample wine selection in ornate rooms.',
       url: 'https://grill23.com/'
     },
     {
@@ -31,6 +33,7 @@ const restaurantList = [
       address: '1288 Massachusetts Ave, Cambridge, MA 02138',
       phone: ' (617)441-4011',
       icon: '../images/bread.png',
+      introduction:'Cozy spot with a rustic feel serving breakfast, soups, sandwiches & an array of baked treats.',
       url: 'https://tattebakery.com//'
     },
     {
@@ -42,6 +45,7 @@ const restaurantList = [
       address: '63 Salem St # 1, Boston, MA 02113',
       phone: ' (617)742-3474',
       icon: '../images/fish.png',
+      introduction:'Lines form for the raw bar & warm, buttered lobster rolls at this tiny, high-end oyster bar.',
       url: 'https://www.neptuneoyster.com/'
     },
 ]
