@@ -11,6 +11,7 @@ module.exports = {
     path.join(config.root, config.paths.src, 'css/styles.scss'),
   ],
   output: {
+    globalObject: "this",
     path: path.join(config.root, config.paths.dist),
     filename: '[name].[hash].js',
   },

@@ -4,86 +4,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="Restaurant Detail Page" content="A list of restaurants" />
-	<title>Bite Boston List</title>
+	<meta name="description" content="A Boston area restaurant guide" />
+	<title>Bite Boston</title>
 </head>
 <body>
-	<header>
-		<section class="page-top">
-		<img class="logo" src="./images/logo.png" alt="Bite Boston"/>
-		</section>
-
-		<section class="filters-and-search">
-		<div class="filters">
-		<span><p>Fliters</p></span>
-		<span><img src="./images/menu.png" alt="Fliters"/></span>
-		</div>
-
-		<div class="search">
-		<span><input type="text" placeholder="Search for restaurants"></span>
-		<span><img src="./images/search-engine.png" alt="search engine"/></span>
-		</div>
-		</section>
-	</header>
-
-	<main class="restaurant-list-content">
-		<section class="oishii-boston">
-			<div class="oishii-boston-top"></div>
-				<p class="restaurant-list-names">Oishii Boston</p>
-				<img class="restaurant-list-icons" src=./images/tuna.png alt="oishii-boston-icon"/>
-				<span class="restaurant-list-phone"><a href=”tel:6174828868”>(617)482-8868 </a></span>
-			</div>
-			<br>
-			<div class="oishii-boston-bottom">
-				<img class="restaurant-list-images" src=https://s3-media0.fl.yelpcdn.com/bphoto/G0zsAlvFBjys7gH_jdp4fw/o.jpg alt="oishii-boston-intro-image"/>
-				<p>1166 Washington St #110, Boston, MA 02118</p>
-				<hr>
-				<p>High-concept sushi & other Japanese plates crafted in swish, dramatically lit environment.</p>
-			</div>
-		</section>
-
-		<section class="grill-23-&-bar">
-			<div class="grill-23-&-bar-top">
-				<p class="restaurant-list-names">Grill 23 & Bar</p>
-				<img class="restaurant-list-icons" src=./images/meat.png alt="grill-23-&-bar-icon"/>
-				<a href=”tel:6175422255”>(617)542-2255 </a>
-			</div>
-			<div class="grill-23-&-bar-bottom">
-				<img class="restaurant-list-images" src=https://s3-media0.fl.yelpcdn.com/bphoto/-4GzIj-3IsJ1BOZkZcfVlg/o.jpg alt="grill-23-&-bar-image"/>
-				<p>161 Berkeley St, Boston, MA 02116</p>
-				<hr>
-				<p>Classy chophouse presenting surf ’n’ turf classics & an ample wine selection in ornate rooms.</p>
-			</div>
-		</section>
-
-		<section class="tatte-bakery-&-cafe">
-			<div class="tatte-bakery-&-cafe-top">
-				<p class="restaurant-list-names">Tatte Bakery & Cafe</p>
-				<img class="restaurant-list-icons" src=./images/bread.png alt="tatte-bakery-&-cafe-icon"/>
-				<a href=”tel:6177235555”>(617)723-5555 </a>
-			</div>
-			<div class="tatte-bakery-&-cafe-bottom">
-				<img class="restaurant-list-images" src=https://s3-media0.fl.yelpcdn.com/bphoto/b75odVoDCA7x-uxsuHzpcQ/o.jpg alt="tatte-bakery-&-cafe-image"/>
-				<p>70 Charles St, Boston, MA 02114</p>
-				<hr>
-				<p>Cozy spot with a rustic feel serving breakfast, soups, sandwiches & an array of baked treats.</p>
-			</div>
-		</section>
-
-		<section class="neptune-oyster">
-			<div class="neptune-oyster-top">
-				<p class="restaurant-list-names">Neptune Oyster</p>
-				<img class="restaurant-list-icons" src=./images/fish.png alt="neptune-oyster-icon"/>
-				<a href=”tel:6177423474”>(617)742-3474 </a>
-			</div>
-			<div class="neptune-oyster-bottom">
-				<img class="restaurant-list-images" src=https://s3-media0.fl.yelpcdn.com/bphoto/qzU7C1wTPZTaalC78GiwNQ/o.jpg alt="neptune-oyster-image"/>
-				<p>63 Salem St # 1, Boston, MA 02113</p>
-				<hr>
-				<p>Lines form for the raw bar & warm, buttered lobster rolls at this tiny, high-end oyster bar.</p>
-			</div>
-		</section>
+	<main class="content-container">
+		<img class="logo" src="./images/logo.png" alt="Bite Boston">
+		<h3 class="introduction">Click around to explore restaurants in Boston </h3>
+		<div id="google_map"></div>
+		<a type="button" id="homepage-browse-restaurants" href="./list.html" target="_blank">Browse restaurants</a>
 	</main>
+
+
 </body>
 </html>
-
