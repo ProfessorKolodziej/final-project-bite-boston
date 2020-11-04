@@ -16,3 +16,44 @@
 .image-wrapper{
 	width: 100%;
 }
+
+
+.logo{
+	width:184px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filters img{
+	width:25px;
+}
+
+.search img{
+	width:28px;
+}
+
+.restaurant-list-names{
+	float:left;
+}
+
+.restaurant-list-icons{
+	width:36px;
+	float:left;
+	margin-top:1em;
+	margin-left: 0.5em;
+}
+
+.restaurant-list-images{
+	width: 125px;
+	height: 125px;
+	border-radius: 15px;
+}
+
+.oishii-boston{
+	border-radius: 25px;
+	border: 2px solid #73AD21;
+	padding: 10px;
+	margin: 10px;
+}
