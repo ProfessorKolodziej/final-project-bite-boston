@@ -29,27 +29,8 @@ const restaurants = [
         url: 'https://grill23.com/'
       }
     ]
-    function restaurantdetailheader(restaurant) {
-        return '<div class="restaurant-detail-name">' +
-          `<h2> ${restaurant.name} </h2>` +
-          '<div class="image-wrapper">' + 
-            `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>` +
-          '</div>' +
-          `<p> ${restaurant.phone} </p>` +
-        '</div>'
-      }
-      function restaurantdetailbox(restaurant) {
-        return '<div class="restaurant-detail-info">' +
-          `<p> ${restaurant.address} </p>` +
-          `<p> ${restaurant.hours} </p>` +
-          `<p> ${restaurant.price} </p>` +
-          `<p> ${restaurant.cuisines} </p>` +
-          `<p> ${restaurant.diningstyle} </p>` +
-          `<p> ${restaurant.dresscode} </p>` +
-        '</div>'
-      }
-      function restaurantdetailintro(restaurant) {
-        return '<div class="restaurant-detail-intro">' +
-          `<p> ${restaurant.bio} </p>` +
-        '</div>'
-      }
+for (let i=0; i<restaurant.length; i++)
+return (restaurant[i].name)
+
+
+   
