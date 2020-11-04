@@ -77,12 +77,13 @@ mapLoader.initMap(mapLoaderOptions)
 //restaurant list page
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">' +
+  `<h3> ${restaurant.name} </h3>` +
+  `<p> ${restaurant.phone} </p>`+
     '<div class="image-wrapper">' +
       `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>` +
     '</div>' +
-    `<h3> ${restaurant.name} </h3>` +
     `<p> ${restaurant.address} </p>` +
-    `<p> ${restaurant.phone} </p>`+
+    `<p> ${restaurant.introduction} </p>` +
     `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>` +
   '</div>'
 }
@@ -96,4 +97,5 @@ function render(){
   });
 }
 document.addEventListener("DOMContentLoaded", render);
+
 
