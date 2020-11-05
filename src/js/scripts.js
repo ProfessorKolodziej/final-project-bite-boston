@@ -1,36 +1,125 @@
-// Add your scripts here
-const restaurants = [
-    {
-      name: 'Oishii Boston',
-      location: {
-        lat: 42.343349, lng: -71.066010
-      },
-      hours: 'Tue–Thu 4:30 pm–10:00 pm Fri, Sat 1:00 pm–10:00 pm',
-      price: '$$$',
-      cuisines: 'Sushi, Japanese',
-      diningstyle: 'Casual Elegant',
-      dresscode: 'Smart Casual',
-      image: '../images/oishii.jpg',
-      address: '1166 Washington St #110, Boston, MA 02118',
-      phone: '(617)482-8868',
-      icon: '../images/tuna.png',
-      url: 'https://www.oishiiboston.com/menu-2',
-      bio: 'Oishii Boston is located in the South End SOWA district, the most artistic area in Boston. Oishii Boston is devoted to providing the most wonderful dining experience to every customer. Chef Ting San is dedicated to combining every dish with the freshest… '
-    },
-    {
-        name: 'Grill 23 & Bar',
-        location: {
-          lat: 42.349411, lng: -71.071892
-        },
-        image: '../images/grill23.jpg',
-        address: 'an161 Berkeley St, Boston, MA 02116',
-        phone: ' (617)542-2255',
-        icon: '../images/meat.png',
-        url: 'https://grill23.com/'
-      }
-    ]
-for (let i=0; i<restaurant.length; i++)
-return (restaurant[i].name)
+import { GoogleMap } from '@googlemaps/map-loader';
+import MarkerWithLabel from '@googlemaps/markerwithlabel';
+import restaurantList from './restaurant-data';
 
+const googleMapsAPIKey = process.env.MAP_KEY;
+const mapOptions = {
+  center: {
+    lat: 42.343349, lng: -71.066010,
+  },
+  zoom: 13,
+};
 
-   
+/*
+ * Options for loading the Maps JS API.
+ */
+const apiOptions = {
+  version: 'weekly',
+  libraries: ['places'],
+};
+
+/*
+ * Set ID of the div where the map will be loaded,
+ * and whether to append to that div.
+ */
+const mapLoaderOptions = {
+  apiKey: googleMapsAPIKey,
+  divId: 'google_map',
+  append: false, // Appends to divId. Set to false to init in divId.
+  mapOptions,
+  apiOptions,
+};
+
+// Instantiate map loader
+const mapLoader = new GoogleMap();
+
+const makeMarker = function (map, position, icon) {
+  return new MarkerWithLabel({
+    position,
+    draggable: false,
+    clickable: true,
+    map,
+    labelContent: '',
+    icon,
+  });
+};
+
+// home page info-window.
+function mapInfoWindow(restaurant) {
+  return '<div class="info-card">'
+    + '<div class="image-wrapper">'
+      + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
+    + '</div>'
+    + `<h3> ${restaurant.name} </h3>`
+    + `<p> ${restaurant.address} </p>`
+    + `<p> ${restaurant.phone} </p>`
+    + `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
+  + '</div>';
+}
+
+mapLoader.initMap(mapLoaderOptions)
+  .then((map) => {
+    restaurantList.forEach((restaurant) => {
+      const marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
+      const placeInfo = mapInfoWindow(restaurant);
+
+      const info = new google.maps.InfoWindow({
+        content: placeInfo, // this should be a string
+      });
+
+      marker.addListener('click', (e) => {
+        info.open(map, marker);
+      });
+    });
+  });
+
+// restaurant list page
+function mapInfoRestaurantList(restaurant) {
+  return '<div class="info-card">'
+  + `<h3> ${restaurant.name} </h3>`
+  + `<p> ${restaurant.phone} </p>`
+    + '<div class="image-wrapper">'
+      + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
+    + '</div>'
+    + `<p> ${restaurant.address} </p>`
+    + `<p> ${restaurant.introduction} </p>`
+    + `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
+  + '</div>';
+}
+
+function render() {
+  restaurantList.forEach((restaurant) => {
+    const ul = document.getElementById('restaurant-list');
+    const li = document.createElement('li');
+    li.innerHTML = mapInfoRestaurantList(restaurant);
+    ul.appendChild(li);
+  });
+}
+document.addEventListener('DOMContentLoaded', render);
+
+// Restaurant detail page scripts
+
+function restaurantdetailheader(restaurant) {
+  return '<div class="restaurant-detail-name">'
+    + `<h2> ${restaurant.name} </h2>`
+    + '<div class="image-wrapper">'
+      + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
+    + '</div>'
+    + `<p> ${restaurant.phone} </p>`
+  + '</div>';
+}
+function restaurantdetailbox(restaurant) {
+  return '<div class="restaurant-detail-info">'
+    + `<p> ${restaurant.address} </p>`
+    + `<p> ${restaurant.hours} </p>`
+    + `<p> ${restaurant.price} </p>`
+    + `<p> ${restaurant.cuisines} </p>`
+    + `<p> ${restaurant.diningstyle} </p>`
+    + `<p> ${restaurant.dresscode} </p>`
+  + '</div>';
+}
+function restaurantdetailintro(restaurant) {
+  return '<div class="restaurant-detail-intro">'
+    + `<p> ${restaurant.bio} </p>`
+  + '</div>';
+}

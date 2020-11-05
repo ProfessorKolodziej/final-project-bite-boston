@@ -6,10 +6,10 @@
 // Your typography styles here.
 
 body {
-	font-family: 'roboto', sans-serif;
-	font-size: 15px;
+	font-family: 'Roboto';
+	color: #707070;
 	line-height: 1.5;
-	color: grey;
+	font-size: 15px;
 }
 
 h1 {
@@ -60,4 +60,8 @@ aside {
 ul,
 ol {
 	padding-left: 2em;
+}
+
+.restaurant-list-names{
+	font-size: 20px;
 }
