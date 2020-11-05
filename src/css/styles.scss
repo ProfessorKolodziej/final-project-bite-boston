@@ -44,15 +44,21 @@ $grey: #707070;
 		color: $blue;
 	}
 }
-.read-more-button{
+
+.read-more-button {
 	border: none;
 	color: $red;
 	font-style: "roboto",sans-serif;
 	font-size: 15px;
 }
-.view-photos-button{
+
+.view-photos-button {
 	border: none;
 	color: $grey;
 	font-style: 'roboto', sans-serif;
 	font-size: 15px;
+}
+
+#google_map {
+	min-height: 400px;
 }

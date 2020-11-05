@@ -1,35 +1,61 @@
-// Some frontend developers prefer to keep layout styles in a partial, like this.
-
-.content-container {
-	margin: 0 auto;
-	max-width: 900px;
-	padding: 1em;
-
-	@media screen and (min-width: 768px) {
-		display: grid;
-		grid-gap: 3em;
-		grid-template-columns: repeat(3, 1fr);
-		padding: 2em 1em 5em;
-	}
+#google_map,
+#google_map_appended {
+	height: 50vh;
+	width: 100%;
 }
 
-.page-heading {
-	grid-column: span 3;
+.info-card-image{
+	width: 100%;
 }
 
-.introduction {
-	grid-column: span 2;
-	grid-row: span 2;
+.info-card{
+	max-width: 200px;
+	height: auto;
 }
 
-// Huh. Wouldn't it be nice if we didn't have to repeat this?
-// With partials, you don't have to. Create a color variables
-// partial and include it at the top.
+.image-wrapper{
+	width: 100%;
+}
+
+
+.logo{
+	width:184px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filters img{
+	width:25px;
+}
+
+.search img{
+	width:28px;
+}
+
+.restaurant-list-names{
+	float:left;
+}
 
 $blue: #081B67;
 
-.promotion {
-	background: lighten($blue, 50%);
-	border: 1px solid $blue;
-	padding: 2em;
+.restaurant-list-icons{
+	width:36px;
+	float:left;
+	margin-top:1em;
+	margin-left: 0.5em;
+}
+
+.restaurant-list-images{
+	width: 125px;
+	height: 125px;
+	border-radius: 15px;
+}
+
+.oishii-boston{
+	border-radius: 25px;
+	border: 2px solid #73AD21;
+	padding: 10px;
+	margin: 10px;
 }
