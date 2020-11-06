@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', render);
 
 // Restaurant detail page scripts
 
-function restaurantdetailheader(restaurant) {
+function restaurantDetailHeader(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
     + '<div class="image-wrapper">'
@@ -108,7 +108,7 @@ function restaurantdetailheader(restaurant) {
     + `<p> ${restaurant.phone} </p>`
   + '</div>';
 }
-function restaurantdetailbox(restaurant) {
+function restaurantDetailBox(restaurant) {
   return '<div class="restaurant-detail-info">'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.hours} </p>`
@@ -118,7 +118,7 @@ function restaurantdetailbox(restaurant) {
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>';
 }
-function restaurantdetailintro(restaurant) {
+function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
     + `<p> ${restaurant.bio} </p>`
   + '</div>';
@@ -127,6 +127,14 @@ function restaurantdetailintro(restaurant) {
 console.log(restaurantList);
 for(let i = 0; i<restaurantList.length; i++){
   console.log(restaurantList[i])
-  restaurantdetailheader (restaurantList[i]);
-  console.log(restaurantdetailheader (restaurantList[i]))
+  restaurantDetailHeader (restaurantList[i]);
+  console.log(restaurantDetailHeader (restaurantList[i]))
 }
+
+console.log(restaurantList);
+for(let i = 0; i<restaurantList.length; i++){
+  console.log(restaurantList[i])
+  restaurantDetailBox (restaurantList[i]);
+  console.log(restaurantDetailBox (restaurantList[i]))
+}
+

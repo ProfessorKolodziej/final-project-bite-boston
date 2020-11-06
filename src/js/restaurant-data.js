@@ -11,6 +11,11 @@ const restaurantList = [
     icon: '../images/tuna.png',
     introduction: 'High-concept sushi & other Japanese plates crafted in swish, dramatically lit environment.',
     url: '../detail.html',
+    dresscode:'Smart Casual',
+    diningstyle: 'Casual Elegant',
+    cuisines: 'Sushi, Japanese',
+    price: '$$$',
+    hours: 'Tue–Thu 4:30 pm–10:00 pm Fri, Sat 1:00 pm–10:00 pm',
   },
   {
     name: 'Grill 23 & Bar',
