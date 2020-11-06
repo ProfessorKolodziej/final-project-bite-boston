@@ -123,3 +123,10 @@ function restaurantdetailintro(restaurant) {
     + `<p> ${restaurant.bio} </p>`
   + '</div>';
 }
+
+console.log(restaurantList);
+for(let i = 0; i<restaurantList.length; i++){
+  console.log(restaurantList[i])
+  restaurantdetailheader (restaurantList[i]);
+  console.log(restaurantdetailheader (restaurantList[i]))
+}
