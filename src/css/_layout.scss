@@ -19,11 +19,44 @@
 
 
 .logo{
-	width:184px;
+	width:220px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.introduction{
+	width: 250px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+#homepage-browse-restaurants{
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	padding: 15px 30px;
+	font-size: 20px;
+	padding-right: 0px;
+	border: none;
+}
+
+#homepage-browse-restaurants:focus {
+	border: none;
+	outline: none;
+}
+
+#homepage-browse-restaurants:hover {
+	cursor: pointer;
 }
 
 .filters img{
@@ -57,3 +90,4 @@
 	padding: 10px;
 	margin: 10px;
 }
+
