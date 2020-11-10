@@ -109,7 +109,7 @@ function restaurantDetailHeader(restaurant) {
   + '</div>';
 }
 function restaurantDetailBox(restaurant) {
-  return '<div class="restaurant-detail-info">'
+  return '<div class="restaurant-detail-box">'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.hours} </p>`
     + `<p> ${restaurant.price} </p>`
@@ -120,16 +120,16 @@ function restaurantDetailBox(restaurant) {
 }
 function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
-    + `<p> ${restaurant.bio} </p>`
+    + `<p> ${restaurant.introduction} </p>`
   + '</div>';
 }
 
-console.log(restaurantList);
-for(let i = 0; i<restaurantList.length; i++){
-  console.log(restaurantList[i])
-  restaurantDetailHeader (restaurantList[i]);
-  console.log(restaurantDetailHeader (restaurantList[i]))
-}
+//console.log(restaurantList);
+//for(let i = 0; i<restaurantList.length; i++){
+  //console.log(restaurantList[i])
+  //restaurantDetailHeader (restaurantList[i]);
+  //console.log(restaurantDetailHeader (restaurantList[i]))
+//}
 
 console.log(restaurantList);
 for(let i = 0; i<restaurantList.length; i++){
@@ -138,3 +138,9 @@ for(let i = 0; i<restaurantList.length; i++){
   console.log(restaurantDetailBox (restaurantList[i]))
 }
 
+console.log(restaurantList);
+for(let i = 0; i<restaurantList.length; i++){
+  console.log(restaurantList[i])
+  restaurantDetailIntro (restaurantList[i]);
+  console.log(rrestaurantDetailIntro (restaurantList[i]))
+}
