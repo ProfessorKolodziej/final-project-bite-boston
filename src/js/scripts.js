@@ -83,10 +83,11 @@ function mapInfoRestaurantList(restaurant) {
     + '</div>'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.introduction} </p>`
-    + `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
-  + '</div>';
+    + `<button id="info-card-details-button">  Details </button>`
+    + '</div>';
 }
-
+//+ `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
+//+ '</div>';
 function render() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
@@ -97,8 +98,12 @@ function render() {
 }
 document.addEventListener('DOMContentLoaded', render);
 
+
 // Restaurant detail page scripts
 
+// loads the restaurant detail information to the bottom of the list page
+// need to get the functions to appear once the "detail" button is clicked 
+// then, how does the correct restaurant display when the button is clicked? 
 function restaurantDetailHeader(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
@@ -106,9 +111,10 @@ function restaurantDetailHeader(restaurant) {
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     + `<p> ${restaurant.phone} </p>`
-  + '</div>';
-}
-function restaurantDetailBox(restaurant) {
+    + '</div>';
+  }
+
+  function restaurantDetailBox(restaurant) {
   return '<div class="restaurant-detail-box">'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.hours} </p>`
@@ -118,29 +124,60 @@ function restaurantDetailBox(restaurant) {
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>';
 }
+
 function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
     + `<p> ${restaurant.introduction} </p>`
   + '</div>';
 }
 
-//console.log(restaurantList);
-//for(let i = 0; i<restaurantList.length; i++){
-  //console.log(restaurantList[i])
-  //restaurantDetailHeader (restaurantList[i]);
-  //console.log(restaurantDetailHeader (restaurantList[i]))
-//}
-
-console.log(restaurantList);
-for(let i = 0; i<restaurantList.length; i++){
-  console.log(restaurantList[i])
-  restaurantDetailBox (restaurantList[i]);
-  console.log(restaurantDetailBox (restaurantList[i]))
+let renderDetailHeader = (restaurantList) => {
+  restaurantList.forEach((restaurant) => {
+    const p = document.getElementById('restaurant-detail-header');
+    p.innerHTML = restaurantDetailHeader(restaurant);
+  });
 }
 
-console.log(restaurantList);
-for(let i = 0; i<restaurantList.length; i++){
-  console.log(restaurantList[i])
-  restaurantDetailIntro (restaurantList[i]);
-  console.log(rrestaurantDetailIntro (restaurantList[i]))
+let renderDetailBox = (restaurantList) => {
+  restaurantList.forEach((restaurant) => {
+    const p = document.getElementById('restaurant-detail-box');
+    p.innerHTML = restaurantDetailBox(restaurant);
+  });
 }
+
+let renderDetailIntro = (restaurantList) => {
+  restaurantList.forEach((restaurant) => {
+    const p = document.getElementById('restaurant-detail-intro');
+    p.innerHTML = restaurantDetailIntro(restaurant);
+  });
+}
+
+window.onload= function (){
+  document.querySelector("#info-card-details-button").addEventListener("click",
+  function renderDetailHeader() {
+    restaurantList.forEach((restaurant) => {
+      const p = document.getElementById('restaurant-detail-header');
+      p.innerHTML = restaurantDetailHeader(restaurant);
+    });
+  })
+}
+ 
+window.onload= function (){
+    document.querySelector("#info-card-details-button").addEventListener("click",
+    function renderDetailBox() {
+      restaurantList.forEach((restaurant) => {
+        const p = document.getElementById('restaurant-detail-box');
+        p.innerHTML = restaurantDetailBox(restaurant);
+      });
+    })
+  }
+
+  window.onload= function (){
+    document.querySelector("#info-card-details-button").addEventListener("click",
+    function renderDetailIntro() {
+      restaurantList.forEach((restaurant) => {
+        const p = document.getElementById('restaurant-detail-intro');
+        p.innerHTML = restaurantDetailIntro(restaurant);
+      });
+    })
+  }
