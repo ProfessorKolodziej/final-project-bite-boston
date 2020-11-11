@@ -1,3 +1,3 @@
 function dropdownFunction() {
-    document.getElementById("fliters").classList.toggle("show");
-  }
+  document.getElementById('fliters').classList.toggle('show');
+}
