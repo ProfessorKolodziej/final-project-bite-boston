@@ -95,7 +95,8 @@ function render() {
     const restaurantHTML = mapInfoRestaurantList(restaurant);
     const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
     const button = parsedHTML.querySelector('.info-card-details-button');
-    button.dataset.restaurant = restaurant;
+    console.log(restaurant);
+    button.dataset.restaurant = JSON.stringify(restaurant);
 
     console.log(parsedHTML);
 
@@ -106,11 +107,13 @@ function render() {
 }
 document.addEventListener('DOMContentLoaded', render);
 
+
+// This controls the button click for showing the restaurant detail
 document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {
-    console.log(event.target);
-    console.log(event.target.dataset.restaurant);
-    alert("click");
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    alert(restaurantDetailHeader(restaurant));
   }
 });
 
