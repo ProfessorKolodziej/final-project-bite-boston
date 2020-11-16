@@ -86,8 +86,7 @@ function mapInfoRestaurantList(restaurant) {
     + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-//+ `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
-//+ '</div>';
+
 function render() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
