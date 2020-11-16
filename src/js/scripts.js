@@ -112,8 +112,10 @@ document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    const p = document.createElement('restaurant-detail-header');
-    p.innerHTML = restaurantDetailHeader(restaurant);
+    const p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+   //p.innerHTML = restaurantDetailBox(restaurant);
+
     document.body.appendChild(p);
   }
 });
@@ -122,30 +124,26 @@ document.addEventListener('click', event => {
 // Restaurant detail page scripts
 
 // this is the html for the detail pages 
-function restaurantDetailHeader(restaurant) {
+function restaurantDetail(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     + `<p> ${restaurant.phone} </p>`
-    + '</div>';
-  }
-
-  function restaurantDetailBox(restaurant) {
-  return '<div class="restaurant-detail-box">'
+    + '</div>'
+    +'<div class="restaurant-detail-box">'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.hours} </p>`
     + `<p> ${restaurant.price} </p>`
     + `<p> ${restaurant.cuisines} </p>`
     + `<p> ${restaurant.diningstyle} </p>`
     + `<p> ${restaurant.dresscode} </p>`
+  + '</div>'
+  +'<div class="restaurant-detail-intro">'
+  + `<p> ${restaurant.introduction} </p>`
   + '</div>';
-}
+  }
 
-function restaurantDetailIntro(restaurant) {
-  return '<div class="restaurant-detail-intro">'
-    + `<p> ${restaurant.introduction} </p>`
-  + '</div>';
-}
+
 
