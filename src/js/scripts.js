@@ -83,27 +83,45 @@ function mapInfoRestaurantList(restaurant) {
     + '</div>'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.introduction} </p>`
-    + `<button id="info-card-details-button">  Details </button>`
+    + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-//+ `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
-//+ '</div>';
+
 function render() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
     const li = document.createElement('li');
-    li.innerHTML = mapInfoRestaurantList(restaurant);
+    const restaurantHTML = mapInfoRestaurantList(restaurant);
+    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
+    const button = parsedHTML.querySelector('.info-card-details-button');
+    console.log(restaurant);
+    button.dataset.restaurant = JSON.stringify(restaurant);
+
+    console.log(parsedHTML);
+
+    // This is where it goes on the page
+    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
     ul.appendChild(li);
   });
 }
 document.addEventListener('DOMContentLoaded', render);
 
 
+// This controls the button click for showing the restaurant detail
+document.addEventListener('click', event => {
+  if (event.target.className === 'info-card-details-button') {
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    alert(restaurantDetailHeader(restaurant));
+  }
+});
+
+
 // Restaurant detail page scripts
 
 // loads the restaurant detail information to the bottom of the list page
-// need to get the functions to appear once the "detail" button is clicked 
-// then, how does the correct restaurant display when the button is clicked? 
+// need to get the functions to appear once the "detail" button is clicked
+// then, how does the correct restaurant display when the button is clicked?
 function restaurantDetailHeader(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
@@ -161,7 +179,7 @@ window.onload= function (){
     });
   })
 }
- 
+
 window.onload= function (){
     document.querySelector("#info-card-details-button").addEventListener("click",
     function renderDetailBox() {
