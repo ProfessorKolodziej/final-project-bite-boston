@@ -112,16 +112,16 @@ document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    alert(restaurantDetailHeader(restaurant));
+    const p = document.createElement('restaurant-detail-header');
+    p.innerHTML = restaurantDetailHeader(restaurant);
+    document.body.appendChild(p);
   }
 });
 
 
 // Restaurant detail page scripts
 
-// loads the restaurant detail information to the bottom of the list page
-// need to get the functions to appear once the "detail" button is clicked
-// then, how does the correct restaurant display when the button is clicked?
+// this is the html for the detail pages 
 function restaurantDetailHeader(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
@@ -149,53 +149,3 @@ function restaurantDetailIntro(restaurant) {
   + '</div>';
 }
 
-let renderDetailHeader = (restaurantList) => {
-  restaurantList.forEach((restaurant) => {
-    const p = document.getElementById('restaurant-detail-header');
-    p.innerHTML = restaurantDetailHeader(restaurant);
-  });
-}
-
-let renderDetailBox = (restaurantList) => {
-  restaurantList.forEach((restaurant) => {
-    const p = document.getElementById('restaurant-detail-box');
-    p.innerHTML = restaurantDetailBox(restaurant);
-  });
-}
-
-let renderDetailIntro = (restaurantList) => {
-  restaurantList.forEach((restaurant) => {
-    const p = document.getElementById('restaurant-detail-intro');
-    p.innerHTML = restaurantDetailIntro(restaurant);
-  });
-}
-
-window.onload= function (){
-  document.querySelector("#info-card-details-button").addEventListener("click",
-  function renderDetailHeader() {
-    restaurantList.forEach((restaurant) => {
-      const p = document.getElementById('restaurant-detail-header');
-      p.innerHTML = restaurantDetailHeader(restaurant);
-    });
-  })
-}
-
-window.onload= function (){
-    document.querySelector("#info-card-details-button").addEventListener("click",
-    function renderDetailBox() {
-      restaurantList.forEach((restaurant) => {
-        const p = document.getElementById('restaurant-detail-box');
-        p.innerHTML = restaurantDetailBox(restaurant);
-      });
-    })
-  }
-
-  window.onload= function (){
-    document.querySelector("#info-card-details-button").addEventListener("click",
-    function renderDetailIntro() {
-      restaurantList.forEach((restaurant) => {
-        const p = document.getElementById('restaurant-detail-intro');
-        p.innerHTML = restaurantDetailIntro(restaurant);
-      });
-    })
-  }
