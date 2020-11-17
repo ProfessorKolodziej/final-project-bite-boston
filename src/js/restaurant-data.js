@@ -52,6 +52,6 @@ const restaurantList = [
       url: 'https://www.neptuneoyster.com/',
       filterTag: ['price1','seaport','seafood']    
     }
-  }
+]
 
 export default restaurantList;
