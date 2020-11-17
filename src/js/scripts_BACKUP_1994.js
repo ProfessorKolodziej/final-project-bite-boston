@@ -73,7 +73,7 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
-
+ 
 //restaurant list page
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
@@ -184,6 +184,7 @@ window.onload= function (){
     })
   }
 
+<<<<<<< HEAD
   window.onload= function (){
     document.querySelector("#info-card-details-button").addEventListener("click",
     function renderDetailIntro() {
@@ -193,4 +194,6 @@ window.onload= function (){
       });
     })
   }
+=======
 
+>>>>>>> 00e206ca331c0473c7fb98703b54ff9333203c87
