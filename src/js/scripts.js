@@ -73,12 +73,8 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
-<<<<<<< HEAD
  
 //restaurant list page
-=======
-// restaurant list page
->>>>>>> 31f9bfedeb7b77cceeb1732b59468939b7bd6cb0
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
   + `<h3> ${restaurant.name} </h3>`
@@ -91,9 +87,6 @@ function mapInfoRestaurantList(restaurant) {
     + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-
-<<<<<<< HEAD
-
 function render(){
   restaurantList.forEach(function(restaurant){
     var ul= document.getElementById("restaurant-list");
@@ -102,22 +95,6 @@ function render(){
       li.classList.add(tag);
     });
     li.innerHTML=mapInfoRestaurantList(restaurant);
-=======
-function render() {
-  restaurantList.forEach((restaurant) => {
-    const ul = document.getElementById('restaurant-list');
-    const li = document.createElement('li');
-    const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
-    const button = parsedHTML.querySelector('.info-card-details-button');
-    console.log(restaurant);
-    button.dataset.restaurant = JSON.stringify(restaurant);
-
-    console.log(parsedHTML);
-
-    // This is where it goes on the page
-    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
->>>>>>> 31f9bfedeb7b77cceeb1732b59468939b7bd6cb0
     ul.appendChild(li);
   });
 }
@@ -160,9 +137,6 @@ function restaurantDetailHeader(restaurant) {
   + '</div>';
 }
 
-<<<<<<< HEAD
-
-=======
 function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
     + `<p> ${restaurant.introduction} </p>`
@@ -210,18 +184,4 @@ window.onload= function (){
     })
   }
 
-<<<<<<< HEAD
 
-
-=======
-  window.onload= function (){
-    document.querySelector("#info-card-details-button").addEventListener("click",
-    function renderDetailIntro() {
-      restaurantList.forEach((restaurant) => {
-        const p = document.getElementById('restaurant-detail-intro');
-        p.innerHTML = restaurantDetailIntro(restaurant);
-      });
-    })
-  }
->>>>>>> ab5bc62f3b99f847971fb7304a5ffab1f86fee68
->>>>>>> 31f9bfedeb7b77cceeb1732b59468939b7bd6cb0
