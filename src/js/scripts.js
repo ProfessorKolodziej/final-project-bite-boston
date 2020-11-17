@@ -73,7 +73,8 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
-// restaurant list page
+ 
+//restaurant list page
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
   + `<h3> ${restaurant.name} </h3>`
@@ -86,21 +87,14 @@ function mapInfoRestaurantList(restaurant) {
     + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-
-function render() {
-  restaurantList.forEach((restaurant) => {
-    const ul = document.getElementById('restaurant-list');
-    const li = document.createElement('li');
-    const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
-    const button = parsedHTML.querySelector('.info-card-details-button');
-    console.log(restaurant);
-    button.dataset.restaurant = JSON.stringify(restaurant);
-
-    console.log(parsedHTML);
-
-    // This is where it goes on the page
-    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
+function render(){
+  restaurantList.forEach(function(restaurant){
+    var ul= document.getElementById("restaurant-list");
+    var li = document.createElement("li");
+    restaurant.filterTag.forEach(function(tag){
+      li.classList.add(tag);
+    });
+    li.innerHTML=mapInfoRestaurantList(restaurant);
     ul.appendChild(li);
   });
 }
@@ -190,6 +184,7 @@ window.onload= function (){
     })
   }
 
+<<<<<<< HEAD
   window.onload= function (){
     document.querySelector("#info-card-details-button").addEventListener("click",
     function renderDetailIntro() {
@@ -199,3 +194,6 @@ window.onload= function (){
       });
     })
   }
+=======
+
+>>>>>>> 00e206ca331c0473c7fb98703b54ff9333203c87
