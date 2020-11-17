@@ -170,9 +170,11 @@ function restaurantDetail(restaurant) {
   + '</div>'
   + '</section>';
   }
+
   document.getElementById('close-detail-button').addEventListener('click', () => {
     history.back();
   });
+  
   // function hideDetail() {
   //   const detail = document.getElementById('restaurant-detail');
   //   if (detail.style.display === 'none') {
