@@ -10,7 +10,8 @@ const restaurantList = [
       phone: '(617)482-8868',
       icon: '../images/tuna.png',
       introduction:'High-concept sushi & other Japanese plates crafted in swish, dramatically lit environment.',
-      url: '../detail.html'
+      url: '../detail.html',
+      filterTag: ['price1','downtown','japanese']
     },
     {
       name: 'Grill 23 & Bar',
@@ -22,7 +23,8 @@ const restaurantList = [
       phone: ' (617)542-2255',
       icon: '../images/meat.png',
       introduction:'Classy chophouse presenting surf ’n’ turf classics & an ample wine selection in ornate rooms.',
-      url: 'https://grill23.com/'
+      url: 'https://grill23.com/',
+      filterTag: ['price2','southend','steakhouse']   
     },
     {
       name: 'Tatte Bakery & Cafe',
@@ -34,7 +36,8 @@ const restaurantList = [
       phone: ' (617)441-4011',
       icon: '../images/bread.png',
       introduction:'Cozy spot with a rustic feel serving breakfast, soups, sandwiches & an array of baked treats.',
-      url: 'https://tattebakery.com//'
+      url: 'https://tattebakery.com//',  
+      filterTag: ['price3','northend','bakery']    
     },
     {
       name: 'Neptune Oyster',
@@ -46,8 +49,11 @@ const restaurantList = [
       phone: ' (617)742-3474',
       icon: '../images/fish.png',
       introduction:'Lines form for the raw bar & warm, buttered lobster rolls at this tiny, high-end oyster bar.',
-      url: 'https://www.neptuneoyster.com/'
+      url: 'https://www.neptuneoyster.com/',
+      filterTag: ['price1','seaport','seafood']    
     },
 ]
+
+
 
 export default restaurantList;

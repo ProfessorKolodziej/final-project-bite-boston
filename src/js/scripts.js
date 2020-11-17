@@ -74,6 +74,7 @@ mapLoader.initMap(mapLoaderOptions)
     })
   });
 
+ 
 //restaurant list page
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">' +
@@ -88,13 +89,19 @@ function mapInfoRestaurantList(restaurant) {
   '</div>'
 }
 
+
 function render(){
   restaurantList.forEach(function(restaurant){
     var ul= document.getElementById("restaurant-list");
     var li = document.createElement("li");
+    restaurant.filterTag.forEach(function(tag){
+      li.classList.add(tag);
+    });
     li.innerHTML=mapInfoRestaurantList(restaurant);
     ul.appendChild(li);
   });
 }
 document.addEventListener("DOMContentLoaded", render);
+
+
 
