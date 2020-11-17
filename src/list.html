@@ -5,39 +5,61 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A Boston area restaurant guide" />
+    <script type="text/javascript" src="js/filters.js"></script>
+    <script type="text/javascript" src="js/restaurant-data.js"></script>
+    <!--script type="text/javascript" src="js/scripts.js"></script>-->
+    <link rel="stylesheet" href="css/filters.css">
     <title>Bite Boston-listing</title>
+    <script src="https://use.fontawesome.com/7ccb1a3cee.js"></script>
 </head>
 <body>
 	<main class="content-container">
-		<img class="logo" src="./images/logo.png" alt="Bite Boston">
-        <h3 class="introduction">Click around to explore restaurants in Boston </h3>
-        <a href=index.html>BACK</a>
+    <button type="button" class="back-btn" id="back-to-map" onclick="window.open('./index.html');">
+			<span class="back-btn-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+		</button>
+		<section class=logo-color>
+			<img class="logo" src="./images/logo.png" alt="Bite Boston">
+			<h3 class="introduction">Click around to explore restaurants in Boston </h3>
+    </section>
         <div class="dropdown">
-            <button onclick="dropdownFunction()" class="dropbtn">Fliters</button>
-            <div id="fliters" class="fliters-content">
-              <input type="text" placeholder="Search for restaurants" id="flitersInput" onkeyup="filtersFunction()">
-              <ul>Location</ul>
-                <li><input type="checkbox" id="Downtown" name="Downtown" value="Downtown">Downtown</li>
-                <li><input type="checkbox" id="North End" name="North End" value="North End">North End</li>
-                <li><input type="checkbox" id="Seaport" name="Seaport" value="Seaport">Seaport</li>
-                <li><input type="checkbox" id="South End" name="South End" value="South End">South End</li>
-              <ul>Price</ul>
-                <li><input type="checkbox" id="$" name="$" value="$">$</li>
-                <li><input type="checkbox" id="$$" name="$$" value="$$">$$</li>
-                <li><input type="checkbox" id="$$$" name="$$$" value="$$$">$$$</li>
-                <li><input type="checkbox" id="$$$$" name="$$$$" value="$$$">$$$$</li>
-              <ul>Food Category</ul>
-                <li><input type="checkbox" id="Steak House" name="Steak House" value="Steak House">Steak House</li>
-                <li><input type="checkbox" id="Seafood" name="Seafood" value="Seafood">Seafood</li>
-                <li><input type="checkbox" id="Japanese" name="Japanese" value="Japanese">Japanese</li>
-                <li><input type="checkbox" id="Italian" name="Italian" value="Italian">Italian</li>
-                <li><input type="checkbox" id="Chinese" name="Chinese" value="Chinese">Chinese</li>
-                <li><input type="checkbox" id="Bakery" name="Bakery" value="Bakery">Bakery</li>
+            <button class="dropbtn">Fliters</button>
+            <div id="fliters" class="dropdown-content">
+              <ul>Location
+                <li><input type="checkbox" onclick="filterSelection(this, 'downtown')" >Downtown</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'northend')" >North End</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'seaport')" >Seaport</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'southend')" >South End</li>
+              </ul>
+              <ul>Price
+                <li><input type="checkbox" onclick="filterSelection(this, 'price1')" >$</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'price2')" >$$</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'price3')" >$$$</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'price4')" >$$$$</li>
+              </ul>
+              <ul>Food Category
+                <li><input type="checkbox" onclick="filterSelection(this, 'steakhouse')" >Steak House</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'seafood')" >Seafood</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'japanese')" >Japanese</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'italian')" >Italian</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'chinese')" >Chinese</li>
+                <li><input type="checkbox" onclick="filterSelection(this, 'bakery')" >Bakery</li>
+              </ul>
             </div>
         </div>
-            <section>
+          <section>
+              <div class="container">
                 <ul id="restaurant-list"></ul>
+              </div>
             </section>
+          <section>
+            <p id='restaurant-detail-header'></p>
+          </section>
+          <section>
+            <p id='restaurant-detail-box'></p>
+          </section>
+          <section>
+            <p id='restaurant-detail-intro'></p>
+          </section>
 	</main>
 </body>
 </html>
