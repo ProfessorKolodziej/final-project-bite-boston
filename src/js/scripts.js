@@ -114,8 +114,6 @@ document.addEventListener('click', event => {
     console.log(restaurant);
     const p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
-   //p.innerHTML = restaurantDetailBox(restaurant);
-
     document.body.appendChild(p);
   }
 });
