@@ -143,6 +143,9 @@ function restaurantDetailHeader(restaurant) {
   + '</div>';
 }
 
+<<<<<<< HEAD
+
+=======
 function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
     + `<p> ${restaurant.introduction} </p>`
@@ -199,3 +202,4 @@ window.onload= function (){
       });
     })
   }
+>>>>>>> ab5bc62f3b99f847971fb7304a5ffab1f86fee68

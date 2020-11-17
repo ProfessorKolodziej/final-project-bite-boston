@@ -38,5 +38,33 @@ $grey: #707070;
 }
 
 #google_map {
-	min-height: 400px;
+	height: 80vh;
+}
+
+.logo-color {
+	background-color:#CCB34F;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+
+.browse-btn-text {
+	background:  #081B67;
+	padding: 17px;
+}
+
+.browse-btn-text:hover {
+
+	background:#114594;
+}
+
+.browse-btn-icon{
+	background-color: #802D2B;
+	padding-top:17px;
+	padding-bottom: 17px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-top-right-radius: 3.125rem;
+	border-bottom-right-radius: 3.125rem;
+	margin-left: -3px;
 }
