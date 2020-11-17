@@ -74,7 +74,7 @@ mapLoader.initMap(mapLoaderOptions)
   });
 
 
-//restaurant list page
+//restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
   + `<h3> ${restaurant.name} </h3>`
@@ -87,19 +87,39 @@ function mapInfoRestaurantList(restaurant) {
     + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-function render(){
-  restaurantList.forEach(function(restaurant){
-    var ul= document.getElementById("restaurant-list");
-    var li = document.createElement("li");
-    restaurant.filterTag.forEach(function(tag){
-      li.classList.add(tag);
-    });
-    li.innerHTML=mapInfoRestaurantList(restaurant);
+//i dont think we need this here if it's on the filter page too -grace 
+// function render(){
+//   restaurantList.forEach(function(restaurant){
+//     var ul= document.getElementById("restaurant-list");
+//     var li = document.createElement("li");
+//     restaurant.filterTag.forEach(function(tag){
+//       li.classList.add(tag);
+//     });
+//     li.innerHTML=mapInfoRestaurantList(restaurant);
+//     ul.appendChild(li);
+//   });
+// }
+// document.addEventListener('DOMContentLoaded', render);
+
+//this creates the cards on the list page 
+function renderList() {
+  restaurantList.forEach((restaurant) => {
+    const ul = document.getElementById('restaurant-list');
+    const li = document.createElement('li');
+    const restaurantHTML = mapInfoRestaurantList(restaurant);
+    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
+    const button = parsedHTML.querySelector('.info-card-details-button');
+    console.log(restaurant);
+    button.dataset.restaurant = JSON.stringify(restaurant);
+
+    console.log(parsedHTML);
+
+    // This is where it goes on the page
+    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
     ul.appendChild(li);
   });
 }
-document.addEventListener('DOMContentLoaded', render);
-
+document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', event => {
