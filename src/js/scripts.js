@@ -170,14 +170,16 @@ function restaurantDetail(restaurant) {
   + '</div>'
   + '</section>';
   }
+  document.getElementById('close-detail-button').addEventListener('click', () => {
+    history.back();
+  });
+  // function hideDetail() {
+  //   const detail = document.getElementById('restaurant-detail');
+  //   if (detail.style.display === 'none') {
+  //     detail.style.display = 'block';
+  //   } else {
+  //     detail.style.display = 'none';
+  //   }
+  // }
 
-  function hideDetail() {
-    const detail = document.getElementById('restaurant-detail');
-    if (detail.style.display === 'none') {
-      detail.style.display = 'block';
-    } else {
-      detail.style.display = 'none';
-    }
-  }
-
-  document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
+  // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
