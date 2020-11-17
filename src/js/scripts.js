@@ -104,22 +104,72 @@ function mapInfoRestaurantList(restaurant) {
 //this creates the cards on the list page 
 function renderList() {
   restaurantList.forEach((restaurant) => {
-    const ul = document.getElementById('restaurant-list');
-    const li = document.createElement('li');
-    const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
-    const button = parsedHTML.querySelector('.info-card-details-button');
+    let ul = document.getElementById('restaurant-list');
+    let li = document.createElement('li');
+    let restaurantHTML = mapInfoRestaurantList(restaurant);
+    let parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
+    let button = parsedHTML.querySelector('.info-card-details-button');
     console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
-
+  
     console.log(parsedHTML);
-
     // This is where it goes on the page
     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
     ul.appendChild(li);
   });
 }
 document.addEventListener('DOMContentLoaded', renderList);
+document.addEventListener('click', hideList);
+
+function hideList() {
+  let info = document.getElementById('restaurant-list');
+  if (info.style.display === 'none') {
+    info.style.display = 'block';
+  } else {
+    info.style.display = 'none';
+  }
+}
+
+// function myFunction() {
+//   var x = document.getElementById('myDIV');
+//   if (x.style.visibility === 'hidden') {
+//     x.style.visibility = 'visible';
+//   } else {
+//     x.style.visibility = 'hidden';
+//   }
+  
+// function hideList() {
+//   // get the clock
+//   let info = document.getElementById('restaurant-list');
+
+//   // get the current value of the clock's display property
+//   //var displaySetting = myClock.style.display;
+
+//   // also get the clock button, so we can change what it says
+//   let hideButton = document.getElementById('.info-card-details-button');
+
+//   // now toggle the clock and the button text, depending on current state
+//   if (displaySetting == 'block') {
+//     // clock is visible. hide it
+//     info.style.display = 'none';
+//     // change button text
+    
+//   }
+//   else {
+//     // clock is hidden. show it
+//     info.style.display = 'block';
+//     // change button text
+   
+//   }
+// }
+// function hideList() {
+//   let x = document.getElementById("restaurant-list");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', event => {
