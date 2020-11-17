@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', render);
 // Restaurant detail page scripts
 
 // loads the restaurant detail information to the bottom of the list page
-// need to get the functions to appear once the "detail" button is clicked 
-// then, how does the correct restaurant display when the button is clicked? 
+// need to get the functions to appear once the "detail" button is clicked
+// then, how does the correct restaurant display when the button is clicked?
 function restaurantDetailHeader(restaurant) {
   return '<div class="restaurant-detail-name">'
     + `<h2> ${restaurant.name} </h2>`
@@ -125,9 +125,6 @@ function restaurantDetailHeader(restaurant) {
   + '</div>';
 }
 
-<<<<<<< HEAD
-
-=======
 function restaurantDetailIntro(restaurant) {
   return '<div class="restaurant-detail-intro">'
     + `<p> ${restaurant.introduction} </p>`
@@ -164,7 +161,7 @@ window.onload= function (){
     });
   })
 }
- 
+
 window.onload= function (){
     document.querySelector("#info-card-details-button").addEventListener("click",
     function renderDetailBox() {
@@ -184,4 +181,3 @@ window.onload= function (){
       });
     })
   }
->>>>>>> ab5bc62f3b99f847971fb7304a5ffab1f86fee68
