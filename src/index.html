@@ -5,16 +5,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="A Boston area restaurant guide" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<title>Bite Boston</title>
 </head>
 <body>
 	<main class="content-container">
-		<img class="logo" src="./images/logo.png" alt="Bite Boston">
-		<h3 class="introduction">Click around to explore restaurants in Boston </h3>
+		<section class=logo-color>
+			<img class="logo" src="./images/logo.png" alt="Bite Boston">
+			<h3 class="introduction">Click around to explore restaurants in Boston </h3>
+		</section>
 		<div id="google_map"></div>
-		<a type="button" id="homepage-browse-restaurants" href="./list.html" target="_blank">Browse restaurants</a>
-	</main>
+		<button type="button" class="browse-btn" id="homepage-browse-restaurants" onclick="window.open('./list.html');">
+			<span class="browse-btn-text">Browse restaurants</span>
+			<span class="browse-btn-icon"><i class="fa fa-angle-right"></i></div>
+		</button>
 
+	</main>
 
 </body>
 </html>
