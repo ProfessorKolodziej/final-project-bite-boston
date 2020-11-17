@@ -139,13 +139,4 @@ function restaurantDetail(restaurant) {
 
 
 
-  window.onload= function (){
-    document.querySelector("#info-card-details-button").addEventListener("click",
-    function renderDetailIntro() {
-      restaurantList.forEach((restaurant) => {
-        const p = document.getElementById('restaurant-detail-intro');
-        p.innerHTML = restaurantDetailIntro(restaurant);
-      });
-    })
-  }
 
