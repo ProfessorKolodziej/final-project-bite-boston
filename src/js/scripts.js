@@ -119,18 +119,6 @@ function renderList() {
   });
 }
 document.addEventListener('DOMContentLoaded', renderList);
-document.addEventListener('click', hideList);
-
-
-//this hides the list 
-function hideList() {
-  const info = document.getElementById('restaurant-list');
-  if (info.style.display === 'none') {
-    info.style.display = 'block';
-  } else {
-    info.style.display = 'none';
-  }
-}
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', event => {
@@ -143,6 +131,16 @@ document.addEventListener('click', event => {
   }
 });
 
+//this hides the list
+document.addEventListener('click', event => {
+  if (event.target.className === 'info-card-details-button') {  
+      const info = document.getElementById('restaurant-list');
+      if (info.style.display === 'none') {
+        info.style.display = 'block';
+      } else {
+        info.style.display = 'none';
+      }}
+    });
 
 // Restaurant detail page scripts
 
