@@ -169,9 +169,13 @@ function restaurantDetail(restaurant) {
   + '</section>';
   }
 
-  document.getElementById('close-detail-button').addEventListener('click', () => {
-    history.back();
-  });
+
+  document.getElementById('close-detail-button').addEventListener(alert("hello"))
+
+
+  // document.getElementById('close-detail-button').addEventListener('click', () => {
+  //   history.back();
+  // });
   
   // function hideDetail() {
   //   const detail = document.getElementById('restaurant-detail');
