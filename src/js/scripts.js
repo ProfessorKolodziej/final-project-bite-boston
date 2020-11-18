@@ -141,6 +141,7 @@ document.addEventListener('click', event => {
       }}
     });
 
+//this hides the filter button
 document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {  
       const filter = document.getElementsByClassName("dropbtn");
