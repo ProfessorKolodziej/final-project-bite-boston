@@ -87,7 +87,7 @@ function mapInfoRestaurantList(restaurant) {
     + `<button class="info-card-details-button">  Details </button>`
     + '</div>';
 }
-//i dont think we need this here if it's on the filter page too -grace 
+//i dont think we need this here if it's on the filter page too -grace
 // function render(){
 //   restaurantList.forEach(function(restaurant){
 //     var ul= document.getElementById("restaurant-list");
@@ -101,7 +101,7 @@ function mapInfoRestaurantList(restaurant) {
 // }
 // document.addEventListener('DOMContentLoaded', render);
 
-//this creates the cards on the list page 
+//this creates the cards on the list page
 function renderList() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
@@ -109,10 +109,10 @@ function renderList() {
     const restaurantHTML = mapInfoRestaurantList(restaurant);
     const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
     const button = parsedHTML.querySelector('.info-card-details-button');
-    console.log(restaurant);
+    //console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
-  
-    console.log(parsedHTML);
+
+    //console.log(parsedHTML);
     // This is where it goes on the page
     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
     ul.appendChild(li);
@@ -133,7 +133,7 @@ document.addEventListener('click', event => {
 
 //this hides the list
 document.addEventListener('click', event => {
-  if (event.target.className === 'info-card-details-button') {  
+  if (event.target.className === 'info-card-details-button') {
       const info = document.getElementById('restaurant-list');
       if (info.style.display === 'none') {
         info.style.display = 'block';
@@ -144,7 +144,7 @@ document.addEventListener('click', event => {
 
 // Restaurant detail page scripts
 
-// this is the html for the detail pages 
+// this is the html for the detail pages
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     +'<div class="restaurant-detail-name">'
@@ -170,13 +170,13 @@ function restaurantDetail(restaurant) {
   }
 
 
-  document.getElementById('close-detail-button').addEventListener(alert("hello"))
+  // document.getElementById('close-detail-button').addEventListener(alert("hello"))
 
 
   // document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
   // });
-  
+
   // function hideDetail() {
   //   const detail = document.getElementById('restaurant-detail');
   //   if (detail.style.display === 'none') {
@@ -189,8 +189,9 @@ function restaurantDetail(restaurant) {
   // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
 
   var selectedTag = new Set();
-const checkboxes = document.getElementsByClassName("filterSelection")
-console.log(checkboxes)
+const checkboxes = document.getElementsByClassName("filterSelection");
+console.log(checkboxes);
+console.log("Potoo!");
 function filterSelection(callback, classname){
   var x, i;
   if(callback.checked){
@@ -208,7 +209,7 @@ function filterSelection(callback, classname){
     if (allclass.length == 0 || x[i].matches(allclass)) {
       x[i].classList.remove('filter');
     }
-    else { 
+    else {
       x[i].classList.add('filter');
     }
   }

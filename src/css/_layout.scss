@@ -4,29 +4,29 @@
 	width: 100%;
 }
 
-.info-card-image{
+.info-card-image {
 	width: 100%;
 }
 
-.info-card{
+.info-card {
 	max-width: 200px;
 	height: auto;
 }
 
-.image-wrapper{
+.image-wrapper {
 	width: 100%;
 }
 
 
-.logo{
-	width:220px;
+.logo {
+	width: 220px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.introduction{
+.introduction {
 	width: 370px;
 	position: relative;
 	display: block;
@@ -35,10 +35,9 @@
 	margin-top: 10px;
 	margin-bottom: 0;
 	color: black;
-
 }
 
-#homepage-browse-restaurants{
+#homepage-browse-restaurants {
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -49,7 +48,7 @@
 	color: white;
 	padding: 15px 30px;
 	font-size: 20px;
-	padding-right: 0px;
+	padding-right: 0;
 	border: none;
 }
 
@@ -62,36 +61,36 @@
 	cursor: pointer;
 }
 
-.filters img{
-	width:25px;
+.filters img {
+	width: 25px;
 }
 
-.search img{
-	width:28px;
+.search img {
+	width: 28px;
 }
 
-.restaurant-list-names{
-	float:left;
+.restaurant-list-names {
+	float: left;
 }
 
-$blue: #081B67;
+$blue: #081b67;
 
-.restaurant-list-icons{
-	width:36px;
-	float:left;
-	margin-top:1em;
+.restaurant-list-icons {
+	width: 36px;
+	float: left;
+	margin-top: 1em;
 	margin-left: 0.5em;
 }
 
-.restaurant-list-images{
+.restaurant-list-images {
 	width: 125px;
 	height: 125px;
 	border-radius: 15px;
 }
 
-.oishii-boston{
+.oishii-boston {
 	border-radius: 25px;
-	border: 2px solid #73AD21;
+	border: 2px solid #73ad21;
 	padding: 10px;
 	margin: 10px;
 }
