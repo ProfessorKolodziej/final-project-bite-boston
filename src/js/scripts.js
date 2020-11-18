@@ -73,6 +73,16 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
+  //attempting to add the detail page to the detail button 
+  document.addEventListener('click', event => {
+    if (event.target.className === "indo-card-details") {
+      const restaurant = JSON.parse(event.target.dataset.restaurant);
+      console.log(restaurant);
+      let p = document.createElement('restaurant-detail');
+      p.innerHTML = restaurantDetail(restaurant);
+      document.body.appendChild(p);
+    }
+  });
 
 //restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
@@ -124,7 +134,7 @@ document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    const p = document.createElement('restaurant-detail');
+    let p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
   }
@@ -146,7 +156,6 @@ document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {  
       const filter = document.getElementsByClassName("dropbtn");
       const bttn =  filter[0];
-      
       if (bttn.style.display === 'none') {
         bttn.style.display = 'block';
       } else {
@@ -183,15 +192,27 @@ function restaurantDetail(restaurant) {
 
 
   
-  function closeRestaurantDetail (){  
-    const restaurantDetailHTML = restaurantDetail(restaurant);
-    const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
-    const detailButton = parsedHTML.querySelector(".close-detail-button");
-    console.log(detailButton);
-    //detailButton.dataset.restaurant = JSON.stringify(restaurant);
- ;
-  }
-document.querySelector(".close-detail-button").addEventListener('click', closeRestaurantDetai);
+//   function closeRestaurantDetail (){  
+//     const restaurantDetailHTML = restaurantDetail(restaurant);
+//     const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
+//     const detailButton = parsedHTML.getElementById("close-detail-button");
+//     console.log(detailButton);
+//     //detailButton.dataset.restaurant = JSON.stringify(restaurant);
+//  ;
+//   }
+
+  document.querySelector("close-detail-button").addEventListener('click', event => {
+    if (event.target.className === 'close-detail-button') {
+     function alert (){
+      window.requestAnimationFrame(restaurant)
+       alert ("yay!!!!");
+     }
+    }
+  });
+
+  
+
+//document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
   
 // document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
