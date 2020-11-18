@@ -73,18 +73,18 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
-  //attempting to add the detail page to the detail button 
-  document.addEventListener('click', event => {
-    if (event.target.className === "indo-card-details") {
-      const restaurant = JSON.parse(event.target.dataset.restaurant);
-      console.log(restaurant);
-      let p = document.createElement('restaurant-detail');
-      p.innerHTML = restaurantDetail(restaurant);
-      document.body.appendChild(p);
-    }
-  });
+// attempting to add the detail page to the detail button
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'indo-card-details') {
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    const p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(p);
+  }
+});
 
-//restaurant list page HTML
+// restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
   + `<h3> ${restaurant.name} </h3>`
@@ -94,10 +94,10 @@ function mapInfoRestaurantList(restaurant) {
     + '</div>'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.introduction} </p>`
-    + `<button class="info-card-details-button">  Details </button>`
+    + '<button class="info-card-details-button">  Details </button>'
     + '</div>';
 }
-//i dont think we need this here if it's on the filter page too -grace 
+// i dont think we need this here if it's on the filter page too -grace
 // function render(){
 //   restaurantList.forEach(function(restaurant){
 //     var ul= document.getElementById("restaurant-list");
@@ -111,13 +111,13 @@ function mapInfoRestaurantList(restaurant) {
 // }
 // document.addEventListener('DOMContentLoaded', render);
 
-//this creates the cards on the list page 
+// this creates the cards on the list page
 function renderList() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
     const li = document.createElement('li');
     const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
+    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
     const button = parsedHTML.querySelector('.info-card-details-button');
     console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
@@ -130,53 +130,55 @@ function renderList() {
 document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
-document.addEventListener('click', event => {
+document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    let p = document.createElement('restaurant-detail');
+    const p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
   }
 });
 
-//this hides the list
-document.addEventListener('click', event => {
-  if (event.target.className === 'info-card-details-button') {  
-      const info = document.getElementById('restaurant-list');
-      if (info.style.display === 'none') {
-        info.style.display = 'block';
-      } else {
-        info.style.display = 'none';
-      }}
-    });
+// this hides the list
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'info-card-details-button') {
+    const info = document.getElementById('restaurant-list');
+    if (info.style.display === 'none') {
+      info.style.display = 'block';
+    } else {
+      info.style.display = 'none';
+    }
+  }
+});
 
-//this hides the filter button
-document.addEventListener('click', event => {
-  if (event.target.className === 'info-card-details-button') {  
-      const filter = document.getElementsByClassName("dropbtn");
-      const bttn =  filter[0];
-      if (bttn.style.display === 'none') {
-        bttn.style.display = 'block';
-      } else {
-        bttn.style.display = 'none';
-      }}
-    });
+// this hides the filter button
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'info-card-details-button') {
+    const filter = document.getElementsByClassName('dropbtn');
+    const bttn = filter[0];
+    if (bttn.style.display === 'none') {
+      bttn.style.display = 'block';
+    } else {
+      bttn.style.display = 'none';
+    }
+  }
+});
 
 // Restaurant detail page scripts
 
-// this is the html for the detail pages 
+// this is the html for the detail pages
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
-    +'<div class="restaurant-detail-name">'
-    +' <button type="button" class="close-detail-button">x</button>'
+    + '<div class="restaurant-detail-name">'
+    + ' <button type="button" class="close-detail-button">x</button>'
     + `<h2> ${restaurant.name} </h2>`
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     + `<p> ${restaurant.phone} </p>`
     + '</div>'
-    +'<div class="restaurant-detail-box">'
+    + '<div class="restaurant-detail-box">'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.hours} </p>`
     + `<p> ${restaurant.price} </p>`
@@ -184,15 +186,13 @@ function restaurantDetail(restaurant) {
     + `<p> ${restaurant.diningstyle} </p>`
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
-  +'<div class="restaurant-detail-intro">'
+  + '<div class="restaurant-detail-intro">'
   + `<p> ${restaurant.introduction} </p>`
   + '</div>'
   + '</section>';
-  }
+}
 
-
-  
-//   function closeRestaurantDetail (){  
+//   function closeRestaurantDetail (){
 //     const restaurantDetailHTML = restaurantDetail(restaurant);
 //     const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
 //     const detailButton = parsedHTML.getElementById("close-detail-button");
@@ -201,30 +201,28 @@ function restaurantDetail(restaurant) {
 //  ;
 //   }
 
-  document.querySelector("close-detail-button").addEventListener('click', event => {
-    if (event.target.className === 'close-detail-button') {
-     function alert (){
-      window.requestAnimationFrame(restaurant)
-       alert ("yay!!!!");
-     }
+document.querySelector('close-detail-button').addEventListener('click', (event) => {
+  if (event.target.className === 'close-detail-button') {
+    function alert() {
+      window.requestAnimationFrame(restaurant);
+      alert('yay!!!!');
     }
-  });
+  }
+});
 
-  
+// document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
 
-//document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
-  
 // document.getElementById('close-detail-button').addEventListener('click', () => {
-  //   history.back();
-  // });
-  
-  // function hideDetail() {
-  //   const detail = document.getElementById('restaurant-detail');
-  //   if (detail.style.display === 'none') {
-  //     detail.style.display = 'block';
-  //   } else {
-  //     detail.style.display = 'none';
-  //   }
-  // }
+//   history.back();
+// });
 
-  // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
+// function hideDetail() {
+//   const detail = document.getElementById('restaurant-detail');
+//   if (detail.style.display === 'none') {
+//     detail.style.display = 'block';
+//   } else {
+//     detail.style.display = 'none';
+//   }
+// }
+
+// document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
