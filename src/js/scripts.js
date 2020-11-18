@@ -73,6 +73,16 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
+  //attempting to add the detail page to the detail button 
+  document.addEventListener('click', event => {
+    if (event.target.className === "indo-card-details") {
+      const restaurant = JSON.parse(event.target.dataset.restaurant);
+      console.log(restaurant);
+      let p = document.createElement('restaurant-detail');
+      p.innerHTML = restaurantDetail(restaurant);
+      document.body.appendChild(p);
+    }
+  });
 
 //restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
@@ -111,7 +121,6 @@ function renderList() {
     const button = parsedHTML.querySelector('.info-card-details-button');
     console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
-  
     console.log(parsedHTML);
     // This is where it goes on the page
     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
@@ -125,7 +134,7 @@ document.addEventListener('click', event => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    const p = document.createElement('restaurant-detail');
+    let p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
   }
@@ -160,7 +169,7 @@ document.addEventListener('click', event => {
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     +'<div class="restaurant-detail-name">'
-    +' <button type="button" id="close-detail-button">x</button>'
+    +' <button type="button" class="close-detail-button">x</button>'
     + `<h2> ${restaurant.name} </h2>`
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
@@ -182,10 +191,30 @@ function restaurantDetail(restaurant) {
   }
 
 
-  document.getElementById('close-detail-button').addEventListener(alert("hello"))
+  
+//   function closeRestaurantDetail (){  
+//     const restaurantDetailHTML = restaurantDetail(restaurant);
+//     const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
+//     const detailButton = parsedHTML.getElementById("close-detail-button");
+//     console.log(detailButton);
+//     //detailButton.dataset.restaurant = JSON.stringify(restaurant);
+//  ;
+//   }
 
+  document.querySelector("close-detail-button").addEventListener('click', event => {
+    if (event.target.className === 'close-detail-button') {
+     function alert (){
+      window.requestAnimationFrame(restaurant)
+       alert ("yay!!!!");
+     }
+    }
+  });
 
-  // document.getElementById('close-detail-button').addEventListener('click', () => {
+  
+
+//document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
+  
+// document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
   // });
   
