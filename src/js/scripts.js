@@ -174,8 +174,8 @@ function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     + '<div class="restaurant-detail-name">'
     + ' <button type="button" class="close-detail-button">x</button>'
-    + `<h2> ${restaurant.name} </h2>`
-    + '<div class="image-wrapper">'
+    + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
+    + '<div class="image-wrapper-detail">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     + `<p> ${restaurant.phone} </p>`

@@ -67,3 +67,22 @@ $grey: #707070;
 	border-bottom-right-radius: 3.125rem;
 	margin-left: -3px;
 }
+
+.restaurant-name{
+	background-color: #081b67;
+	color: #ffff;
+	font-size: 36px;
+	text-align: center;
+	padding: 10px;
+	opacity: 75%;
+	z-index: 2;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+  }
+
+.image-wrapper-detail{
+	position: relative;
+	z-index: 1;
+}
