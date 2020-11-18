@@ -111,7 +111,6 @@ function renderList() {
     const button = parsedHTML.querySelector('.info-card-details-button');
     console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
-  
     console.log(parsedHTML);
     // This is where it goes on the page
     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
@@ -142,13 +141,25 @@ document.addEventListener('click', event => {
       }}
     });
 
+document.addEventListener('click', event => {
+  if (event.target.className === 'info-card-details-button') {  
+      const filter = document.getElementsByClassName("dropbtn");
+      const bttn =  filter[0];
+      
+      if (bttn.style.display === 'none') {
+        bttn.style.display = 'block';
+      } else {
+        bttn.style.display = 'none';
+      }}
+    });
+
 // Restaurant detail page scripts
 
 // this is the html for the detail pages 
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     +'<div class="restaurant-detail-name">'
-    +' <button type="button" id="close-detail-button">x</button>'
+    +' <button type="button" class="close-detail-button">x</button>'
     + `<h2> ${restaurant.name} </h2>`
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
@@ -170,10 +181,18 @@ function restaurantDetail(restaurant) {
   }
 
 
-  document.getElementById('close-detail-button').addEventListener(alert("hello"))
-
-
-  // document.getElementById('close-detail-button').addEventListener('click', () => {
+  
+  function closeRestaurantDetail (){  
+    const restaurantDetailHTML = restaurantDetail(restaurant);
+    const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
+    const detailButton = parsedHTML.querySelector(".close-detail-button");
+    console.log(detailButton);
+    //detailButton.dataset.restaurant = JSON.stringify(restaurant);
+ ;
+  }
+document.querySelector(".close-detail-button").addEventListener('click', closeRestaurantDetai);
+  
+// document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
   // });
   
