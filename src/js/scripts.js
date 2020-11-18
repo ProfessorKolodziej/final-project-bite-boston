@@ -179,7 +179,7 @@ function restaurantDetail(restaurant) {
     + '<div class="image-wrapper-detail">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
-    +'</div class="restaurant-detail-phone>'
+    +'</div class="restaurant-detail-phone">'
     + `<p> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
