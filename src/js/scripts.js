@@ -53,9 +53,22 @@ function mapInfoWindow(restaurant) {
     + `<h3> ${restaurant.name} </h3>`
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.phone} </p>`
-    + `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
+    +' <button type="button" class="map-card-details">Details</button>'
   + '</div>';
 }
+
+// adds the detail page to the detail button on home page
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'map-card-details') {
+    alert ("yay")
+    let restaurant = JSON.parse(event.target.dataset.restaurant);
+    //console.log(restaurant);
+    const pBox = document.createElement('restaurant-detail');
+    pBox.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(pBox);
+    console.log(pBox)
+  }
+});
 
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
@@ -73,16 +86,6 @@ mapLoader.initMap(mapLoaderOptions)
     });
   });
 
-// attempting to add the detail page to the detail button
-document.addEventListener('click', (event) => {
-  if (event.target.className === 'indo-card-details') {
-    const restaurant = JSON.parse(event.target.dataset.restaurant);
-    console.log(restaurant);
-    const p = document.createElement('restaurant-detail');
-    p.innerHTML = restaurantDetail(restaurant);
-    document.body.appendChild(p);
-  }
-});
 
 // restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', renderList);
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
-    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    let restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
     const p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
