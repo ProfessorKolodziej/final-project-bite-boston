@@ -60,15 +60,14 @@ function mapInfoWindow(restaurant) {
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
-    alert ("yay")
-    let restaurant = JSON.parse(event.target.dataset.restaurant);
-    //console.log(restaurant);
-    const pBox = document.createElement('restaurant-detail');
-    pBox.innerHTML = restaurantDetail(restaurant);
-    document.body.appendChild(pBox);
-    console.log(pBox)
+    alert ("yay");
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    const p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(p);
   }
-});
+  });
 
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', renderList);
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
-    let restaurant = JSON.parse(event.target.dataset.restaurant);
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
     const p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
