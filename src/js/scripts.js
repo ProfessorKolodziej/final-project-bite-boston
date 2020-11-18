@@ -196,7 +196,7 @@ for ( const checkbox of checkboxes ) {
 }
 
 function filterSelection(callback, classname){
-  alert();
+  console.log(this);
   var x, i;
   if(callback.checked){
     selectedTag.add('.' + classname);
