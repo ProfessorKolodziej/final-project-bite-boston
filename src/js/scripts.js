@@ -201,13 +201,23 @@ function restaurantDetail(restaurant) {
 //  ;
 //   }
 
+// document.addEventListener('click', (event) => {
+//   if (event.target.className === 'close-detail-button') {
+//     alert('yay!!!!');
+//   }
+// });
+
+
 document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
-    alert('yay!!!!');
-    window.requestAnimationFrame(restaurant);
+    const detailHTML = document.getElementById('restaurant-detail');
+    if (detailHTML.style.display === 'none') {
+      detailHTML.style.display = 'block';
+    } else {
+      detailHTML.style.display = 'none';
+    }
   }
 });
-
 // document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
 
 // document.getElementById('close-detail-button').addEventListener('click', () => {
