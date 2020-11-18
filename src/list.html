@@ -5,9 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A Boston area restaurant guide" />
-    <script type="text/javascript" src="js/filters.js"></script>
-    <script type="text/javascript" src="js/restaurant-data.js"></script>
-    <!--script type="text/javascript" src="js/scripts.js"></script>-->
     <link rel="stylesheet" href="css/filters.css">
     <title>Bite Boston-listing</title>
     <script src="https://use.fontawesome.com/7ccb1a3cee.js"></script>
@@ -25,12 +22,12 @@
             <button class="dropbtn">Fliters</button>
             <div id="fliters" class="dropdown-content">
               <ul>Location
-                <li><input type="checkbox" onclick="filterSelection(this, 'downtown')" >Downtown</li>
-                <li><input type="checkbox" onclick="filterSelection(this, 'northend')" >North End</li>
-                <li><input type="checkbox" onclick="filterSelection(this, 'seaport')" >Seaport</li>
-                <li><input type="checkbox" onclick="filterSelection(this, 'southend')" >South End</li>
+                <li><input type="checkbox" class="filterSelection">Downtown</li>
+                <li><input type="checkbox" class="filterSelection" >North End</li>
+                <li><input type="checkbox" class="filterSelection">Seaport</li>
+                <li><input type="checkbox" class="filterSelection">South End</li>
               </ul>
-              <ul>Price
+              <!--<ul>Price
                 <li><input type="checkbox" onclick="filterSelection(this, 'price1')" >$</li>
                 <li><input type="checkbox" onclick="filterSelection(this, 'price2')" >$$</li>
                 <li><input type="checkbox" onclick="filterSelection(this, 'price3')" >$$$</li>
@@ -43,7 +40,7 @@
                 <li><input type="checkbox" onclick="filterSelection(this, 'italian')" >Italian</li>
                 <li><input type="checkbox" onclick="filterSelection(this, 'chinese')" >Chinese</li>
                 <li><input type="checkbox" onclick="filterSelection(this, 'bakery')" >Bakery</li>
-              </ul>
+              </ul>-->
             </div>
         </div>
           <section>

@@ -1,3 +1,4 @@
+import restaurantList from './restaurant-data';
 var selectedTag = new Set();
 
 function filterSelection(callback, classname){

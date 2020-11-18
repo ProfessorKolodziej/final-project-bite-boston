@@ -187,3 +187,29 @@ function restaurantDetail(restaurant) {
   // }
 
   // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
+
+  var selectedTag = new Set();
+const checkboxes = document.getElementsByClassName("filterSelection")
+console.log(checkboxes)
+function filterSelection(callback, classname){
+  var x, i;
+  if(callback.checked){
+    selectedTag.add('.' + classname);
+  }
+  else{
+    selectedTag.delete('.' + classname);
+  }
+
+  allclass = Array.from(selectedTag).join('');
+
+  x = document.getElementsByClassName('filterElement');
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i<x.length; i++){
+    if (allclass.length == 0 || x[i].matches(allclass)) {
+      x[i].classList.remove('filter');
+    }
+    else { 
+      x[i].classList.add('filter');
+    }
+  }
+}
