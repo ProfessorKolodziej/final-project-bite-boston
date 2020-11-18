@@ -142,6 +142,18 @@ document.addEventListener('click', event => {
       }}
     });
 
+//this hides the filter button
+document.addEventListener('click', event => {
+  if (event.target.className === 'info-card-details-button') {  
+      const filter = document.getElementsByClassName("dropbtn");
+      const bttn =  filter[0];
+      if (bttn.style.display === 'none') {
+        bttn.style.display = 'block';
+      } else {
+        bttn.style.display = 'none';
+      }}
+    });
+
 // Restaurant detail page scripts
 
 // this is the html for the detail pages 
