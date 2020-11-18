@@ -192,22 +192,7 @@ function restaurantDetail(restaurant) {
   + '</section>';
 }
 
-//   function closeRestaurantDetail (){
-//     const restaurantDetailHTML = restaurantDetail(restaurant);
-//     const parsedButtonHTML = new DOMParser().parseFromString(restaurantDetailHTMLL, "text/html");
-//     const detailButton = parsedHTML.getElementById("close-detail-button");
-//     console.log(detailButton);
-//     //detailButton.dataset.restaurant = JSON.stringify(restaurant);
-//  ;
-//   }
-
-// document.addEventListener('click', (event) => {
-//   if (event.target.className === 'close-detail-button') {
-//     alert('yay!!!!');
-//   }
-// });
-
-
+//this closes the detail page with the x button
 document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const detailHTML = document.getElementById('restaurant-detail');
@@ -218,19 +203,16 @@ document.addEventListener('click', (event) => {
     }
   }
 });
-// document.getElementById("close-detail-button").addEventListener('click', closeRestaurantDetai);
 
-// document.getElementById('close-detail-button').addEventListener('click', () => {
-//   history.back();
-// });
+//this brings the list page back up 
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'close-detail-button') {
+    const infoList = document.getElementById('restaurant-list');
+    if (infoList.style.display === 'none') {
+      infoList.style.display = 'block';
+    } else {
+      infoList.style.display = 'none';
+    }
+  }
+});
 
-// function hideDetail() {
-//   const detail = document.getElementById('restaurant-detail');
-//   if (detail.style.display === 'none') {
-//     detail.style.display = 'block';
-//   } else {
-//     detail.style.display = 'none';
-//   }
-// }
-
-// document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
