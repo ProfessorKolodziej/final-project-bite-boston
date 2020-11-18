@@ -68,6 +68,7 @@ $grey: #707070;
 	margin-left: -3px;
 }
 
+//detail page
 .detail-container{
 	position: relative;
 	text-align: center;
@@ -91,6 +92,10 @@ $grey: #707070;
 .image-wrapper-detail{
 	position: relative;
 	opacity: 75%;
+}
+
+.restaurant-page-image{
+	max-height: 50%;
 }
 
 .restaurant-detail-box{

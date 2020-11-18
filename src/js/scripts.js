@@ -183,14 +183,21 @@ function restaurantDetail(restaurant) {
     + `<p> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
+    + `<h3>Location</h3>`
     + `<p> ${restaurant.address} </p>`
+    + `<h3>Hours of Operation</h3>`
     + `<p> ${restaurant.hours} </p>`
+    + `<h3>Price</h3>`
     + `<p> ${restaurant.price} </p>`
+    + `<h3>Cuisines</h3>`
     + `<p> ${restaurant.cuisines} </p>`
+    + `<h3>Dining Style</h3>`
     + `<p> ${restaurant.diningstyle} </p>`
+    + `<h3>Dresscode</h3>`
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
   + '<div class="restaurant-detail-intro">'
+  + `<h3>Introduction</h3>`
   + `<p> ${restaurant.introduction} </p>`
   + '</div>'
   + '</section>';
