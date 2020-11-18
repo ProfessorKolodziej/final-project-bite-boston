@@ -201,12 +201,10 @@ function restaurantDetail(restaurant) {
 //  ;
 //   }
 
-document.querySelector('close-detail-button').addEventListener('click', (event) => {
+document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
-    function alert() {
-      window.requestAnimationFrame(restaurant);
-      alert('yay!!!!');
-    }
+    alert('yay!!!!');
+    window.requestAnimationFrame(restaurant);
   }
 });
 
