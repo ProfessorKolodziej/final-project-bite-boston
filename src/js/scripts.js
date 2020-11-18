@@ -173,11 +173,13 @@ document.addEventListener('click', (event) => {
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     + '<div class="restaurant-detail-name">'
-    + ' <button type="button" class="close-detail-button">x</button>'
+    + '<button type="button" class="close-detail-button">x</button>'
+    +'<div class="detail-container">'
     + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
     + '<div class="image-wrapper-detail">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
+    +'</div class="restaurant-detail-phone>'
     + `<p> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'

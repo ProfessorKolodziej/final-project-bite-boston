@@ -68,21 +68,35 @@ $grey: #707070;
 	margin-left: -3px;
 }
 
+.detail-container{
+	position: relative;
+	text-align: center;
+}
+
 .restaurant-name{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
 	background-color: #081b67;
 	color: #ffff;
 	font-size: 36px;
-	text-align: center;
-	padding: 10px;
+	padding: 20px;
+	padding-left: 100%;
+	padding-right: 100%;
 	opacity: 75%;
-	z-index: 2;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	position: absolute;
   }
 
 .image-wrapper-detail{
 	position: relative;
-	z-index: 1;
+	opacity: 75%;
+}
+
+.restaurant-detail-box{
+	text-align: center;
+}
+
+.restaurant-detail-phone{
+	text-align: center;
 }
