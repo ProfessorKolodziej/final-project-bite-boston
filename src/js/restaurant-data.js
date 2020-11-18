@@ -24,7 +24,7 @@ const restaurantList = [
       icon: '../images/meat.png',
       introduction:'Classy chophouse presenting surf ’n’ turf classics & an ample wine selection in ornate rooms.',
       url: 'https://grill23.com/',
-      filterTag: ['price2','southend','steakhouse']   
+      filterTag: ['price2','southend','steakhouse']
     },
     {
       name: 'Tatte Bakery & Cafe',
@@ -36,8 +36,8 @@ const restaurantList = [
       phone: ' (617)441-4011',
       icon: '../images/bread.png',
       introduction:'Cozy spot with a rustic feel serving breakfast, soups, sandwiches & an array of baked treats.',
-      url: 'https://tattebakery.com//',  
-      filterTag: ['price3','northend','bakery']    
+      url: 'https://tattebakery.com//',
+      filterTag: ['price3','northend','bakery']
     },
     {
       name: 'Neptune Oyster',
@@ -50,8 +50,47 @@ const restaurantList = [
       icon: '../images/fish.png',
       introduction:'Lines form for the raw bar & warm, buttered lobster rolls at this tiny, high-end oyster bar.',
       url: 'https://www.neptuneoyster.com/',
-      filterTag: ['price1','seaport','seafood']    
-    }
+      filterTag: ['price1','northend','seafood']
+    },
+    {
+      name: 'O Ya',
+      location: {
+        lat: 42.351370, lng: -71.056940
+      },
+      image: '../images/OYa.jpg',
+      address: '9 East St, Boston, MA 02111',
+      phone: ' (617)654-9900',
+      icon: '../images/tuna.png',
+      introduction:'The sushi and omakase menu is a marvel of both flavor and presentation, with every morsel—from the foie gras nigiri to the bluefin tuna and smoked salmon sashimi—a delectable work of art.',
+      url: 'https://www.o-ya.restaurant/location/o-ya-boston/',
+      filterTag: ['price1','downtown','japanese']
+    },
+    {
+      name: 'Tasting Counter',
+      location: {
+        lat: 42.381540, lng: -71.105570
+      },
+      image: '../images/tasting-counter.jpg',
+      address: '14 Tyler St, Somerville, MA 02143',
+      phone: ' (617)299-6362',
+      icon: '../images/fancy.png',
+      introduction:'Creative dishes are prepped in front of the 20-seat counter, thus the “dining as theater” aspect of the experience. ',
+      url: 'https://tastingcounter.com/',
+      filterTag: ['price1','northend','seafood']
+    },
+    {
+      name: 'Menton',
+      location: {
+        lat: 42.350530, lng: -71.048260
+      },
+      image: '../images/menton.jpg',
+      address: '354 Congress St, Boston, MA 02210',
+      phone: ' (617)737-0099',
+      icon: '../images/fancy.png',
+      introduction:'The contemporary, French- and Italian-inspired cuisine, offered in both a la carte and a tasting menu, features luxurious ingredients such as sea urchin and black truffle. ',
+      url: 'http://www.mentonboston.com/',
+      filterTag: ['price1','northend','seafood']
+    },
 ]
 
 export default restaurantList;
