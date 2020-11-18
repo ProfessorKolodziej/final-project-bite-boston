@@ -190,9 +190,13 @@ function restaurantDetail(restaurant) {
 
   var selectedTag = new Set();
 const checkboxes = document.getElementsByClassName("filterSelection");
-console.log(checkboxes);
-console.log("Potoo!");
+
+for ( const checkbox of checkboxes ) {
+  checkbox.addEventListener("change", filterSelection);
+}
+
 function filterSelection(callback, classname){
+  alert();
   var x, i;
   if(callback.checked){
     selectedTag.add('.' + classname);
