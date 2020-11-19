@@ -67,3 +67,41 @@ $grey: #707070;
 	border-bottom-right-radius: 3.125rem;
 	margin-left: -3px;
 }
+
+//detail page
+.detail-container{
+	position: relative;
+	text-align: center;
+}
+
+.restaurant-name{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	background-color: #081b67;
+	color: #ffff;
+	font-size: 36px;
+	padding: 20px;
+	padding-left: 100%;
+	padding-right: 100%;
+	opacity: 75%;
+  }
+
+.image-wrapper-detail{
+	position: relative;
+	opacity: 75%;
+}
+
+.restaurant-page-image{
+	max-height: 50%;
+}
+
+.restaurant-detail-box{
+	text-align: center;
+}
+
+.restaurant-detail-phone{
+	text-align: center;
+}

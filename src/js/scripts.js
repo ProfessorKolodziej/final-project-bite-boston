@@ -53,9 +53,21 @@ function mapInfoWindow(restaurant) {
     + `<h3> ${restaurant.name} </h3>`
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.phone} </p>`
-    + `<a type="button" class="indo-card-details" href=${restaurant.url} target="_blank">Details</a>`
+    +' <button type="button" class="map-card-details">Details</button>'
   + '</div>';
 }
+
+// adds the detail page to the detail button on home page
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'map-card-details') {
+    alert ("yay");
+    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    const p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(p);
+  }
+  });
 
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
@@ -74,7 +86,7 @@ mapLoader.initMap(mapLoaderOptions)
   });
 
 
-//restaurant list page HTML
+// restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
   return '<div class="info-card">'
   + `<h3> ${restaurant.name} </h3>`
@@ -84,7 +96,7 @@ function mapInfoRestaurantList(restaurant) {
     + '</div>'
     + `<p> ${restaurant.address} </p>`
     + `<p> ${restaurant.introduction} </p>`
-    + `<button class="info-card-details-button">  Details </button>`
+    + '<button class="info-card-details-button">  Details </button>'
     + '</div>';
 }
 //i dont think we need this here if it's on the filter page too -grace
@@ -106,8 +118,12 @@ function renderList() {
   restaurantList.forEach((restaurant) => {
     const ul = document.getElementById('restaurant-list');
     const li = document.createElement('li');
+    restaurant.filterTag.forEach(function(tag){
+      li.classList.add(tag);
+    });
+    li.classList.add("filterElement");
     const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, "text/html");
+    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
     const button = parsedHTML.querySelector('.info-card-details-button');
     //console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
@@ -121,7 +137,7 @@ function renderList() {
 document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
-document.addEventListener('click', event => {
+document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
     const restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
@@ -142,40 +158,50 @@ document.addEventListener('click', event => {
       }}
     });
 
-//this hides the filter button
-document.addEventListener('click', event => {
-  if (event.target.className === 'info-card-details-button') {  
-      const filter = document.getElementsByClassName("dropbtn");
-      const bttn =  filter[0];
-      if (bttn.style.display === 'none') {
-        bttn.style.display = 'block';
-      } else {
-        bttn.style.display = 'none';
-      }}
-    });
+// this hides the filter button
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'info-card-details-button') {
+    const filter = document.getElementsByClassName("dropbtn");
+    const bttn = filter[0];
+    if (bttn.style.display === 'none') {
+      bttn.style.display = 'block';
+    } else {
+      bttn.style.display = 'none';
+    }
+  }
+});
 
 // Restaurant detail page scripts
 
 // this is the html for the detail pages
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
-    +'<div class="restaurant-detail-name">'
-    +' <button type="button" id="close-detail-button">x</button>'
-    + `<h2> ${restaurant.name} </h2>`
-    + '<div class="image-wrapper">'
+    + '<div class="restaurant-detail-name">'
+    + '<button type="button" class="close-detail-button">x</button>'
+    +'<div class="detail-container">'
+    + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
+    + '<div class="image-wrapper-detail">'
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
+    +'</div class="restaurant-detail-phone">'
     + `<p> ${restaurant.phone} </p>`
     + '</div>'
-    +'<div class="restaurant-detail-box">'
+    + '<div class="restaurant-detail-box">'
+    + `<h3>Location</h3>`
     + `<p> ${restaurant.address} </p>`
+    + `<h3>Hours of Operation</h3>`
     + `<p> ${restaurant.hours} </p>`
+    + `<h3>Price</h3>`
     + `<p> ${restaurant.price} </p>`
+    + `<h3>Cuisines</h3>`
     + `<p> ${restaurant.cuisines} </p>`
+    + `<h3>Dining Style</h3>`
     + `<p> ${restaurant.diningstyle} </p>`
+    + `<h3>Dresscode</h3>`
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
-  +'<div class="restaurant-detail-intro">'
+  + '<div class="restaurant-detail-intro">'
+  + `<h3>Introduction</h3>`
   + `<p> ${restaurant.introduction} </p>`
   + '</div>'
   + '</section>';
@@ -184,6 +210,17 @@ function restaurantDetail(restaurant) {
 
   // document.getElementById('close-detail-button').addEventListener(alert("hello"))
 
+//this closes the detail page with the x button
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'close-detail-button') {
+    const detailHTML = document.getElementById('restaurant-detail');
+    if (detailHTML.style.display === 'none') {
+      detailHTML.style.display = 'block';
+    } else {
+      detailHTML.style.display = 'none';
+    }
+  }
+});
 
   // document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
@@ -200,24 +237,23 @@ function restaurantDetail(restaurant) {
 
   // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
 
-  var selectedTag = new Set();
+var selectedTag = new Set();
 const checkboxes = document.getElementsByClassName("filterSelection");
 
 for ( const checkbox of checkboxes ) {
   checkbox.addEventListener("change", filterSelection);
 }
 
-function filterSelection(callback, classname){
-  console.log(this);
+function filterSelection(){
   var x, i;
-  if(callback.checked){
-    selectedTag.add('.' + classname);
+  if(this.checked){
+    selectedTag.add('.' + this.value);
   }
   else{
-    selectedTag.delete('.' + classname);
+    selectedTag.delete('.' + this.value);
   }
 
-  allclass = Array.from(selectedTag).join('');
+  var allclass = Array.from(selectedTag).join('');
 
   x = document.getElementsByClassName('filterElement');
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
