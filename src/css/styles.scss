@@ -18,15 +18,15 @@ $desktop: 1200px;
 // And some color variables.
 // Look how much easier it is to keep track of what these are than hex codes!
 
-$red:#802D2B;
-$yellow:#CCB34F;
-$blue: #081B67;
+$red:#802d2b;
+$yellow:#ccb34f;
+$blue: #081b67;
 $grey: #707070;
 
 .read-more-button {
 	border: none;
 	color: $red;
-	font-style: "roboto",sans-serif;
+	font-style: "roboto", sans-serif;
 	font-size: 15px;
 }
 
@@ -42,29 +42,66 @@ $grey: #707070;
 }
 
 .logo-color {
-	background-color:#CCB34F;
+	background-color: #ccb34f;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
 
 .browse-btn-text {
-	background:  #081B67;
+	background: #081b67;
 	padding: 17px;
 }
 
 .browse-btn-text:hover {
-
-	background:#114594;
+	background: #114594;
 }
 
-.browse-btn-icon{
-	background-color: #802D2B;
-	padding-top:17px;
+.browse-btn-icon {
+	background-color: #802d2b;
+	padding-top: 17px;
 	padding-bottom: 17px;
 	padding-left: 30px;
 	padding-right: 30px;
 	border-top-right-radius: 3.125rem;
 	border-bottom-right-radius: 3.125rem;
 	margin-left: -3px;
+}
+
+//detail page
+.detail-container{
+	position: relative;
+	text-align: center;
+}
+
+.restaurant-name{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	background-color: #081b67;
+	color: #ffff;
+	font-size: 36px;
+	padding: 20px;
+	padding-left: 100%;
+	padding-right: 100%;
+	opacity: 75%;
+  }
+
+.image-wrapper-detail{
+	position: relative;
+	opacity: 75%;
+}
+
+.restaurant-page-image{
+	max-height: 50%;
+}
+
+.restaurant-detail-box{
+	text-align: center;
+}
+
+.restaurant-detail-phone{
+	text-align: center;
 }
