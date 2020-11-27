@@ -50,10 +50,10 @@ function mapInfoWindow(restaurant) {
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
     + '</div>'
-    + `<h3> ${restaurant.name} </h3>`
-    + `<p> ${restaurant.address} </p>`
-    + `<p> ${restaurant.phone} </p>`
-    +' <button type="button" class="map-card-details">Details</button>'
+    + `<h3 style="line-height: 50%;"> ${restaurant.name} </h3>`
+    + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.address} </p>`
+    + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.phone} </p>`
+    +' <button type="button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
   + '</div>';
 }
 
