@@ -161,12 +161,11 @@ document.addEventListener('click', event => {
 // this hides the filter button
 document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
-    const filter = document.getElementsByClassName("dropbtn");
-    const bttn = filter[0];
-    if (bttn.style.display === 'none') {
-      bttn.style.display = 'block';
+    const filter = document.getElementById("filterButton");
+    if (filter.style.display === 'none') {
+      filter.style.display = 'block';
     } else {
-      bttn.style.display = 'none';
+      filter.style.display = 'none';
     }
   }
 });
@@ -207,20 +206,48 @@ function restaurantDetail(restaurant) {
   + '</section>';
   }
 
-
+  //this closes the detail page with the x button
+  document.addEventListener('click', (event) => {
+    if (event.target.className === 'close-detail-button') {
+    const detailPage = document.getElementById("restaurant-detail");
+    detailPage.remove();
+    }
+  });
+  
+  //this brings up the list page again
+  document.addEventListener('click', event => {
+    if (event.target.className === 'close-detail-button') {
+        const info = document.getElementById('restaurant-list');
+        if (info.style.display === 'none') {
+          info.style.display = 'block';
+        } else {
+          info.style.display = 'none';
+        }}
+      });
+//this brings up the filter again
+      document.addEventListener('click', (event) => {
+        if (event.target.className === 'close-detail-button') {
+          const filter = document.getElementById("filterButton");
+          if (filter.style.display === 'none') {
+            filter.style.display = 'block';
+          } else {
+            filter.style.display = 'none';
+          }
+        }
+      });
   // document.getElementById('close-detail-button').addEventListener(alert("hello"))
 
 //this closes the detail page with the x button
-document.addEventListener('click', (event) => {
-  if (event.target.className === 'close-detail-button') {
-    const detailHTML = document.getElementById('restaurant-detail');
-    if (detailHTML.style.display === 'none') {
-      detailHTML.style.display = 'block';
-    } else {
-      detailHTML.style.display = 'none';
-    }
-  }
-});
+// document.addEventListener('click', (event) => {
+//   if (event.target.className === 'close-detail-button') {
+//     const detailHTML = document.getElementById('restaurant-detail');
+//     if (detailHTML.style.display === 'none') {
+//       detailHTML.style.display = 'block';
+//     } else {
+//       detailHTML.style.display = 'none';
+//     }
+//   }
+// });
 
   // document.getElementById('close-detail-button').addEventListener('click', () => {
   //   history.back();
@@ -237,6 +264,8 @@ document.addEventListener('click', (event) => {
 
   // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
 
+
+//filter 
 var selectedTag = new Set();
 const checkboxes = document.getElementsByClassName("filterSelection");
 
