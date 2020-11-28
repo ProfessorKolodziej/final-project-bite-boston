@@ -92,6 +92,7 @@ $grey: #707070;
 .image-wrapper-detail{
 	position: relative;
 	opacity: 75%;
+	max-height: 50%;
 }
 
 .restaurant-page-image{
@@ -103,5 +104,11 @@ $grey: #707070;
 }
 
 .restaurant-detail-phone{
+	text-align: center;
+	border: solid;
+	padding-left: -5px;
+}
+
+.restaurant-detail-intro{
 	text-align: center;
 }
