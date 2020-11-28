@@ -182,8 +182,9 @@ function restaurantDetail(restaurant) {
       + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     +'</div>'
-    + `<div class="restaurant-detail-phone">`
-    + `<p> ${restaurant.phone} </p>`
+    + `<div class="restaurant-detail-phone-container">`
+    +`<img src= "./images/phone-icon.png">`
+    + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
     + `<h3>Location</h3>`

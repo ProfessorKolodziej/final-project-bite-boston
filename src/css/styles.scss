@@ -69,6 +69,11 @@ $grey: #707070;
 }
 
 //detail page
+
+#restaurant-detail{
+	text-align:center;
+}
+
 .detail-container{
 	position: relative;
 	text-align: center;
@@ -87,6 +92,8 @@ $grey: #707070;
 	padding-left: 100%;
 	padding-right: 100%;
 	opacity: 75%;
+	overflow: hidden;
+    white-space: nowrap;
   }
 
 .image-wrapper-detail{
@@ -103,12 +110,37 @@ $grey: #707070;
 	text-align: center;
 }
 
+.restaurant-detail-box h3{
+	margin: 0px;
+}
+
+.restaurant-detail-box p{
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
 .restaurant-detail-phone{
-	text-align: center;
+	display:inline;
+	font-size: 15px;
+}
+
+.restaurant-detail-phone-container{
+	margin: 5px;
+	display: inline-block;
 	border: solid;
-	padding-left: -5px;
+	padding: 10px;
+	border-color: #802D2B;
+	border-top-right-radius: 3.125rem;
+	border-top-left-radius: 3.125rem;
+	border-bottom-right-radius: 3.125rem;
+	border-bottom-left-radius: 3.125rem;
 }
 
 .restaurant-detail-intro{
+	margin: auto;
 	text-align: center;
+	border-bottom: solid, 1px;
+	border-top: solid, 1px;
+	border-color: #707070;
+	max-width: 75%;
 }
