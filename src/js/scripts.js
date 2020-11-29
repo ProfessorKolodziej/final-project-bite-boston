@@ -170,20 +170,31 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// Restaurant detail page scripts
+//hides the back button
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'info-card-details-button') {
+    const mapButton = document.getElementById("back-to-map");
+    if (mapButton.style.display === 'none') {
+      mapButton.style.display = 'block';
+    } else {
+      mapButton.style.display = 'none';
+    }
+  }
+});
 
+// Restaurant detail page scripts
 // this is the html for the detail pages
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
-    + '<button type="button" class="close-detail-button">x</button>'
+    + `<span class="close-detail-button"><i class="fa fa-angle-left" aria-hidden="true"></i></span>`
     +'<div class="detail-container">'
     + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
     + '<div class="image-wrapper-detail">'
-      + `<img src=${restaurant.image} class="restaurant-page-image" alt="restaurant-img"/>`
+      + `<img src=${restaurant.image} id="detail_image" class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     +'</div>'
     + `<div class="restaurant-detail-phone-container">`
-    +`<img src= "./images/phone-icon.png">`
+    +`<img class="phone-icon" src= "./images/phone-icon.png">`
     + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
@@ -225,6 +236,7 @@ function restaurantDetail(restaurant) {
           info.style.display = 'none';
         }}
       });
+
 //this brings up the filter again
       document.addEventListener('click', (event) => {
         if (event.target.className === 'close-detail-button') {
@@ -233,6 +245,18 @@ function restaurantDetail(restaurant) {
             filter.style.display = 'block';
           } else {
             filter.style.display = 'none';
+          }
+        }
+      });
+
+      //brings up the back button
+      document.addEventListener('click', (event) => {
+        if (event.target.className === 'close-detail-button') {
+          const mapButton = document.getElementById("back-to-map");
+          if (mapButton.style.display === 'none') {
+            mapButton.style.display = 'block';
+          } else {
+            mapButton.style.display = 'none';
           }
         }
       });
