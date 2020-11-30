@@ -57,20 +57,29 @@ function mapInfoWindow(restaurant) {
   + '</div>';
 }
 
+// function findRestaurant(){
+//   return name 
 
+// }
+// restaurantList.find((restaurant) => {
+//   var x = event.target.tagName;
 
 
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
     //alert ("yay");
-    console.log(document.getElementById("map-detail-button"))
-  const mapDetailButton = document.getElementById("map-detail-button")
-  mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
-  console.log (typeof mapDetailButton)
-    //console.log (typeof restaurant)
-    let restaurant = JSON.parse(event.target.dataset.restaurant);
-    console.log(typeof restaurant);
+    //console.log(document.getElementById("map-detail-button"))
+    // const mapDetailButton = document.getElementById("map-detail-button")
+    // mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
+    // console.log (typeof mapDetailButton)
+    // console.log (typeof restaurant)
+    let restaurantData = restaurantList;
+    console.log (restaurantData)
+    console.log (typeof restaurantData)
+    let restaurantPage = JSON.stringify(restaurantData)
+    let restaurant = JSON.parse(event.target.dataset.restaurantPage);
+    // console.log(typeof restaurant);
     let p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
