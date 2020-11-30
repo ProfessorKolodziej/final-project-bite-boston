@@ -53,17 +53,25 @@ function mapInfoWindow(restaurant) {
     + `<h3 style="line-height: 50%;"> ${restaurant.name} </h3>`
     + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.address} </p>`
     + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.phone} </p>`
-    +' <button type="button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
+    +' <button type="button" id="map-detail-button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
   + '</div>';
 }
+
+
+
 
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
-    alert ("yay");
-    const restaurant = JSON.parse(event.target.dataset.restaurant);
-    console.log(restaurant);
-    const p = document.createElement('restaurant-detail');
+    //alert ("yay");
+    console.log(document.getElementById("map-detail-button"))
+  const mapDetailButton = document.getElementById("map-detail-button")
+  mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
+  console.log (typeof mapDetailButton)
+    //console.log (typeof restaurant)
+    let restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(typeof restaurant);
+    let p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
   }
@@ -139,9 +147,9 @@ document.addEventListener('DOMContentLoaded', renderList);
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
   if (event.target.className === 'info-card-details-button') {
-    const restaurant = JSON.parse(event.target.dataset.restaurant);
+    let restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
-    const p = document.createElement('restaurant-detail');
+    let p = document.createElement('restaurant-detail');
     p.innerHTML = restaurantDetail(restaurant);
     document.body.appendChild(p);
   }
@@ -186,7 +194,7 @@ document.addEventListener('click', (event) => {
 // this is the html for the detail pages
 function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
-    + `<span class="close-detail-button"><i class="fa fa-angle-left" aria-hidden="true"></i></span>`
+    + `<button class="close-detail-button"><</button>`
     +'<div class="detail-container">'
     + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
     + '<div class="image-wrapper-detail">'
