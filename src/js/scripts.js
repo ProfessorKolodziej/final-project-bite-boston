@@ -68,25 +68,26 @@ function mapInfoWindow(restaurant) {
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
-    alert ("yay");
+    //alert ("yay");
     //console.log(document.getElementById("map-detail-button"))
-    // const mapDetailButton = document.getElementById("map-detail-button")
-    // mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
-    // console.log (typeof mapDetailButton)
-    // console.log (typeof restaurant)
-    // let restaurantData = restaurantList;
-    // console.log (restaurantData)
-    // console.log (typeof restaurantData)
-    // let restaurantPage = JSON.stringify(restaurantData)
-    // let restaurant = JSON.parse(event.target.dataset.restaurantPage);
-    // // console.log(typeof restaurant);
-    // let p = document.createElement('restaurant-detail');
-    // p.innerHTML = restaurantDetail(restaurant);
-    // document.body.appendChild(p);)
+    const mapDetailButton = document.getElementById("map-detail-button")
+    mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
+    //console.log (typeof mapDetailButton)
+    console.log (typeof restaurant)
+    let restaurantData = restaurantList;
+    //console.log (restaurantData)
+    //console.log (typeof restaurantData)
+    let restaurantPage = JSON.stringify(restaurantData)
+    let restaurant = JSON.parse(event.target.dataset.restaurantPage);
+    console.log(typeof restaurant);
+    let p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(p);
   }
   });
 //console.log(result)
 
+//this loads the map 
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
     restaurantList.forEach((restaurant) => {
