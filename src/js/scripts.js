@@ -53,7 +53,7 @@ function mapInfoWindow(restaurant) {
     + `<h3 style="line-height: 50%;"> ${restaurant.name} </h3>`
     + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.address} </p>`
     + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.phone} </p>`
-    +' <button type="button" id="map-detail-button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
+    +' <button type="button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
   + '</div>';
 }
 
@@ -70,19 +70,22 @@ document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
     //alert ("yay");
     //console.log(document.getElementById("map-detail-button"))
-    const mapDetailButton = document.getElementById("map-detail-button")
-    mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
-    //console.log (typeof mapDetailButton)
-    console.log (typeof restaurant)
-    let restaurantData = restaurantList;
-    //console.log (restaurantData)
-    //console.log (typeof restaurantData)
-    let restaurantPage = JSON.stringify(restaurantData)
-    let restaurant = JSON.parse(event.target.dataset.restaurantPage);
-    console.log(typeof restaurant);
-    let p = document.createElement('restaurant-detail');
-    p.innerHTML = restaurantDetail(restaurant);
-    document.body.appendChild(p);
+    // const mapDetailButton = document.getElementById("map-detail-button")
+    // mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
+    // //console.log (typeof mapDetailButton)
+    // console.log (typeof restaurant)
+    // console.log (restaurant)
+    // let restaurantData = restaurantList;
+    // //console.log (restaurantData)
+    // //console.log (typeof restaurantData)
+    // let restaurantPage = JSON.stringify(restaurantData)
+    // let restaurant = JSON.parse(event.target.dataset.restaurantPage);
+    // console.log(typeof restaurant);
+    // let p = document.createElement('restaurant-detail');
+    // p.innerHTML = restaurantDetail(restaurant);
+    // document.body.appendChild(p);
+    console.log( event.target)
+    
   }
   });
 //console.log(result)
@@ -93,7 +96,13 @@ mapLoader.initMap(mapLoaderOptions)
     restaurantList.forEach((restaurant) => {
       const marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
       const placeInfo = mapInfoWindow(restaurant);
-
+      
+      const parsedMapHTML = new DOMParser().parseFromString(placeInfo, 'text/html');
+      const mapButton = parsedMapHTML.querySelector(".map-card-details" );
+      mapButton.dataset.restaurant = JSON.stringify(restaurant);
+        console.log(mapButton)
+        console.log(mapButton.dataset.restaurant)
+//parse placeInfo htmml, find the button in the html, add the restaurant there - not on event listener 
       const info = new google.maps.InfoWindow({
         content: placeInfo, // this should be a string
       });
@@ -133,27 +142,27 @@ function mapInfoRestaurantList(restaurant) {
 // document.addEventListener('DOMContentLoaded', render);
 
 //this creates the cards on the list page
-function renderList() {
-  restaurantList.forEach((restaurant) => {
-    const ul = document.getElementById('restaurant-list');
-    const li = document.createElement('li');
-    restaurant.filterTag.forEach(function(tag){
-      li.classList.add(tag);
-    });
-    li.classList.add("filterElement");
-    const restaurantHTML = mapInfoRestaurantList(restaurant);
-    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
-    const button = parsedHTML.querySelector('.info-card-details-button');
-    //console.log(restaurant);
-    button.dataset.restaurant = JSON.stringify(restaurant);
+// function renderList() {
+//   restaurantList.forEach((restaurant) => {
+//     const ul = document.getElementById('restaurant-list');
+//     const li = document.createElement('li');
+//     restaurant.filterTag.forEach(function(tag){
+//       li.classList.add(tag);
+//     });
+//     li.classList.add("filterElement");
+//     const restaurantHTML = mapInfoRestaurantList(restaurant);
+//     const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
+//     const button = parsedHTML.querySelector('.info-card-details-button');
+//     console.log(restaurant);
+//     button.dataset.restaurant = JSON.stringify(restaurant);
 
-    //console.log(parsedHTML);
-    // This is where it goes on the page
-    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
-    ul.appendChild(li);
-  });
-}
-document.addEventListener('DOMContentLoaded', renderList);
+//     //console.log(parsedHTML);
+//     // This is where it goes on the page
+//     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
+//     ul.appendChild(li);
+//   });
+// }
+// document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
