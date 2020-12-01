@@ -105,15 +105,16 @@ mapLoader.initMap(mapLoaderOptions)
 
 // restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
-  return '<div class="info-card">'
-  + `<h3> ${restaurant.name} </h3>`
-  + `<p> ${restaurant.phone} </p>`
-    + '<div class="image-wrapper">'
-      + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
+  return '<div class="list-page-info-card">'
+  + `<h3 class="list-page-name"> ${restaurant.name} </h3>`
+  + `<img src=${restaurant.icon} class="list-page-icon" alt="restaurant-icon-img"/>`
+  + `<p class="list-page-phone"> ${restaurant.phone} </p>`
+    + '<div class="list-page-image-wrapper">'
+      + `<img src=${restaurant.image} class="list-page-info-card-image" alt="restaurant-img"/>`
     + '</div>'
-    + `<p> ${restaurant.address} </p>`
-    + `<p> ${restaurant.introduction} </p>`
-    + '<button class="info-card-details-button">  Details </button>'
+    + `<p class="list-page-address"> ${restaurant.address} </p>`
+    + `<p class="list-page-introduction"> ${restaurant.introduction} </p>`
+    + '<button class="list-page-details-button">  Details </button>'
     + '</div>';
 }
 //i dont think we need this here if it's on the filter page too -grace

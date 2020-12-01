@@ -176,7 +176,7 @@ const restaurantList = [
     diningstyle: 'Fine Dining',
     dresscode: 'Business Casual',
     icon: '../images/fish.png',
-    introduction: 'he team at Row 34 loves beer as much as they love oysters, so be sure to pair your oysters with whatever is recommended from the list of small-production, local, and rare craft beers on tap.',
+    introduction: 'He team at Row 34 loves beer as much as they love oysters, so be sure to pair your oysters with whatever is recommended from the list of small-production, local, and rare craft beers on tap.',
     url: 'https://www.row34.com/',
     filterTag: ['price2', 'downtown', 'seafood'],
   },
