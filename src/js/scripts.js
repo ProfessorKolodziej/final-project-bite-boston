@@ -64,6 +64,28 @@ function mapInfoWindow(restaurant) {
 // restaurantList.find((restaurant) => {
 //   var x = event.target.tagName;
 
+//console.log(result)
+
+//this loads the map 
+mapLoader.initMap(mapLoaderOptions)
+  .then((map) => {
+    restaurantList.forEach((restaurant) => {
+      const marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
+      const placeInfo = mapInfoWindow(restaurant);
+      
+      const parsedMapHTML = new DOMParser().parseFromString(placeInfo, 'text/html');
+      const mapButton = parsedMapHTML.querySelector(".map-card-details" );
+      mapButton.dataset.restaurant = JSON.stringify(restaurant);
+
+      const info = new google.maps.InfoWindow({
+        content: parsedMapHTML.documentElement.innerHTML, // this should be a string
+      });
+
+      marker.addListener('click', (e) => {
+        info.open(map, marker);
+      });
+    });
+  });
 
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
@@ -84,35 +106,11 @@ document.addEventListener('click', (event) => {
     // let p = document.createElement('restaurant-detail');
     // p.innerHTML = restaurantDetail(restaurant);
     // document.body.appendChild(p);
-    console.log( event.target)
+    console.log( event.target);
+    console.log( event.target.dataset);
     
   }
-  });
-//console.log(result)
-
-//this loads the map 
-mapLoader.initMap(mapLoaderOptions)
-  .then((map) => {
-    restaurantList.forEach((restaurant) => {
-      const marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
-      const placeInfo = mapInfoWindow(restaurant);
-      
-      const parsedMapHTML = new DOMParser().parseFromString(placeInfo, 'text/html');
-      const mapButton = parsedMapHTML.querySelector(".map-card-details" );
-      mapButton.dataset.restaurant = JSON.stringify(restaurant);
-        console.log(mapButton)
-        console.log(mapButton.dataset.restaurant)
-//parse placeInfo htmml, find the button in the html, add the restaurant there - not on event listener 
-      const info = new google.maps.InfoWindow({
-        content: placeInfo, // this should be a string
-      });
-
-      marker.addListener('click', (e) => {
-        info.open(map, marker);
-      });
-    });
-  });
-
+});
 
 // restaurant list page HTML
 function mapInfoRestaurantList(restaurant) {
