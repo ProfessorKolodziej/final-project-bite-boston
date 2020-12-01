@@ -142,13 +142,13 @@ function renderList() {
     li.classList.add("filterElement");
     const restaurantHTML = mapInfoRestaurantList(restaurant);
     const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
-    const button = parsedHTML.querySelector('.info-card-details-button');
+    const button = parsedHTML.querySelector('.list-page-details-button');
     //console.log(restaurant);
     button.dataset.restaurant = JSON.stringify(restaurant);
 
     //console.log(parsedHTML);
     // This is where it goes on the page
-    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
+    li.appendChild(parsedHTML.childNodes[0].querySelector('.list-page-info-card'));
     ul.appendChild(li);
   });
 }
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
-  if (event.target.className === 'info-card-details-button') {
+  if (event.target.className === 'list-page-details-button') {
     let restaurant = JSON.parse(event.target.dataset.restaurant);
     console.log(restaurant);
     let p = document.createElement('restaurant-detail');
@@ -167,7 +167,7 @@ document.addEventListener('click', (event) => {
 
 //this hides the list
 document.addEventListener('click', event => {
-  if (event.target.className === 'info-card-details-button') {
+  if (event.target.className === 'list-page-details-button') {
       const info = document.getElementById('restaurant-list');
       if (info.style.display === 'none') {
         info.style.display = 'block';
@@ -178,7 +178,7 @@ document.addEventListener('click', event => {
 
 // this hides the filter button
 document.addEventListener('click', (event) => {
-  if (event.target.className === 'info-card-details-button') {
+  if (event.target.className === 'list-page-details-button') {
     const filter = document.getElementById("filterButton");
     if (filter.style.display === 'none') {
       filter.style.display = 'block';
@@ -190,7 +190,7 @@ document.addEventListener('click', (event) => {
 
 //hides the back button
 document.addEventListener('click', (event) => {
-  if (event.target.className === 'info-card-details-button') {
+  if (event.target.className === 'list-page-details-button') {
     const mapButton = document.getElementById("back-to-map");
     if (mapButton.style.display === 'none') {
       mapButton.style.display = 'block';
