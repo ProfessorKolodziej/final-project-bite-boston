@@ -5,10 +5,11 @@
 .show {
     display: block;
 }
-
-/*.back-btn-icon{
+/*
+.back-btn{
   color: #802D2B;
   width: 30px;
+  display:none;
 } */
 
 .logo-color{
