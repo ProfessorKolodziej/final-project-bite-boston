@@ -46,7 +46,7 @@ const makeMarker = function (map, position, icon) {
 
 // home page info-window.
 function mapInfoWindow(restaurant) {
-  return '<div class="info-card">'
+  return '<div class="info-card" id="homepage-info-card">'
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
     + '</div>'
@@ -91,24 +91,59 @@ mapLoader.initMap(mapLoaderOptions)
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
     //alert ("yay");
-    //console.log(document.getElementById("map-detail-button"))
-    // const mapDetailButton = document.getElementById("map-detail-button")
-    // mapDetailButton.dataset.restaurant = JSON.stringify(restaurant); 
-    // //console.log (typeof mapDetailButton)
-    // console.log (typeof restaurant)
-    // console.log (restaurant)
-    // let restaurantData = restaurantList;
-    // //console.log (restaurantData)
-    // //console.log (typeof restaurantData)
-    // let restaurantPage = JSON.stringify(restaurantData)
-    // let restaurant = JSON.parse(event.target.dataset.restaurantPage);
-    // console.log(typeof restaurant);
-    // let p = document.createElement('restaurant-detail');
-    // p.innerHTML = restaurantDetail(restaurant);
-    // document.body.appendChild(p);
     console.log( event.target);
     console.log( event.target.dataset);
-    
+    let restaurant = JSON.parse(event.target.dataset.restaurant);
+    console.log(restaurant);
+    let p = document.createElement('restaurant-detail');
+    p.innerHTML = restaurantDetail(restaurant);
+    document.body.appendChild(p);
+  }
+});
+
+//hides the map 
+    document.addEventListener('click', event => {
+      if (event.target.className === 'map-card-details') {
+          const homepageMap = document.getElementById('google_map');
+          if (homepageMap.style.display === 'none') {
+            homepageMap.style.display = 'block';
+          } else {
+            homepageMap.style.display = 'none';
+          }}
+        });
+
+//hides the browse restaurants button 
+document.addEventListener('click', event => {
+  if (event.target.className === 'map-card-details') {
+      const homepageButton = document.getElementById('homepage-browse-restaurants');
+      if (homepageButton.style.display === 'none') {
+        homepageButton.style.display = 'block';
+      } else {
+        homepageButton.style.display = 'none';
+      }}
+    });
+
+//brings the map back up 
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'close-detail-button') {
+    const filter = document.getElementById("google_map");
+    if (filter.style.display === 'none') {
+      filter.style.display = 'block';
+    } else {
+      filter.style.display = 'none';
+    }
+  }
+});
+
+// brings the browse restaurants button back up 
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'close-detail-button') {
+    const filter = document.getElementById("homepage-browse-restaurants");
+    if (filter.style.display === 'none') {
+      filter.style.display = 'block';
+    } else {
+      filter.style.display = 'none';
+    }
   }
 });
 
@@ -140,27 +175,27 @@ function mapInfoRestaurantList(restaurant) {
 // document.addEventListener('DOMContentLoaded', render);
 
 //this creates the cards on the list page
-// function renderList() {
-//   restaurantList.forEach((restaurant) => {
-//     const ul = document.getElementById('restaurant-list');
-//     const li = document.createElement('li');
-//     restaurant.filterTag.forEach(function(tag){
-//       li.classList.add(tag);
-//     });
-//     li.classList.add("filterElement");
-//     const restaurantHTML = mapInfoRestaurantList(restaurant);
-//     const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
-//     const button = parsedHTML.querySelector('.info-card-details-button');
-//     console.log(restaurant);
-//     button.dataset.restaurant = JSON.stringify(restaurant);
+function renderList() {
+  restaurantList.forEach((restaurant) => {
+    const ul = document.getElementById('restaurant-list');
+    const li = document.createElement('li');
+    restaurant.filterTag.forEach(function(tag){
+      li.classList.add(tag);
+    });
+    li.classList.add("filterElement");
+    const restaurantHTML = mapInfoRestaurantList(restaurant);
+    const parsedHTML = new DOMParser().parseFromString(restaurantHTML, 'text/html');
+    const button = parsedHTML.querySelector('.info-card-details-button');
+    console.log(restaurant);
+    button.dataset.restaurant = JSON.stringify(restaurant);
 
-//     //console.log(parsedHTML);
-//     // This is where it goes on the page
-//     li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
-//     ul.appendChild(li);
-//   });
-// }
-// document.addEventListener('DOMContentLoaded', renderList);
+    //console.log(parsedHTML);
+    // This is where it goes on the page
+    li.appendChild(parsedHTML.childNodes[0].querySelector('.info-card'));
+    ul.appendChild(li);
+  });
+}
+document.addEventListener('DOMContentLoaded', renderList);
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
