@@ -47,7 +47,6 @@ $grey: #707070;
 	padding-bottom: 30px;
 }
 
-
 .browse-btn-text {
 	background: #081b67;
 	padding: 17px;
@@ -68,8 +67,8 @@ $grey: #707070;
 	margin-left: -3px;
 }
 
-.back-btn{
-	border:solid;
+.back-btn {
+	border: solid;
 	border-radius: 50%;
 	border-color: $red;
 	background-color: $red;
@@ -79,21 +78,21 @@ $grey: #707070;
 	left: 2px;
 	top: 5px;
 	width: 50px;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-.back-btn-icon:hover { 
+.back-btn-icon:hover {
 	transform: scale(1.1);
- }
+}
 
 //detail page
 
-#restaurant-detail{
-	text-align:center;
+#restaurant-detail {
+	text-align: center;
 }
 
-.close-detail-button{
-	border:solid;
+.close-detail-button {
+	border: solid;
 	border-radius: 50%;
 	border-color: $red;
 	background-color: $red;
@@ -103,22 +102,23 @@ $grey: #707070;
 	left: 2px;
 	top: 5px;
 	width: 50px;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-.close-detail-button:hover { 
+.close-detail-button:hover {
 	transform: scale(1.1);
- }
+}
 
-.logo{
+.logo {
 	margin-top: 25px;
 }
-.detail-container{
+
+.detail-container {
 	position: relative;
 	text-align: center;
 }
 
-.restaurant-name{
+.restaurant-name {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -132,53 +132,53 @@ $grey: #707070;
 	padding-right: 100%;
 	opacity: 75%;
 	overflow: hidden;
-    white-space: nowrap;
-  }
+	white-space: nowrap;
+}
 
-.image-wrapper-detail{
+.image-wrapper-detail {
 	position: relative;
 	opacity: 75%;
 	max-height: 50%;
 }
 
-#detail_image{
+#detail_image {
 	width: 100%;
 	height: 500px;
 }
 
-.restaurant-page-image{
+.restaurant-page-image {
 	max-height: 50%;
 }
 
-.restaurant-detail-box{
+.restaurant-detail-box {
 	text-align: center;
 }
 
-.restaurant-detail-box h3{
-	margin: 0px;
+.restaurant-detail-box h3 {
+	margin: 0;
 }
 
-.restaurant-detail-box p{
-	margin: 0px;
+.restaurant-detail-box p {
+	margin: 0;
 	margin-bottom: 5px;
 }
 
-.phone-icon{
+.phone-icon {
 	size: inherit;
 }
 
-.restaurant-detail-phone{
-	display:inline;
+.restaurant-detail-phone {
+	display: inline;
 	font-size: 24px;
 	color: #ffff;
 }
 
-.restaurant-detail-phone-container{
+.restaurant-detail-phone-container {
 	margin: 5px;
 	display: inline-block;
 	border: solid;
 	padding: 10px;
-	border-color: #802D2B;
+	border-color: #802d2b;
 	border-top-right-radius: 3.125rem;
 	border-top-left-radius: 3.125rem;
 	border-bottom-right-radius: 3.125rem;
@@ -186,7 +186,7 @@ $grey: #707070;
 	background-color: $red;
 }
 
-.restaurant-detail-intro{
+.restaurant-detail-intro {
 	margin: auto;
 	text-align: center;
 	border-bottom: solid, 1px;
