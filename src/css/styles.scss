@@ -74,7 +74,7 @@ $grey: #707070;
 	border-color: $red;
 	background-color: $red;
 	color: #ffff;
-	font-size: 36px;
+	font-size: 2.25em;
 	position: absolute;
 	left: 2px;
 	top: 5px;
@@ -101,7 +101,7 @@ $grey: #707070;
 	border-color: $red;
 	background-color: $red;
 	color: #ffff;
-	font-size: 36px;
+	font-size: 2.25em;
 	position: absolute;
 	left: 2px;
 	top: 5px;
@@ -116,11 +116,15 @@ $grey: #707070;
 .logo{
 	margin-top: 25px;
 }
+
+@media screen and (min-width: $large-phone){
 .detail-container{
 	position: relative;
 	text-align: center;
+	}
 }
 
+@media screen and (min-width: $large-phone){
 .restaurant-name{
 	position: absolute;
 	top: 50%;
@@ -129,7 +133,7 @@ $grey: #707070;
 	z-index: 3;
 	background-color: $blue;
 	color: #ffff;
-	font-size: 64px;
+	font-size: 4em;
 	padding: 20px;
 	padding-left: 100%;
 	padding-right: 100%;
@@ -137,6 +141,7 @@ $grey: #707070;
 	overflow: hidden;
     white-space: nowrap;
   }
+}
 
 .image-wrapper-detail{
 	position: relative;
@@ -145,7 +150,7 @@ $grey: #707070;
 }
 
 #detail_image{
-	width: 100%;
+	min-width: fit-content;
 	height: 500px;
 }
 
@@ -168,19 +173,21 @@ $grey: #707070;
 
 .phone-icon{
 	size: inherit;
+	vertical-align: middle;
 }
 
 .restaurant-detail-phone{
 	display:inline;
-	font-size: 24px;
+	font-size: 1.5em;
 	color: #ffff;
 }
 
 .restaurant-detail-phone-container{
-	margin: 5px;
-	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 10px;
 	border: solid;
-	padding: 10px;
+	padding: 0px;
+	display: inline-block;
 	border-color: #802D2B;
 	border-top-right-radius: 3.125rem;
 	border-top-left-radius: 3.125rem;
