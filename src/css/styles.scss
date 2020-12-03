@@ -41,6 +41,18 @@ $grey: #707070;
 	height: 80vh;
 }
 
+@media only screen and (max-width: 769px) {
+	#google_map {
+		height: 75vh;
+	}
+}
+
+@media only screen and (max-width: 376px) {
+	#google_map {
+		height: 70vh;
+	}
+}
+
 .logo-color {
 	background-color: #ccb34f;
 	padding-top: 30px;
