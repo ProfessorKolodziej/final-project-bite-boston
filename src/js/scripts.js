@@ -50,15 +50,15 @@ function mapInfoWindow(restaurant) {
     + '<div class="image-wrapper">'
       + `<img src=${restaurant.image} class="info-card-image" alt="restaurant-img"/>`
     + '</div>'
-    + `<h3 style="line-height: 50%;"> ${restaurant.name} </h3>`
-    + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.address} </p>`
-    + `<p style="line-height: 50%; font-weight: 500;"> ${restaurant.phone} </p>`
+    + `<h3> ${restaurant.name} </h3>`
+    + `<p style="font-weight: 500;"> ${restaurant.address} </p>`
+    + `<p style="font-weight: 500;"> ${restaurant.phone} </p>`
     +' <button type="button" class="map-card-details" style="background-color: #CC4B47; color: white; border-style: none; padding: 10px 40px; position: relative; display: block; margin-left: auto; margin-right: auto; border-radius: 3.125rem;">Details</button>'
   + '</div>';
 }
 
 // function findRestaurant(){
-//   return name 
+//   return name
 
 // }
 // restaurantList.find((restaurant) => {
@@ -66,13 +66,13 @@ function mapInfoWindow(restaurant) {
 
 //console.log(result)
 
-//this loads the map 
+//this loads the map
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
     restaurantList.forEach((restaurant) => {
       const marker = makeMarker(map, new google.maps.LatLng(restaurant.location.lat, restaurant.location.lng), restaurant.icon);
       const placeInfo = mapInfoWindow(restaurant);
-      
+
       const parsedMapHTML = new DOMParser().parseFromString(placeInfo, 'text/html');
       const mapButton = parsedMapHTML.querySelector(".map-card-details" );
       mapButton.dataset.restaurant = JSON.stringify(restaurant);
@@ -101,7 +101,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-//hides the map 
+//hides the map
     document.addEventListener('click', event => {
       if (event.target.className === 'map-card-details') {
           const homepageMap = document.getElementById('google_map');
@@ -112,7 +112,7 @@ document.addEventListener('click', (event) => {
           }}
         });
 
-//hides the browse restaurants button 
+//hides the browse restaurants button
 document.addEventListener('click', event => {
   if (event.target.className === 'map-card-details') {
       const homepageButton = document.getElementById('homepage-browse-restaurants');
@@ -123,7 +123,7 @@ document.addEventListener('click', event => {
       }}
     });
 
-//brings the map back up 
+//brings the map back up
 document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const filter = document.getElementById("google_map");
@@ -135,7 +135,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// brings the browse restaurants button back up 
+// brings the browse restaurants button back up
 document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const filter = document.getElementById("homepage-browse-restaurants");
@@ -287,7 +287,7 @@ function restaurantDetail(restaurant) {
     detailPage.remove();
     }
   });
-  
+
   //this brings up the list page again
   document.addEventListener('click', event => {
     if (event.target.className === 'close-detail-button') {
@@ -352,7 +352,7 @@ function restaurantDetail(restaurant) {
   // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
 
 
-//filter 
+//filter
 var selectedTag = new Set();
 const checkboxes = document.getElementsByClassName("filterSelection");
 
