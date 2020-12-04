@@ -41,12 +41,23 @@ $grey: #707070;
 	height: 80vh;
 }
 
+@media only screen and (max-width: 769px) {
+	#google_map {
+		height: 75vh;
+	}
+}
+
+@media only screen and (max-width: 376px) {
+	#google_map {
+		height: 70vh;
+	}
+}
+
 .logo-color {
 	background-color: #ccb34f;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
-
 
 .browse-btn-text {
 	background: #081b67;
@@ -68,8 +79,8 @@ $grey: #707070;
 	margin-left: -3px;
 }
 
-.back-btn{
-	border:solid;
+.back-btn {
+	border: solid;
 	border-radius: 50%;
 	border-color: $red;
 	background-color: $red;
@@ -79,24 +90,21 @@ $grey: #707070;
 	left: 2px;
 	top: 5px;
 	width: 50px;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-.back-btn-icon:hover { 
+.back-btn-icon:hover {
 	transform: scale(1.1);
- }
+}
 
 //detail page
 
-#restaurant-detail{
-	text-align:center;
-	// position: absolute;
-	// top: 0px;
-	// color: white;
+#restaurant-detail {
+	text-align: center;
 }
 
-.close-detail-button{
-	border:solid;
+.close-detail-button {
+	border: solid;
 	border-radius: 50%;
 	border-color: $red;
 	background-color: $red;
@@ -106,15 +114,11 @@ $grey: #707070;
 	left: 2px;
 	top: 5px;
 	width: 50px;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-.close-detail-button:hover { 
+.close-detail-button:hover {
 	transform: scale(1.1);
- }
-
-.logo{
-	margin-top: 25px;
 }
 
 @media screen and (min-width: $large-phone){
@@ -143,7 +147,7 @@ $grey: #707070;
   }
 }
 
-.image-wrapper-detail{
+.image-wrapper-detail {
 	position: relative;
 	opacity: 75%;
 	max-height: 50%;
@@ -154,24 +158,24 @@ $grey: #707070;
 	height: 500px;
 }
 
-.restaurant-page-image{
+.restaurant-page-image {
 	max-height: 50%;
 }
 
-.restaurant-detail-box{
+.restaurant-detail-box {
 	text-align: center;
 }
 
-.restaurant-detail-box h3{
-	margin: 0px;
+.restaurant-detail-box h3 {
+	margin: 0;
 }
 
-.restaurant-detail-box p{
-	margin: 0px;
+.restaurant-detail-box p {
+	margin: 0;
 	margin-bottom: 5px;
 }
 
-.phone-icon{
+.phone-icon {
 	size: inherit;
 	vertical-align: middle;
 }
@@ -196,7 +200,7 @@ $grey: #707070;
 	background-color: $red;
 }
 
-.restaurant-detail-intro{
+.restaurant-detail-intro {
 	margin: auto;
 	text-align: center;
 	border-bottom: solid, 1px;

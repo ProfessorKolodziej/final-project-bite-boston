@@ -1,9 +1,3 @@
-#google_map,
-#google_map_appended {
-	height: 50vh;
-	width: 100%;
-}
-
 .info-card-image {
 	width: 100%;
 }
@@ -11,6 +5,20 @@
 .info-card {
 	max-width: 300px;
 	height: auto;
+}
+
+@media only screen and (max-width: 769px) {
+	.info-card {
+		max-width: 200px;
+		height: auto;
+	}
+}
+
+@media only screen and (max-width: 376px) {
+	.info-card {
+		max-width: 180px;
+		height: auto;
+	}
 }
 
 .image-wrapper {
@@ -23,17 +31,28 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 25px;
+}
+
+@media only screen and (max-width: 769px) {
+	.logo {
+		width: 180px;
+	}
 }
 
 .introduction {
-	width: 370px;
-	position: relative;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	font-family: 'Alegreya Sans', sans-serif;
+	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 0;
 	color: black;
+}
+
+@media only screen and (max-width: 769px) {
+	.introduction {
+		width: 241px;
+		font-size: 14px;
+	}
 }
 
 #homepage-browse-restaurants {
