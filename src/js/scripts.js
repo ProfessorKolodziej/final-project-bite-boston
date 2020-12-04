@@ -250,8 +250,8 @@ function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     + `<button class="close-detail-button"><</button>`
     +'<div class="detail-container">'
-    + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
     + '<div class="image-wrapper-detail">'
+    + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
       + `<img src=${restaurant.image} id="detail_image" class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     +'</div>'
@@ -275,7 +275,7 @@ function restaurantDetail(restaurant) {
   + '</div>'
   + '<div class="restaurant-detail-intro">'
   + `<h3>Introduction</h3>`
-  + `<p> ${restaurant.introduction} </p>`
+  + `<p> id="shrinkMe" class="shrinkable" ${restaurant.introduction} </p>`
   + '</div>'
   + '</section>';
   }

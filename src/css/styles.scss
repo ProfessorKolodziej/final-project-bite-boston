@@ -11,9 +11,9 @@
 // You can still write styles in this file too.
 // Here's an example of how you could write media queries more easily with Sass.
 
-$large-phone: 500px;
+$large-phone: 375px;
 $tablet-vertical: 768px;
-$desktop: 1200px;
+$desktop: 1024px;
 
 // And some color variables.
 // Look how much easier it is to keep track of what these are than hex codes!
@@ -57,6 +57,7 @@ $grey: #707070;
 	background-color: #ccb34f;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	text-align: center;
 }
 
 .browse-btn-text {
@@ -114,11 +115,18 @@ $grey: #707070;
 	left: 2px;
 	top: 5px;
 	width: 50px;
-	transition: all 0.2s ease-in-out;
 }
 
+@media screen and (min-width: $desktop){
+.close-detail-button {
+	transition: all 0.2s ease-in-out;
+	}
+}
+
+@media screen and (min-width: $desktop){
 .close-detail-button:hover {
 	transform: scale(1.1);
+	}
 }
 
 @media screen and (min-width: $large-phone){
@@ -147,15 +155,21 @@ $grey: #707070;
   }
 }
 
+@media screen and (min-width: $large-phone){
 .image-wrapper-detail {
 	position: relative;
-	opacity: 75%;
 	max-height: 50%;
+	max-width: 100%;
+	overflow: hidden;
+	}
 }
 
+@media screen and (min-width: $large-phone){
 #detail_image{
 	min-width: fit-content;
 	height: 500px;
+	opacity: 75%;
+	}
 }
 
 .restaurant-page-image {
@@ -190,7 +204,7 @@ $grey: #707070;
 	margin-top: 5px;
 	margin-bottom: 10px;
 	border: solid;
-	padding: 0px;
+	padding: 5px;
 	display: inline-block;
 	border-color: #802D2B;
 	border-top-right-radius: 3.125rem;
