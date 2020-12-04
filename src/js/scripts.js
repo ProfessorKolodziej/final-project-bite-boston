@@ -322,34 +322,6 @@ function restaurantDetail(restaurant) {
           }
         }
       });
-  // document.getElementById('close-detail-button').addEventListener(alert("hello"))
-
-//this closes the detail page with the x button
-// document.addEventListener('click', (event) => {
-//   if (event.target.className === 'close-detail-button') {
-//     const detailHTML = document.getElementById('restaurant-detail');
-//     if (detailHTML.style.display === 'none') {
-//       detailHTML.style.display = 'block';
-//     } else {
-//       detailHTML.style.display = 'none';
-//     }
-//   }
-// });
-
-  // document.getElementById('close-detail-button').addEventListener('click', () => {
-  //   history.back();
-  // });
-
-  // function hideDetail() {
-  //   const detail = document.getElementById('restaurant-detail');
-  //   if (detail.style.display === 'none') {
-  //     detail.style.display = 'block';
-  //   } else {
-  //     detail.style.display = 'none';
-  //   }
-  // }
-
-  // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
 
 
 //filter
