@@ -117,17 +117,17 @@ $grey: #707070;
 	width: 50px;
 }
 
-@media screen and (min-width: $desktop){
-.close-detail-button {
-	transition: all 0.2s ease-in-out;
+	@media screen and (min-width: $desktop){
+	.close-detail-button {
+		transition: all 0.2s ease-in-out;
+		}
 	}
-}
 
-@media screen and (min-width: $desktop){
-.close-detail-button:hover {
-	transform: scale(1.1);
+	@media screen and (min-width: $desktop){
+	.close-detail-button:hover {
+		transform: scale(1.1);
+		}
 	}
-}
 
 .detail-container{
 	position: relative;
@@ -161,12 +161,6 @@ $grey: #707070;
 	@media screen and (min-width: $tablet-vertical){
 		.image-wrapper-detail {
 			object-fit: cover;
-			// position: fixed; 
-			// top: -50%; 
-			// left: -50%; 
-			// width: 200%; 
-			// height: 200%;
-			// 
 		}
 	}
 
@@ -179,16 +173,6 @@ $grey: #707070;
 
 	@media screen and (min-width: $tablet-vertical){
 		#detail_image{
-			// position: absolute; 
-			// top: 0; 
-			// left: 0; 
-			// right: 0; 
-			// bottom: 0; 
-			// margin: auto; 
-			// min-width: 50%;
-			// min-height: 50%;
-			// width: auto;
-			// height: auto;
 			width: 100%;
 			height: auto;
 			max-height: 500px;
@@ -205,10 +189,12 @@ $grey: #707070;
 	}
 }
 
-.restaurant-detail-box {
-	text-align: center;
-	margin-bottom: 0px;
-}
+	@media screen and (min-width: $desktop){
+		.detail-phone-box-intro-wrapper{
+			padding-left: 20%;
+			padding-right: 20%;
+			}
+		}
 
 @media screen and (min-width: $tablet-vertical){
 .detail-phone-box-wrapper{
@@ -224,26 +210,37 @@ $grey: #707070;
 	}
 }
 
-@media screen and (min-width: $tablet-vertical){
-	.restaurant-detail-box {
-		text-align: center;
-		margin-bottom: 0px;
-		border: solid;
-		border-color: $red;
-		border-top-right-radius: 3.125rem;
-		border-top-left-radius: 3.125rem;
-		border-bottom-right-radius: 3.125rem;
-		border-bottom-left-radius: 3.125rem;
-		//display: inline-block;
-		padding: 10px;
-		position: relative;
-		float: right;
-		}
+.restaurant-detail-box {
+	text-align: center;
+	margin-bottom: 0px;
 }
+
+	@media screen and (min-width: $tablet-vertical){
+		.restaurant-detail-box {
+			text-align: center;
+			margin-bottom: 0px;
+			border: solid;
+			border-color: $red;
+			border-top-right-radius: 3.125rem;
+			border-top-left-radius: 3.125rem;
+			border-bottom-right-radius: 3.125rem;
+			border-bottom-left-radius: 3.125rem;
+			//display: inline-block;
+			padding: 10px;
+			position: relative;
+			float: right;
+			}
+	}
 
 .restaurant-detail-box h3 {
 	margin: 0;
 }
+
+	@media screen and (min-width: $tablet-vertical){
+		.restaurant-detail-box h3 {
+			display: block;
+		}
+	}
 
 .restaurant-detail-box p {
 	margin: 0;
@@ -251,17 +248,11 @@ $grey: #707070;
 	display: inline;
 }
 
-@media screen and (min-width: $tablet-vertical){
-	.restaurant-detail-box p {
-		display: inline;
+	@media screen and (min-width: $tablet-vertical){
+		.restaurant-detail-box p {
+			display: inline;
+		}
 	}
-}
-
-@media screen and (min-width: $tablet-vertical){
-	.restaurant-detail-box h3 {
-		display: block;
-	}
-}
 
 .phone-icon {
 	size: inherit;
@@ -287,11 +278,11 @@ $grey: #707070;
 	border-bottom-left-radius: 3.125rem;
 	background-color: $red;
 }
-@media screen and (min-width: $tablet-vertical){
-	.restaurant-detail-phone-container{
-	position: relative;
+	@media screen and (min-width: $tablet-vertical){
+		.restaurant-detail-phone-container{
+		position: relative;
+		}
 	}
-}
 
 .restaurant-detail-intro {
 	margin: auto;
@@ -303,16 +294,16 @@ $grey: #707070;
 	max-width: 75%;
 }
 
-@media screen and (min-width: $tablet-vertical){
-	.restaurant-detail-intro {
-		float: left;
-		margin-left: 15px;
-		max-width: 60%
+	@media screen and (min-width: $tablet-vertical){
+		.restaurant-detail-intro {
+			float: left;
+			margin-left: 15px;
+			max-width: 60%
+		}
 	}
-}
 
-@media screen and (min-width: $tablet-vertical){
-.intro-title{
-	text-align: left;
+	@media screen and (min-width: $tablet-vertical){
+	.intro-title{
+		text-align: left;
+		}
 	}
-}
