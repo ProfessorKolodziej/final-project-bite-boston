@@ -255,6 +255,8 @@ function restaurantDetail(restaurant) {
       + `<img src=${restaurant.image} id="detail_image" class="restaurant-page-image" alt="restaurant-img"/>`
     + '</div>'
     +'</div>'
+    +'<div class="detail-phone-box-intro-wrapper">'
+    +'<div class="detail-phone-box-wrapper">'
     + `<div class="restaurant-detail-phone-container">`
     +`<img class="phone-icon" src= "./images/phone-icon.png">`
     + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
@@ -273,9 +275,11 @@ function restaurantDetail(restaurant) {
     + `<h3>Dresscode</h3>`
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
+  +'</div>'
   + '<div class="restaurant-detail-intro">'
   + `<h3 class="intro-title">Introduction</h3>`
   + `<p id="shrinkMe" class="shrinkable"> ${restaurant.introduction} </p>`
+  + '</div>'
   + '</div>'
   + '</section>';
   }
