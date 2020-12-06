@@ -129,14 +129,11 @@ $grey: #707070;
 	}
 }
 
-@media screen and (min-width: $large-phone){
 .detail-container{
 	position: relative;
 	text-align: center;
 	}
-}
 
-@media screen and (min-width: $large-phone){
 .restaurant-name{
 	position: absolute;
 	top: 50%;
@@ -153,32 +150,54 @@ $grey: #707070;
 	overflow: hidden;
     white-space: nowrap;
   }
-}
 
-@media screen and (min-width: $large-phone){
-.image-wrapper-detail {
+.image-name-wrapper-detail {
 	position: relative;
 	max-height: 50%;
 	max-width: 100%;
 	overflow: hidden;
 	}
-}
-	
-@media screen and (min-width: $large-phone){
+
+	@media screen and (min-width: $tablet-vertical){
+		.image-wrapper-detail {
+			object-fit: cover;
+			// position: fixed; 
+			// top: -50%; 
+			// left: -50%; 
+			// width: 200%; 
+			// height: 200%;
+			// 
+		}
+	}
+
 #detail_image{
 	min-width: fit-content;
 	height: 500px;
 	opacity: 75%;
+	max-height: 50%;
 	}
-}
+
+	@media screen and (min-width: $tablet-vertical){
+		#detail_image{
+			// position: absolute; 
+			// top: 0; 
+			// left: 0; 
+			// right: 0; 
+			// bottom: 0; 
+			// margin: auto; 
+			// min-width: 50%;
+			// min-height: 50%;
+			// width: auto;
+			// height: auto;
+			width: 100%;
+			height: auto;
+			max-height: 500px;
+			}
+	}
 
 // .hidden {
 //     display: none;
 // }
-
-.restaurant-page-image {
-	max-height: 50%;
-}
 
 @media screen and (min-width: $tablet-vertical){
 .detail-phone-box-intro-wrapper{
