@@ -274,7 +274,7 @@ function restaurantDetail(restaurant) {
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
   + '<div class="restaurant-detail-intro">'
-  + `<h3>Introduction</h3>`
+  + `<h3 class="intro-title">Introduction</h3>`
   + `<p id="shrinkMe" class="shrinkable"> ${restaurant.introduction} </p>`
   + '</div>'
   + '</section>';
