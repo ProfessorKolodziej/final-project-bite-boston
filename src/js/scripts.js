@@ -283,6 +283,15 @@ function restaurantDetail(restaurant) {
   + `<p id="shrinkMe" class="shrinkable"> ${restaurant.introduction} </p>`
   + '</div>'
   + '</div>'
+  + '<div class="popular-dishes-container">'
+  + `<h3 class="pictures-title">Popular Dishes</h3>`
+  + '<div class="picture-container">'
+  + `<img src=${restaurant.pictureOne} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureTwo} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureThree} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureFour} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + '</div>'
+  + '</div>'
   + '</section>';
   }
 
