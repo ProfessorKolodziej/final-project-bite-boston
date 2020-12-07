@@ -57,15 +57,6 @@ function mapInfoWindow(restaurant) {
   + '</div>';
 }
 
-// function findRestaurant(){
-//   return name
-
-// }
-// restaurantList.find((restaurant) => {
-//   var x = event.target.tagName;
-
-//console.log(result)
-
 //this loads the map
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
@@ -90,7 +81,6 @@ mapLoader.initMap(mapLoaderOptions)
 // adds the detail page to the detail button on home page
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
-    //alert ("yay");
     console.log( event.target);
     console.log( event.target.dataset);
     let restaurant = JSON.parse(event.target.dataset.restaurant);
@@ -161,19 +151,6 @@ function mapInfoRestaurantList(restaurant) {
     + '<button class="list-page-details-button">  Details </button>'
     + '</div>';
 }
-//i dont think we need this here if it's on the filter page too -grace
-// function render(){
-//   restaurantList.forEach(function(restaurant){
-//     var ul= document.getElementById("restaurant-list");
-//     var li = document.createElement("li");
-//     restaurant.filterTag.forEach(function(tag){
-//       li.classList.add(tag);
-//     });
-//     li.innerHTML=mapInfoRestaurantList(restaurant);
-//     ul.appendChild(li);
-//   });
-// }
-// document.addEventListener('DOMContentLoaded', render);
 
 //this creates the cards on the list page
 function renderList() {
@@ -337,34 +314,6 @@ function restaurantDetail(restaurant) {
           }
         }
       });
-// //trying out read more buttton
-//       function showMore(id){
-//         document.getElementById(id+'Overflow').className='';
-//         document.getElementById(id+'MoreLink').className='hidden';
-//         document.getElementById(id+'LessLink').className='';
-//     }
-    
-//     function showLess(id){
-//         document.getElementById(id+'Overflow').className='hidden';
-//         document.getElementById(id+'MoreLink').className='';
-//         document.getElementById(id+'LessLink').className='hidden';
-//     }
-    
-//     var len = 100;
-//     var shrinkables = document.getElementsByClassName('shrinkable');
-//     if (shrinkables.length > 0) {
-//         for (var i = 0; i < shrinkables.length; i++){
-//             var fullText = shrinkables[i].innerHTML;
-//             if(fullText.length > len){
-//                 var trunc = fullText.substring(0, len).replace(/\w+$/, '');
-//                 var remainder = "";
-//                 var id = shrinkables[i].id;
-//                 remainder = fullText.substring(len, fullText.length);
-//                 shrinkables[i].innerHTML = '<span>' + trunc + '<span class="hidden" id="' + id + 'Overflow">'+ remainder +'</span></span>&nbsp;<a id="' + id + 'MoreLink" href="#!" onclick="showMore(\''+ id + '\');">More</a><a class="hidden" href="#!" id="' + id + 'LessLink" onclick="showLess(\''+ id + '\');">Less</a>';
-//             }
-//         }
-//     }
-
 
 //filter
 var selectedTag = new Set();

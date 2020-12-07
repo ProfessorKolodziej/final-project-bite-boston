@@ -38,18 +38,18 @@ $grey: #707070;
 }
 
 #google_map {
-	height: 80vh;
+	height: 70vh;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (min-width: 376px) {
 	#google_map {
 		height: 75vh;
 	}
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (min-width: 769px) {
 	#google_map {
-		height: 70vh;
+		height: 80vh;
 	}
 }
 
