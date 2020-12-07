@@ -104,6 +104,18 @@ $grey: #707070;
 	text-align: center;
 }
 
+	@media screen and (min-width: $tablet-vertical){
+		#restaurant-detail h3 {
+			font-size: 24px;
+		}
+	}
+
+	@media screen and (min-width: $tablet-vertical){
+		#restaurant-detail p {
+			font-size: 16px;
+		}
+	}
+
 .close-detail-button {
 	border: solid;
 	border-radius: 50%;
@@ -192,7 +204,7 @@ $grey: #707070;
 	@media screen and (min-width: $desktop){
 		.detail-phone-box-intro-wrapper{
 			padding-left: 10%;
-			padding-right: 20%;
+			padding-right: 10%;
 			}
 		}
 
