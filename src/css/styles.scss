@@ -104,17 +104,17 @@ $grey: #707070;
 	text-align: center;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		#restaurant-detail h3 {
-			font-size: 24px;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	#restaurant-detail h3 {
+		font-size: 24px;
 	}
+}
 
-	@media screen and (min-width: $tablet-vertical){
-		#restaurant-detail p {
-			font-size: 16px;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	#restaurant-detail p {
+		font-size: 16px;
 	}
+}
 
 .close-detail-button {
 	border: solid;
@@ -129,24 +129,24 @@ $grey: #707070;
 	width: 50px;
 }
 
-	@media screen and (min-width: $desktop){
+@media screen and (min-width: $desktop) {
 	.close-detail-button {
 		transition: all 0.2s ease-in-out;
-		}
 	}
+}
 
-	@media screen and (min-width: $desktop){
+@media screen and (min-width: $desktop) {
 	.close-detail-button:hover {
 		transform: scale(1.1);
-		}
 	}
+}
 
-.detail-container{
+.detail-container {
 	position: relative;
 	text-align: center;
-	}
+}
 
-.restaurant-name{
+.restaurant-name {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -160,99 +160,99 @@ $grey: #707070;
 	padding-right: 100%;
 	opacity: 75%;
 	overflow: hidden;
-    white-space: nowrap;
-  }
+	white-space: nowrap;
+}
 
 .image-name-wrapper-detail {
 	position: relative;
 	max-height: 50%;
 	max-width: 100%;
 	overflow: hidden;
-	}
+}
 
-	@media screen and (min-width: $tablet-vertical){
-		.image-wrapper-detail {
-			object-fit: cover;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.image-wrapper-detail {
+		object-fit: cover;
 	}
+}
 
-#detail_image{
+#detail_image {
 	min-width: fit-content;
 	height: 500px;
 	opacity: 75%;
 	max-height: 50%;
-	}
+}
 
-	@media screen and (min-width: $tablet-vertical){
-		#detail_image{
-			width: 100%;
-			height: auto;
-			max-height: 500px;
-			}
+@media screen and (min-width: $tablet-vertical) {
+	#detail_image {
+		width: 100%;
+		height: auto;
+		max-height: 500px;
 	}
+}
 
 // .hidden {
 //     display: none;
 // }
 
-@media screen and (min-width: $tablet-vertical){
-.detail-phone-box-intro-wrapper{
-	padding: 10px;
+@media screen and (min-width: $tablet-vertical) {
+	.detail-phone-box-intro-wrapper {
+		padding: 10px;
 	}
 }
 
-	@media screen and (min-width: $desktop){
-		.detail-phone-box-intro-wrapper{
-			padding-left: 10%;
-			padding-right: 10%;
-			}
-		}
+@media screen and (min-width: $desktop) {
+	.detail-phone-box-intro-wrapper {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
 
-@media screen and (min-width: $tablet-vertical){
-.detail-phone-box-wrapper{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	float: right;
-	margin: 10px;
-	flex-grow: 2;
+@media screen and (min-width: $tablet-vertical) {
+	.detail-phone-box-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		float: right;
+		margin: 10px;
+		flex-grow: 2;
 	}
 }
 
 .restaurant-detail-box {
 	text-align: center;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.restaurant-detail-box {
-			text-align: center;
-			margin-bottom: 0px;
-			border: solid;
-			border-color: $red;
-			border-top-right-radius: 3.125rem;
-			border-top-left-radius: 3.125rem;
-			border-bottom-right-radius: 3.125rem;
-			border-bottom-left-radius: 3.125rem;
-			//display: inline-block;
-			padding: 10px;
-			position: relative;
-			float: right;
-			}
+@media screen and (min-width: $tablet-vertical) {
+	.restaurant-detail-box {
+		text-align: center;
+		margin-bottom: 0;
+		border: solid;
+		border-color: $red;
+		border-top-right-radius: 3.125rem;
+		border-top-left-radius: 3.125rem;
+		border-bottom-right-radius: 3.125rem;
+		border-bottom-left-radius: 3.125rem;
+		//display: inline-block;
+		padding: 10px;
+		position: relative;
+		float: right;
 	}
+}
 
 .restaurant-detail-box h3 {
 	margin: 0;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.restaurant-detail-box h3 {
-			display: block;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.restaurant-detail-box h3 {
+		display: block;
 	}
+}
 
 .restaurant-detail-box p {
 	margin: 0;
@@ -260,75 +260,76 @@ $grey: #707070;
 	display: inline;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.restaurant-detail-box p {
-			display: inline;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.restaurant-detail-box p {
+		display: inline;
 	}
+}
 
 .phone-icon {
 	size: inherit;
 	vertical-align: middle;
 }
 
-.restaurant-detail-phone{
-	display:inline;
+.restaurant-detail-phone {
+	display: inline;
 	font-size: 1.5em;
 	color: #ffff;
 }
 
-.restaurant-detail-phone-container{
+.restaurant-detail-phone-container {
 	margin-top: 5px;
 	margin-bottom: 10px;
 	border: solid;
 	padding: 5px;
 	display: inline-block;
-	border-color: #802D2B;
+	border-color: #802d2b;
 	border-top-right-radius: 3.125rem;
 	border-top-left-radius: 3.125rem;
 	border-bottom-right-radius: 3.125rem;
 	border-bottom-left-radius: 3.125rem;
 	background-color: $red;
 }
-	@media screen and (min-width: $tablet-vertical){
-		.restaurant-detail-phone-container{
+
+@media screen and (min-width: $tablet-vertical) {
+	.restaurant-detail-phone-container {
 		position: relative;
-		}
 	}
+}
 
 .restaurant-detail-intro {
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 5px;
 	text-align: center;
-	border-bottom: 1px solid rgba(112,112,112,.5);
-	border-top: 1px solid rgba(112,112,112,.5);
+	border-bottom: 1px solid rgba(112, 112, 112, 0.5);
+	border-top: 1px solid rgba(112, 112, 112, 0.5);
 	max-width: 75%;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.restaurant-detail-intro {
-			float: left;
-			margin-left: 15px;
-			max-width: 60%
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.restaurant-detail-intro {
+		float: left;
+		margin-left: 15px;
+		max-width: 60%;
 	}
+}
 
-	@media screen and (min-width: $tablet-vertical){
-	.intro-title{
+@media screen and (min-width: $tablet-vertical) {
+	.intro-title {
 		text-align: left;
-		}
 	}
+}
 
-@media screen and (min-width: $tablet-vertical){
-	.pictures-title{
+@media screen and (min-width: $tablet-vertical) {
+	.pictures-title {
 		float: right;
 		margin-left: 15px;
 	}
 }
 
-@media screen and (min-width: $tablet-vertical){
-	.popular-dishes-container{
+@media screen and (min-width: $tablet-vertical) {
+	.popular-dishes-container {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -339,20 +340,20 @@ $grey: #707070;
 	}
 }
 
-	@media screen and (min-width: $desktop){
-		.popular-dishes-container{
-			padding-left: 9%;
-			padding-right: 20%;
-		}
+@media screen and (min-width: $desktop) {
+	.popular-dishes-container {
+		padding-left: 9%;
+		padding-right: 20%;
 	}
+}
 
-.picture-container{
+.picture-container {
 	position: inherit;
 	margin: 10px auto;
-	width:200px;
-	height:200px;
-	background-color:#fff;
-	display:grid;
+	width: 200px;
+	height: 200px;
+	background-color: #fff;
+	display: grid;
 	grid-template-columns: 100px 100px;
 	grid-row: auto;
 	grid-column-gap: 10px;
@@ -360,45 +361,45 @@ $grey: #707070;
 	// photo grid from https://codepen.io/MattWindle/pen/perZRG
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.picture-container{
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			align-items: baseline;
-			float: left;
-			margin-left: 15px;
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.picture-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: baseline;
+		float: left;
+		margin-left: 15px;
 	}
-
-.detail-page-pic{
-	width: 100%;
-	height: 100%;
-	border-radius:10px;
-	display:flex;
-	align-items:center;
-	justify-content:center;
 }
 
-	@media screen and (min-width: $tablet-vertical){
-		.detail-page-pic{
-			width: 50%;
-			height: 50%;
-			border-radius:10px;
-			display:flex;
-			align-items:center;
-			justify-content:center;
-		}
-	}
+.detail-page-pic {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-		@media screen and (min-width: $desktop){
-			.detail-page-pic{
-				width: 75%;
-				height: 75%;
-				border-radius:10px;
-				display:flex;
-				align-items:center;
-				justify-content:center;
-			}
-		}
+@media screen and (min-width: $tablet-vertical) {
+	.detail-page-pic {
+		width: 50%;
+		height: 50%;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.detail-page-pic {
+		width: 75%;
+		height: 75%;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
