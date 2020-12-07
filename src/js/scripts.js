@@ -250,11 +250,15 @@ function restaurantDetail(restaurant) {
   return '<section id= "restaurant-detail">'
     + `<button class="close-detail-button"><</button>`
     +'<div class="detail-container">'
-    + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
+    + '<div class="image-name-wrapper-detail">'
+        + `<h2 class="restaurant-name"> ${restaurant.name} </h2>`
     + '<div class="image-wrapper-detail">'
-      + `<img src=${restaurant.image} id="detail_image" class="restaurant-page-image" alt="restaurant-img"/>`
+      + `<img src=${restaurant.imageDetail} id="detail_image" class="restaurant-page-image" alt="restaurant-img"/>`
+    + '</div>'
     + '</div>'
     +'</div>'
+    +'<div class="detail-phone-box-intro-wrapper">'
+    +'<div class="detail-phone-box-wrapper">'
     + `<div class="restaurant-detail-phone-container">`
     +`<img class="phone-icon" src= "./images/phone-icon.png">`
     + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
@@ -273,9 +277,20 @@ function restaurantDetail(restaurant) {
     + `<h3>Dresscode</h3>`
     + `<p> ${restaurant.dresscode} </p>`
   + '</div>'
+  +'</div>'
   + '<div class="restaurant-detail-intro">'
-  + `<h3>Introduction</h3>`
-  + `<p> ${restaurant.introduction} </p>`
+  + `<h3 class="intro-title">Introduction</h3>`
+  + `<p id="shrinkMe" class="shrinkable"> ${restaurant.introduction} </p>`
+  + '</div>'
+  + '</div>'
+  + '<div class="popular-dishes-container">'
+  + `<h3 class="pictures-title">Popular Dishes</h3>`
+  + '<div class="picture-container">'
+  + `<img src=${restaurant.pictureOne} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureTwo} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureThree} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + `<img src=${restaurant.pictureFour} class="detail-page-pic" alt="pictures of popular dishes from various restaurants"/>`
+  + '</div>'
   + '</div>'
   + '</section>';
   }
@@ -322,34 +337,33 @@ function restaurantDetail(restaurant) {
           }
         }
       });
-  // document.getElementById('close-detail-button').addEventListener(alert("hello"))
-
-//this closes the detail page with the x button
-// document.addEventListener('click', (event) => {
-//   if (event.target.className === 'close-detail-button') {
-//     const detailHTML = document.getElementById('restaurant-detail');
-//     if (detailHTML.style.display === 'none') {
-//       detailHTML.style.display = 'block';
-//     } else {
-//       detailHTML.style.display = 'none';
+// //trying out read more buttton
+//       function showMore(id){
+//         document.getElementById(id+'Overflow').className='';
+//         document.getElementById(id+'MoreLink').className='hidden';
+//         document.getElementById(id+'LessLink').className='';
 //     }
-//   }
-// });
-
-  // document.getElementById('close-detail-button').addEventListener('click', () => {
-  //   history.back();
-  // });
-
-  // function hideDetail() {
-  //   const detail = document.getElementById('restaurant-detail');
-  //   if (detail.style.display === 'none') {
-  //     detail.style.display = 'block';
-  //   } else {
-  //     detail.style.display = 'none';
-  //   }
-  // }
-
-  // document.getElementById('close-detail-button').document.addEventListener('click', hideDetail);
+    
+//     function showLess(id){
+//         document.getElementById(id+'Overflow').className='hidden';
+//         document.getElementById(id+'MoreLink').className='';
+//         document.getElementById(id+'LessLink').className='hidden';
+//     }
+    
+//     var len = 100;
+//     var shrinkables = document.getElementsByClassName('shrinkable');
+//     if (shrinkables.length > 0) {
+//         for (var i = 0; i < shrinkables.length; i++){
+//             var fullText = shrinkables[i].innerHTML;
+//             if(fullText.length > len){
+//                 var trunc = fullText.substring(0, len).replace(/\w+$/, '');
+//                 var remainder = "";
+//                 var id = shrinkables[i].id;
+//                 remainder = fullText.substring(len, fullText.length);
+//                 shrinkables[i].innerHTML = '<span>' + trunc + '<span class="hidden" id="' + id + 'Overflow">'+ remainder +'</span></span>&nbsp;<a id="' + id + 'MoreLink" href="#!" onclick="showMore(\''+ id + '\');">More</a><a class="hidden" href="#!" id="' + id + 'LessLink" onclick="showLess(\''+ id + '\');">Less</a>';
+//             }
+//         }
+//     }
 
 
 //filter
