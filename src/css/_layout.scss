@@ -3,20 +3,20 @@
 }
 
 .info-card {
-	max-width: 300px;
+	max-width: 180px;
 	height: auto;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (min-width: 376px) {
 	.info-card {
 		max-width: 200px;
 		height: auto;
 	}
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (min-width: 769px) {
 	.info-card {
-		max-width: 180px;
+		max-width: 300px;
 		height: auto;
 	}
 }
@@ -26,7 +26,7 @@
 }
 
 .logo {
-	width: 220px;
+	width: 180px;
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -34,9 +34,9 @@
 	margin-top: 25px;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (min-width: 769px) {
 	.logo {
-		width: 180px;
+		width: 220px;
 	}
 }
 
@@ -83,8 +83,6 @@
 .restaurant-list-names {
 	float: left;
 }
-
-$blue: #081b67;
 
 .restaurant-list-icons {
 	width: 36px;
