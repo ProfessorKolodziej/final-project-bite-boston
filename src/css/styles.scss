@@ -177,16 +177,19 @@ $grey: #707070;
 }
 
 @media screen and (min-width: $tablet-vertical) {
-	.image-wrapper-detail {
-		object-fit: cover;
+	.image-name-wrapper-detail {
+		position: relative;
+		max-height: 50%;
+		max-width: 100%;
+		overflow: hidden;
 	}
 }
 
 #detail_image {
-	min-width: fit-content;
 	height: 500px;
 	opacity: 75%;
-	max-height: 50%;
+	margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 @media screen and (min-width: $tablet-vertical) {
@@ -205,8 +208,14 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.detail-phone-box-intro-wrapper {
-		padding-left: 5%;
 		padding-right: 5%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.detail-phone-box-intro-wrapper {
+		padding-right: 10%;
+		padding-left: 10%;
 	}
 }
 
@@ -242,6 +251,7 @@ $grey: #707070;
 		padding: 10px;
 		position: relative;
 		float: right;
+		max-width: 250px;
 	}
 }
 
@@ -354,8 +364,14 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.popular-dishes-container {
-		padding-left: 4%;
 		padding-right: 5%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.popular-dishes-container {
+		padding-right: 10%;
+		padding-left: 10%;
 	}
 }
 
@@ -396,8 +412,8 @@ $grey: #707070;
 
 @media screen and (min-width: $tablet-vertical) {
 	.detail-page-pic {
-		width: 50%;
-		height: 50%;
+		max-width: 50%;
+		max-height: 50%;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
@@ -407,8 +423,8 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.detail-page-pic {
-		width: 75%;
-		height: 75%;
+		max-width: 75%;
+		max-height: 75%;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
