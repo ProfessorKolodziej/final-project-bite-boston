@@ -97,7 +97,7 @@ function restaurantDetail(restaurant) {
     + '<div class="detail-phone-box-wrapper">'
     + '<div class="restaurant-detail-phone-container">'
     + '<img class="phone-icon" src= "./images/phone-icon.png">'
-    + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
+    + `<p id="detail-phone" class="restaurant-detail-phone"> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
     + '<h3>Location</h3>'
