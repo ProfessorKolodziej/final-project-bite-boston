@@ -106,11 +106,17 @@ $grey: #707070;
 
 @media screen and (min-width: $tablet-vertical) {
 	#restaurant-detail h3 {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	#restaurant-detail h3 {
 		font-size: 24px;
 	}
 }
 
-@media screen and (min-width: $tablet-vertical) {
+@media screen and (min-width: $desktop) {
 	#restaurant-detail p {
 		font-size: 16px;
 	}
@@ -142,7 +148,6 @@ $grey: #707070;
 }
 
 .detail-container {
-	position: relative;
 	text-align: center;
 }
 
@@ -165,35 +170,38 @@ $grey: #707070;
 
 .image-name-wrapper-detail {
 	position: relative;
-	max-height: 50%;
-	max-width: 100%;
 	overflow: hidden;
+	height: 500px;
+	width: auto;
 }
 
 @media screen and (min-width: $tablet-vertical) {
-	.image-wrapper-detail {
-		object-fit: cover;
+	.image-name-wrapper-detail {
+		min-height: 600px;
+		height: auto;
 	}
 }
 
 #detail_image {
-	min-width: fit-content;
-	height: 500px;
 	opacity: 75%;
-	max-height: 50%;
+	max-height: 100%;
+	margin: auto;
+	transform: translateX(-50%);
+	position: absolute;
 }
 
 @media screen and (min-width: $tablet-vertical) {
 	#detail_image {
-		width: 100%;
-		height: auto;
-		max-height: 500px;
+		max-height: 150%;
 	}
 }
 
-// .hidden {
-//     display: none;
-// }
+@media screen and (min-width: $desktop) {
+	#detail_image {
+		max-height: 200%;
+		transform: translate(-50%, -50%);
+	}
+}
 
 @media screen and (min-width: $tablet-vertical) {
 	.detail-phone-box-intro-wrapper {
@@ -203,8 +211,14 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.detail-phone-box-intro-wrapper {
-		padding-left: 10%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.detail-phone-box-intro-wrapper {
 		padding-right: 10%;
+		padding-left: 10%;
 	}
 }
 
@@ -237,10 +251,9 @@ $grey: #707070;
 		border-top-left-radius: 3.125rem;
 		border-bottom-right-radius: 3.125rem;
 		border-bottom-left-radius: 3.125rem;
-		//display: inline-block;
 		padding: 10px;
-		position: relative;
 		float: right;
+		max-width: 250px;
 	}
 }
 
@@ -273,7 +286,7 @@ $grey: #707070;
 
 .restaurant-detail-phone {
 	display: inline;
-	font-size: 1.5em;
+	font-size: 12px;
 	color: #ffff;
 }
 
@@ -291,12 +304,6 @@ $grey: #707070;
 	background-color: $red;
 }
 
-@media screen and (min-width: $tablet-vertical) {
-	.restaurant-detail-phone-container {
-		position: relative;
-	}
-}
-
 .restaurant-detail-intro {
 	margin: auto;
 	margin-top: 10px;
@@ -309,7 +316,6 @@ $grey: #707070;
 
 @media screen and (min-width: $tablet-vertical) {
 	.restaurant-detail-intro {
-		float: left;
 		margin-left: 15px;
 		max-width: 60%;
 	}
@@ -323,7 +329,7 @@ $grey: #707070;
 
 @media screen and (min-width: $tablet-vertical) {
 	.pictures-title {
-		float: right;
+		float: left;
 		margin-left: 15px;
 	}
 }
@@ -342,13 +348,18 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.popular-dishes-container {
-		padding-left: 9%;
-		padding-right: 20%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.popular-dishes-container {
+		padding-right: 10%;
+		padding-left: 10%;
 	}
 }
 
 .picture-container {
-	position: inherit;
 	margin: 10px auto;
 	width: 200px;
 	height: 200px;
@@ -384,8 +395,8 @@ $grey: #707070;
 
 @media screen and (min-width: $tablet-vertical) {
 	.detail-page-pic {
-		width: 50%;
-		height: 50%;
+		max-width: 50%;
+		max-height: 50%;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
@@ -395,8 +406,8 @@ $grey: #707070;
 
 @media screen and (min-width: $desktop) {
 	.detail-page-pic {
-		width: 75%;
-		height: 75%;
+		max-width: 75%;
+		max-height: 75%;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;

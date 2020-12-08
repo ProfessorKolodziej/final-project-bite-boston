@@ -97,7 +97,7 @@ function restaurantDetail(restaurant) {
     + '<div class="detail-phone-box-wrapper">'
     + '<div class="restaurant-detail-phone-container">'
     + '<img class="phone-icon" src= "./images/phone-icon.png">'
-    + `<p class="restaurant-detail-phone"> ${restaurant.phone} </p>`
+    + `<p id="detail-phone" class="restaurant-detail-phone"> ${restaurant.phone} </p>`
     + '</div>'
     + '<div class="restaurant-detail-box">'
     + '<h3>Location</h3>'
@@ -141,7 +141,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// hides the map
+// hides the map and browse restaurants button
 document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
     const homepageMap = document.getElementById('google_map');
@@ -151,10 +151,6 @@ document.addEventListener('click', (event) => {
       homepageMap.style.display = 'none';
     }
   }
-});
-
-// hides the browse restaurants button
-document.addEventListener('click', (event) => {
   if (event.target.className === 'map-card-details') {
     const homepageButton = document.getElementById('homepage-browse-restaurants');
     if (homepageButton.style.display === 'none') {
@@ -165,7 +161,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// brings the map back up
+// brings the map and browse restaurant button back up
 document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const filter = document.getElementById('google_map');
@@ -175,10 +171,6 @@ document.addEventListener('click', (event) => {
       filter.style.display = 'none';
     }
   }
-});
-
-// brings the browse restaurants button back up
-document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const filter = document.getElementById('homepage-browse-restaurants');
     if (filter.style.display === 'none') {
@@ -244,10 +236,6 @@ document.addEventListener('click', (event) => {
       info.style.display = 'none';
     }
   }
-});
-
-// this hides the filter button
-document.addEventListener('click', (event) => {
   if (event.target.className === 'list-page-details-button') {
     const filter = document.getElementById('filterButton');
     if (filter.style.display === 'none') {
@@ -256,10 +244,6 @@ document.addEventListener('click', (event) => {
       filter.style.display = 'none';
     }
   }
-});
-
-// hides the back button
-document.addEventListener('click', (event) => {
   if (event.target.className === 'list-page-details-button') {
     const mapButton = document.getElementById('back-to-map');
     if (mapButton.style.display === 'none') {
@@ -288,10 +272,6 @@ document.addEventListener('click', (event) => {
       info.style.display = 'none';
     }
   }
-});
-
-// this brings up the filter again
-document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const filter = document.getElementById('filterButton');
     if (filter.style.display === 'none') {
@@ -300,10 +280,6 @@ document.addEventListener('click', (event) => {
       filter.style.display = 'none';
     }
   }
-});
-
-// brings up the back button
-document.addEventListener('click', (event) => {
   if (event.target.className === 'close-detail-button') {
     const mapButton = document.getElementById('back-to-map');
     if (mapButton.style.display === 'none') {
