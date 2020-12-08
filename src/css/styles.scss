@@ -148,7 +148,6 @@ $grey: #707070;
 }
 
 .detail-container {
-	position: relative;
 	text-align: center;
 }
 
@@ -171,32 +170,36 @@ $grey: #707070;
 
 .image-name-wrapper-detail {
 	position: relative;
-	max-height: 50%;
-	max-width: 100%;
 	overflow: hidden;
+	height: 500px;
+	width: auto;
 }
 
 @media screen and (min-width: $tablet-vertical) {
 	.image-name-wrapper-detail {
-		position: relative;
-		max-height: 50%;
-		max-width: 100%;
-		overflow: hidden;
+		min-height: 600px;
+		height: auto;
 	}
 }
 
 #detail_image {
-	height: 500px;
 	opacity: 75%;
-	margin-left: 50%;
-    transform: translateX(-50%);
+	max-height: 100%;
+	margin: auto;
+	transform: translateX(-50%);
+	position: absolute;
 }
 
 @media screen and (min-width: $tablet-vertical) {
 	#detail_image {
-		width: 100%;
-		height: auto;
-		max-height: 500px;
+		max-height: 150%;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	#detail_image {
+		max-height: 200%;
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -249,7 +252,6 @@ $grey: #707070;
 		border-bottom-right-radius: 3.125rem;
 		border-bottom-left-radius: 3.125rem;
 		padding: 10px;
-		position: relative;
 		float: right;
 		max-width: 250px;
 	}
@@ -288,18 +290,6 @@ $grey: #707070;
 	color: #ffff;
 }
 
-@media screen and (min-width: $tablet-vertical) {
-	#detail-phone {
-		font-size: 16px;
-	}
-}
-
-@media screen and (min-width: $tablet-vertical) {
-	#detail-phone {
-		font-size: 24px;
-	}
-}
-
 .restaurant-detail-phone-container {
 	margin-top: 5px;
 	margin-bottom: 10px;
@@ -312,12 +302,6 @@ $grey: #707070;
 	border-bottom-right-radius: 3.125rem;
 	border-bottom-left-radius: 3.125rem;
 	background-color: $red;
-}
-
-@media screen and (min-width: $tablet-vertical) {
-	.restaurant-detail-phone-container {
-		position: relative;
-	}
 }
 
 .restaurant-detail-intro {
@@ -376,7 +360,6 @@ $grey: #707070;
 }
 
 .picture-container {
-	position: inherit;
 	margin: 10px auto;
 	width: 200px;
 	height: 200px;
