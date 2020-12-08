@@ -191,10 +191,6 @@ $grey: #707070;
 	}
 }
 
-// .hidden {
-//     display: none;
-// }
-
 @media screen and (min-width: $tablet-vertical) {
 	.detail-phone-box-intro-wrapper {
 		padding: 10px;
@@ -237,7 +233,6 @@ $grey: #707070;
 		border-top-left-radius: 3.125rem;
 		border-bottom-right-radius: 3.125rem;
 		border-bottom-left-radius: 3.125rem;
-		//display: inline-block;
 		padding: 10px;
 		position: relative;
 		float: right;
