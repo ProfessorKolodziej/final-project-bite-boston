@@ -176,14 +176,14 @@ $grey: #707070;
 	overflow: hidden;
 }
 
-@media screen and (min-width: $tablet-vertical) {
-	.image-name-wrapper-detail {
-		position: relative;
-		max-height: 50%;
-		max-width: 100%;
-		overflow: hidden;
-	}
-}
+// @media screen and (min-width: $tablet-vertical) {
+// 	.image-name-wrapper-detail {
+// 		position: relative;
+// 		max-height: 50%;
+// 		max-width: 100%;
+// 		overflow: hidden;
+// 	}
+// }
 
 #detail_image {
 	height: 500px;
@@ -192,9 +192,17 @@ $grey: #707070;
     transform: translateX(-50%);
 }
 
-@media screen and (min-width: $tablet-vertical) {
+// @media screen and (min-width: $tablet-vertical) {
+// 	#detail_image {
+// 		width: 100%;
+// 		height: auto;
+// 		max-height: 500px;
+// 	}
+// }
+
+@media screen and (min-width: $desktop) {
 	#detail_image {
-		width: 100%;
+		max-width: 2400px;
 		height: auto;
 		max-height: 500px;
 	}
