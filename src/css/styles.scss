@@ -179,8 +179,7 @@ $grey: #707070;
 	.image-name-wrapper-detail {
 		min-height: 600px;
 		height: auto;
-		top:-30px;
-
+		top: -30px;
 	}
 }
 
@@ -190,8 +189,6 @@ $grey: #707070;
 	margin: auto;
 	transform: translateX(-50%);
 	position: absolute;
-
-
 }
 
 @media screen and (min-width: $tablet-vertical) {
@@ -418,4 +415,3 @@ $grey: #707070;
 		justify-content: center;
 	}
 }
-

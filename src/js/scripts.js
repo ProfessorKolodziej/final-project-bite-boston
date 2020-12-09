@@ -61,7 +61,7 @@ function mapInfoWindow(restaurant) {
 mapLoader.initMap(mapLoaderOptions)
   .then((map) => {
     restaurantList.forEach((restaurant) => {
-      const marker = makeMarker(map, new google.maps.LatLng(
+      const marker = makeMarker(map, new google.maps.LatLng( // eslint-disable-line no-undef
         restaurant.location.lat, restaurant.location.lng,
       ), restaurant.icon);
       const placeInfo = mapInfoWindow(restaurant);
@@ -70,7 +70,7 @@ mapLoader.initMap(mapLoaderOptions)
       const mapButton = parsedMapHTML.querySelector('.map-card-details');
       mapButton.dataset.restaurant = JSON.stringify(restaurant);
 
-      const info = new google.maps.InfoWindow({
+      const info = new google.maps.InfoWindow({ // eslint-disable-line no-undef
         content: parsedMapHTML.documentElement.innerHTML, // this should be a string
       });
 
@@ -294,8 +294,8 @@ document.addEventListener('click', (event) => {
 const selectedTag = new Set();
 
 function filterSelection() {
-  let x; let
-    i;
+  let i;
+  const x = document.getElementsByClassName('filterElement');
   if (this.checked) {
     selectedTag.add(`.${this.value}`);
   } else {
@@ -303,7 +303,6 @@ function filterSelection() {
   }
 
   const allclass = Array.from(selectedTag).join('');
-  x = document.getElementsByClassName('filterElement');
   // Add the "show" class (display:block) to the filtered elements,
   // and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i += 1) {
@@ -317,26 +316,6 @@ function filterSelection() {
 
 const checkboxes = document.getElementsByClassName('filterSelection');
 
-for (const checkbox of checkboxes) {
+for (const checkbox of checkboxes) { // eslint-disable-line no-restricted-syntax
   checkbox.addEventListener('change', filterSelection);
 }
-
-/*function hidebox() {
-  var x = document.getElementById("filterbox");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}*/
-
-// filter button
-let dropdownBtn = document.querySelector('.menu-btn');
-let menuContent = document.querySelector('.menu-content');
-dropdownBtn.addEventListener('click', () => {
-    if (menuContent.style.display === "") {
-        menuContent.style.display = "block";
-    } else {
-        menuContent.style.display = "";
-    }
-});

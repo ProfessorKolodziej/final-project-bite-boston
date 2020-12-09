@@ -7,27 +7,20 @@
     <meta name="description" content="A Boston area restaurant guide" />
     <title>Bite Boston-listing</title>
     <script src="https://use.fontawesome.com/7ccb1a3cee.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/filters.css">
 </head>
-<link rel="stylesheet" href="css/filters.css">
 <body>
 	<main class="content-container">
     <button type="button" class="back-btn" id="back-to-map" onclick="window.open('./index.html');">
       <span class="back-btn-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
 		</button>
-		<section class="logo-color">
+		<section class=logo-color>
 			<img class="logo" src="./images/logo.png" alt="Bite Boston">
 			<h3 class="introduction">Click around to explore restaurants in Boston </h3>
     </section>
-    <div class="dropdown-menu">
-      <button type = "button" id ="filterButton" class="menu-btn"><i class="fa fa-bars"></i> Filters</button>
-          <div id="filters" class="menu-content">
-            <ul>Location
-              <li><input type="checkbox" class="filterSelection" value="downtown">Downtown</li>
-              <li><input type="checkbox" class="filterSelection" value="northend">North End</li>
-              <li><input type="checkbox" class="filterSelection" value="seaport">Seaport</li>
-              <li><input type="checkbox" class="filterSelection" value="southend">South End</li>
-            </ul>
+      <div class="dropdown">
+        <button type = "button" id ="filterButton" class="dropbtn">Filters</button>
+          <div id="fliters" class="dropdown-content">
               <ul>Price
                 <li><input type="checkbox" class="filterSelection" value="price1">$</li>
                 <li><input type="checkbox" class="filterSelection" value="price2">$$</li>
@@ -45,13 +38,7 @@
             </div>
         </div>
         <div id="filterbox" class="web-dropdown">
-          <p class="title"><i class="fa fa-bars"></i> Filters</p>
-            <ul>Location
-              <li><input type="checkbox" class="filterSelection" value="downtown">Downtown</li>
-              <li><input type="checkbox" class="filterSelection" value="northend">North End</li>
-              <li><input type="checkbox" class="filterSelection" value="seaport">Seaport</li>
-              <li><input type="checkbox" class="filterSelection" value="southend">South End</li>
-            </ul>
+          <p class="title">Filters</p>
               <ul>Price
                 <li><input type="checkbox" class="filterSelection" value="price1">$</li>
                 <li><input type="checkbox" class="filterSelection" value="price2">$$</li>
