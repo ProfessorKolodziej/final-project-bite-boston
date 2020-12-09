@@ -160,15 +160,14 @@ ul {
     .list-page-info-card{
         border-radius: 0;
         border: none;
-        height: 300px;
+        height: 340px;
         width: 700px;
         margin-left: 25%;
         margin-right: auto;
         padding:0;
-        padding-bottom: 30px;
         display: grid;
         grid-template-columns: 140px 140px 140px 140px;
-        grid-template-rows: 20px 100px 180px;
+        grid-template-rows: 20px 100px 220px;
         border-bottom: 0.1em solid #a3a1a1; 
     }
     .list-page-name{
@@ -180,19 +179,20 @@ ul {
         padding-top:5px;
     }
     .list-page-info-card-image{
-        width: 200px;
-        height: 180px;
+        width: 230px;
+        height: 200px;
         border-radius: 10px;
     }
     .list-page-details-button{
-        margin-left: 60px;
+        margin-left: 75px;
+        margin-top:-60px;
     }
     .list-page-address{
         grid-column: 3 / 6;
         font-size: 18px;
         margin-top: 80px;
         margin-left: -10px;
-        width: 350px;
+        width: 400px;
         border:none;
     }
     .list-page-phone{
