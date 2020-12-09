@@ -21,7 +21,7 @@ const restaurantList = [
     icon: '../images/tuna.png',
     introduction: 'High-concept sushi & other Japanese plates crafted in swish, dramatically lit environment.',
     url: '../detail.html',
-    filterTag: ['price1', 'downtown', 'japanese'],
+    filterTag: ['price3', 'downtown', 'japanese'],
   },
   {
     name: 'Grill 23 & Bar',
@@ -44,7 +44,7 @@ const restaurantList = [
     icon: '../images/meat.png',
     introduction: 'Classy chophouse presenting surf ’n’ turf classics & an ample wine selection in ornate rooms.',
     url: 'https://grill23.com/',
-    filterTag: ['price2', 'southend', 'steakhouse'],
+    filterTag: ['price4', 'southend', 'steakhouse'],
   },
   {
     name: 'Tatte Bakery & Cafe',
@@ -67,7 +67,7 @@ const restaurantList = [
     icon: '../images/bread.png',
     introduction: 'Cozy spot with a rustic feel serving breakfast, soups, sandwiches & an array of baked treats.',
     url: 'https://tattebakery.com//',
-    filterTag: ['price3', 'northend', 'bakery'],
+    filterTag: ['price2', 'northend', 'bakery'],
   },
   {
     name: 'Neptune Oyster',
@@ -90,7 +90,7 @@ const restaurantList = [
     icon: '../images/fish.png',
     introduction: 'Lines form for the raw bar & warm, buttered lobster rolls at this tiny, high-end oyster bar.',
     url: 'https://www.neptuneoyster.com/',
-    filterTag: ['price1', 'northend', 'seafood'],
+    filterTag: ['price3', 'northend', 'seafood'],
   },
   {
     name: 'O Ya',
@@ -136,7 +136,7 @@ const restaurantList = [
     icon: '../images/fancy.png',
     introduction: 'Creative dishes are prepped in front of the 20-seat counter, thus the “dining as theater” aspect of the experience. ',
     url: 'https://tastingcounter.com/',
-    filterTag: ['price1', 'northend', 'seafood'],
+    filterTag: ['price4', 'northend', 'seafood'],
   },
   {
     name: 'Menton',
@@ -159,7 +159,7 @@ const restaurantList = [
     icon: '../images/fancy.png',
     introduction: 'The contemporary, French- and Italian-inspired cuisine, offered in both a la carte and a tasting menu, features luxurious ingredients such as sea urchin and black truffle. ',
     url: 'http://www.mentonboston.com/',
-    filterTag: ['price1', 'northend', 'seafood'],
+    filterTag: ['price4', 'northend', 'seafood'],
   },
   {
     name: 'No. 9 Park',
@@ -182,7 +182,7 @@ const restaurantList = [
     icon: '../images/fancy.png',
     introduction: 'Situated in the shadow of the State House, Barbara Lynch’s flagship restaurant offers a head-on view of Boston Common. The sleek, cosmopolitan environs are patrolled by attentive servers. Lynch’s culinary team produces a harmonious blend of regionally-inspired Italian and French dishes, served a la carte or as part of a chefs tasting menu. ',
     url: 'http://www.no9park.com/',
-    filterTag: ['price1', 'downtown', 'seafood'],
+    filterTag: ['price4', 'downtown', 'seafood'],
   },
   {
     name: 'Toro',
@@ -205,7 +205,7 @@ const restaurantList = [
     icon: '../images/paella.png',
     introduction: 'For all its dynamism, Toro really hasn’t changed much in the decade-plus since it opened, blowing the roof off of Boston’s then-gentrifying South End. The rustic cubbyhole of a storefront it occupies is as jam-packed and convivial as ever with revelers passing porróns of Cava around; day-one staples like grilled street corn and quince-glazed duck drumsticks are still breaking the hearts of every tapas virgin who wanders in unawares.',
     url: 'https://www.toro-restaurant.com/',
-    filterTag: ['price2', 'downtown', 'seafood'],
+    filterTag: ['price3', 'downtown', 'seafood'],
   },
   {
     name: 'Row 34',
@@ -228,7 +228,7 @@ const restaurantList = [
     icon: '../images/fish.png',
     introduction: 'The team at Row 34 loves beer as much as they love oysters, so be sure to pair your oysters with whatever is recommended from the list of small-production, local, and rare craft beers on tap.',
     url: 'https://www.row34.com/',
-    filterTag: ['price2', 'downtown', 'seafood'],
+    filterTag: ['price3', 'downtown', 'seafood'],
   },
 ];
 
