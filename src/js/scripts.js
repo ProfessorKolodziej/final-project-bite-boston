@@ -192,7 +192,7 @@ function mapInfoRestaurantList(restaurant) {
     + '</div>'
     + `<p class="list-page-address"> ${restaurant.address} </p>`
     + `<p class="list-page-introduction"> ${restaurant.introduction} </p>`
-    + '<button class="list-page-details-button">  Details </button>'
+    + '<button class="list-page-details-button" id="hidebox">  Details </button>'
     + '</div>';
 }
 
@@ -320,3 +320,13 @@ const checkboxes = document.getElementsByClassName('filterSelection');
 for (const checkbox of checkboxes) {
   checkbox.addEventListener('change', filterSelection);
 }
+
+/*function hidebox() {
+  var x = document.getElementById("filterbox");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}*/
+

@@ -113,7 +113,7 @@ const restaurantList = [
     icon: '../images/tuna.png',
     introduction: 'The sushi and omakase menu is a marvel of both flavor and presentation, with every morsel—from the foie gras nigiri to the bluefin tuna and smoked salmon sashimi—a delectable work of art.',
     url: 'https://www.o-ya.restaurant/location/o-ya-boston/',
-    filterTag: ['price1', 'downtown', 'japanese'],
+    filterTag: ['price4', 'downtown', 'japanese'],
   },
   {
     name: 'Tasting Counter',

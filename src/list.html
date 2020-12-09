@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A Boston area restaurant guide" />
-    <link rel="stylesheet" href="css/filters.css">
     <title>Bite Boston-listing</title>
     <script src="https://use.fontawesome.com/7ccb1a3cee.js"></script>
 </head>
+<link rel="stylesheet" href="css/filters.css">
 <body>
 	<main class="content-container">
     <button type="button" class="back-btn" id="back-to-map" onclick="window.open('./index.html');">
@@ -19,7 +19,7 @@
 			<h3 class="introduction">Click around to explore restaurants in Boston </h3>
     </section>
       <div class="dropdown">
-        <button type = "button" id ="filterButton" class="dropbtn">Fliters</button>
+        <button type = "button" id ="filterButton" class="dropbtn">Filters</button>
           <div id="fliters" class="dropdown-content">
             <ul>Location
               <li><input type="checkbox" class="filterSelection" value="downtown">Downtown</li>
@@ -42,6 +42,29 @@
                 <li><input type="checkbox" class="filterSelection" value="bakery">Bakery</li>
               </ul>
             </div>
+        </div>
+        <div id="filterbox" class="web-dropdown">
+          <p class="title">Filters</p>
+            <ul>Location
+              <li><input type="checkbox" class="filterSelection" value="downtown">Downtown</li>
+              <li><input type="checkbox" class="filterSelection" value="northend">North End</li>
+              <li><input type="checkbox" class="filterSelection" value="seaport">Seaport</li>
+              <li><input type="checkbox" class="filterSelection" value="southend">South End</li>
+            </ul>
+              <ul>Price
+                <li><input type="checkbox" class="filterSelection" value="price1">$</li>
+                <li><input type="checkbox" class="filterSelection" value="price2">$$</li>
+                <li><input type="checkbox" class="filterSelection" value="price3">$$$</li>
+                <li><input type="checkbox" class="filterSelection" value="price4">$$$$</li>
+              </ul>
+              <ul>Food Category
+                <li><input type="checkbox" class="filterSelection" value="steakhouse">Steak House</li>
+                <li><input type="checkbox" class="filterSelection" value="seafood">Seafood</li>
+                <li><input type="checkbox" class="filterSelection" value="japanese">Japanese</li>
+                <li><input type="checkbox" class="filterSelection" value="italian">Italian</li>
+                <li><input type="checkbox" class="filterSelection" value="chinese">Chinese</li>
+                <li><input type="checkbox" class="filterSelection" value="bakery">Bakery</li>
+              </ul>
         </div>
           <section>
               <div class="container">

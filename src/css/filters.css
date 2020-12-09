@@ -1,3 +1,4 @@
+
 .filter{
     display: none;
 }
@@ -53,6 +54,7 @@
 
 ul {
     list-style-type: none;
+    padding:0;
 }
 
 /* restaurant list css */
@@ -68,6 +70,7 @@ ul {
     display: grid;
     grid-template-columns: 80px 80px 80px 80px;
     grid-template-rows: 20px 100px 100px;
+    
 }
 
 .list-page-icon{
@@ -135,4 +138,81 @@ ul {
     border-radius: 25px;
     margin-top: -35px;
     margin-left: 40px;
+}
+@media only screen and (min-width: 769px) {
+    .dropbtn{
+        display:none;
+    }
+    .web-dropdown {
+        color: #ffffff;
+        position: absolute;
+        background-color: rgb(8, 27, 103, 0.9);
+        width: 200px;
+        font-size: 18px;
+        top:157px;
+        padding-left:15px;
+        padding-bottom:5px;
+    }
+    .title{
+        text-align: center;
+        font-size: 18px;
+    }
+    .list-page-info-card{
+        border-radius: 0;
+        border: none;
+        height: 300px;
+        width: 700px;
+        margin-left: 25%;
+        margin-right: auto;
+        padding:0;
+        padding-bottom: 30px;
+        display: grid;
+        grid-template-columns: 140px 140px 140px 140px;
+        grid-template-rows: 20px 100px 180px;
+        border-bottom: 0.1em solid #a3a1a1; 
+    }
+    .list-page-name{
+        font-size: 23px;
+        margin-left: -100px;
+    }
+    .list-page-icon{
+        width: 30px;
+        padding-top:5px;
+    }
+    .list-page-info-card-image{
+        width: 200px;
+        height: 180px;
+        border-radius: 10px;
+    }
+    .list-page-details-button{
+        margin-left: 60px;
+    }
+    .list-page-address{
+        grid-column: 3 / 6;
+        font-size: 18px;
+        margin-top: 80px;
+        margin-left: -10px;
+        width: 350px;
+        border:none;
+    }
+    .list-page-phone{
+        grid-column: 3 / 6;
+        grid-row: 1 / 2;
+        font-size: 18px;
+        margin-top: 60px;
+        margin-left:-10px;
+    }
+    .list-page-introduction{
+        font-size:15px;
+        width:420px;
+        margin-top:20px;
+        margin-left:-10px; 
+    }
+    
+}
+
+@media only screen and (max-width: 769px){
+    .web-dropdown{
+        display:none;
+    }
 }
