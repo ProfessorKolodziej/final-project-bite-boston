@@ -319,4 +319,3 @@ const checkboxes = document.getElementsByClassName('filterSelection');
 for (const checkbox of checkboxes) { // eslint-disable-line no-restricted-syntax
   checkbox.addEventListener('change', filterSelection);
 }
-
