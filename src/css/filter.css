@@ -54,16 +54,6 @@
     color: #ffffff;
 }
 
-.menu-category {
-    list-style-type: none;
-    padding-bottom: 20px;
-    border-bottom: 1px solid darkblue;
-}
-
-.menu-category3 {
-    list-style-type: none;
-}
-
 ul {
     list-style-type: none;
     padding:unset;
@@ -75,15 +65,11 @@ ul {
     margin-inline-end: 0.5em;
 }
 
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 768px){
     .web-dropdown{
         display:none;
     }
 }
-
-
-
-
 
 /* restaurant list css */
 .container{
@@ -300,13 +286,5 @@ ul {
         width:420px;
         margin-top:20px;
         margin-left:-10px; 
-    }
-    
-}
-
-@media only screen and (max-width: 768px){
-    .web-dropdown{
-        display:none;
-    }
-}
+    } 
 }
