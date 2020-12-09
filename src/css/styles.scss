@@ -415,3 +415,230 @@ $grey: #707070;
 		justify-content: center;
 	}
 }
+
+.filter {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.dropbtn {
+	background-color: #fff;
+	color: #707070;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	color: #fff;
+	display: none;
+	position: absolute;
+	background-color: rgba(8, 27, 103, 0.9);
+	width: 200px;
+	z-index: 1;
+	font-size: 14px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: #fff;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover { background-color: #fff; }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content { display: block; }
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: rgba(8, 27, 103, 0.9);
+	color: #fff;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+/* restaurant list css */
+.list-page-info-card {
+	border-radius: 25px;
+	border: 2px solid #802d2b;
+	width: 320px;
+	height: 220px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 80px 80px 80px 80px;
+	grid-template-rows: 20px 100px 100px;
+}
+
+.list-page-icon {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	width: 30px;
+	justify-self: start;
+}
+
+.list-page-name {
+	grid-column: 2 / 4;
+	grid-row: 1 / 2;
+	font-size: 16px;
+	margin-left: -40px;
+	margin-top: 5px;
+}
+
+.list-page-phone {
+	grid-column: 4 / 6;
+	grid-row: 1 / 2;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+.list-page-info-card-image {
+	grid-column: 1 / 3;
+	grid-row: 2 / 4;
+	width: 160px;
+	height: 140px;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+
+.list-page-address {
+	grid-column: 3 / 6;
+	grid-row: 2 / 3;
+	font-size: 14px;
+	margin-top: 40px;
+	margin-left: 20px;
+	width: 140px;
+	border-bottom: 0.1em solid #707070;
+}
+
+.list-page-introduction {
+	grid-column: 3 / 6;
+	grid-row: 3 / 5;
+	margin-top: -2px;
+	margin-left: 20px;
+	width: 140px;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.list-page-details-button {
+	grid-column: 1 / 3;
+	grid-row: 4 / 5;
+	width: 80px;
+	height: 30px;
+	background: rgba(150, 61, 44, 0.98);
+	border: 0.15em solid rgba(128, 45, 43, 0.8);
+	box-shadow: 1px 1px 1.1px #4d1b1a;
+	color: ghostwhite;
+	border-radius: 25px;
+	margin-top: -35px;
+	margin-left: 40px;
+}
+
+@media only screen and (min-width: 769px) {
+	.dropbtn {
+		display: none;
+	}
+
+	.web-dropdown {
+		color: #fff;
+		position: absolute;
+		background-color: rgba(8, 27, 103, 0.9);
+		width: 200px;
+		font-size: 18px;
+		top: 157px;
+		padding-left: 15px;
+		padding-bottom: 5px;
+	}
+
+	.title {
+		text-align: center;
+		font-size: 18px;
+	}
+
+	.list-page-info-card {
+		border-radius: 0;
+		border: none;
+		height: 340px;
+		width: 700px;
+		margin-left: 25%;
+		margin-right: auto;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 140px 140px 140px 140px;
+		grid-template-rows: 20px 100px 220px;
+		border-bottom: 0.1em solid #a3a1a1;
+	}
+
+	.list-page-name {
+		font-size: 23px;
+		margin-left: -100px;
+	}
+
+	.list-page-icon {
+		width: 30px;
+		padding-top: 5px;
+	}
+
+	.list-page-info-card-image {
+		width: 230px;
+		height: 200px;
+		border-radius: 10px;
+	}
+
+	.list-page-details-button {
+		margin-left: 75px;
+		margin-top: -60px;
+	}
+
+	.list-page-address {
+		grid-column: 3 / 6;
+		font-size: 18px;
+		margin-top: 80px;
+		margin-left: -10px;
+		width: 400px;
+		border: none;
+	}
+
+	.list-page-phone {
+		grid-column: 3 / 6;
+		grid-row: 1 / 2;
+		font-size: 18px;
+		margin-top: 60px;
+		margin-left: -10px;
+	}
+
+	.list-page-introduction {
+		font-size: 15px;
+		width: 420px;
+		margin-top: 20px;
+		margin-left: -10px;
+	}
+}
+
+@media only screen and (max-width: 769px) {
+	.web-dropdown {
+		display: none;
+	}
+}
