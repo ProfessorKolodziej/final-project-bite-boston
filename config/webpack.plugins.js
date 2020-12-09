@@ -14,6 +14,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const config = require('./site.config');
 
@@ -130,6 +131,14 @@ const google = new GoogleAnalyticsPlugin({
   id: config.googleAnalyticsUA,
 });
 
+// Copy images from HTML
+
+const copyImages = new CopyPlugin({
+  patterns: [
+    { from: "images", to: "images" }
+  ],
+});
+
 module.exports = [
   clean,
   stylelint,
@@ -142,5 +151,6 @@ module.exports = [
   config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
+  copyImages,
   new Dotenv()
 ].filter(Boolean);
