@@ -322,3 +322,16 @@ const checkboxes = document.getElementsByClassName('filterSelection');
 for (const checkbox of checkboxes) { // eslint-disable-line no-restricted-syntax
   checkbox.addEventListener('change', filterSelection);
 }
+
+// filter button
+if (window.location.pathname.indexOf('/list.html') > -1) {
+  const dropdownBtn = document.querySelector('.menu-btn');
+  const menuContent = document.querySelector('.menu-content');
+  dropdownBtn.addEventListener('click', () => {
+    if (menuContent.style.display === '') {
+      menuContent.style.display = 'block';
+    } else {
+      menuContent.style.display = '';
+    }
+  });
+}
