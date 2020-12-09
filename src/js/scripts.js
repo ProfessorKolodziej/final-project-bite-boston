@@ -214,7 +214,10 @@ function renderList() {
     ul.appendChild(li);
   });
 }
-document.addEventListener('DOMContentLoaded', renderList);
+
+if (window.location.pathname.indexOf('/list.html') > -1) {
+  document.addEventListener('DOMContentLoaded', renderList);
+}
 
 // This controls the button click for showing the restaurant detail
 document.addEventListener('click', (event) => {
