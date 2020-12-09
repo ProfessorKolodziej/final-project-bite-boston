@@ -167,7 +167,7 @@ ul {
     margin-left: 15px;
 }
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 375px) {
     .list-page-info-card{
         border-radius: 0;
         border: none;
@@ -299,8 +299,9 @@ ul {
     
 }
 
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 768px){
     .web-dropdown{
         display:none;
     }
+}
 }
