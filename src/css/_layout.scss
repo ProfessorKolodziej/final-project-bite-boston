@@ -1,18 +1,105 @@
-#google_map,
-#google_map_appended {
-	height: 50vh;
+.info-card-image {
 	width: 100%;
 }
 
-.info-card-image{
-	width: 100%;
-}
-
-.info-card{
-	width: 30vw;
+.info-card {
+	max-width: 180px;
 	height: auto;
 }
 
-.image-wrapper{
+@media only screen and (min-width: 376px) {
+	.info-card {
+		max-width: 200px;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.info-card {
+		max-width: 300px;
+		height: auto;
+	}
+}
+
+.image-wrapper {
 	width: 100%;
+}
+
+.logo {
+	width: 180px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+
+@media only screen and (min-width: 769px) {
+	.logo {
+		width: 220px;
+	}
+}
+
+.introduction {
+	font-family: 'Alegreya Sans', sans-serif;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: black;
+}
+
+#homepage-browse-restaurants {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	padding: 15px 30px;
+	font-size: 20px;
+	padding-right: 0;
+	border: none;
+}
+
+#homepage-browse-restaurants:focus {
+	border: none;
+	outline: none;
+}
+
+#homepage-browse-restaurants:hover {
+	cursor: pointer;
+}
+
+.filters img {
+	width: 25px;
+}
+
+.search img {
+	width: 28px;
+}
+
+.restaurant-list-names {
+	float: left;
+}
+
+.restaurant-list-icons {
+	width: 36px;
+	float: left;
+	margin-top: 1em;
+	margin-left: 0.5em;
+}
+
+.restaurant-list-images {
+	width: 125px;
+	height: 125px;
+	border-radius: 15px;
+}
+
+.oishii-boston {
+	border-radius: 25px;
+	border: 2px solid #73ad21;
+	padding: 10px;
+	margin: 10px;
 }
